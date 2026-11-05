@@ -3,15 +3,19 @@ import { WHATSAPP_URL } from "@/lib/specialties";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
+export type RevealDirection = "up" | "left" | "right" | "fade" | "glow";
+
 export function Reveal({
   children,
   className,
   delay = 0,
+  direction = "up",
   as: Tag = "div",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  direction?: RevealDirection;
   as?: ElementType;
 }) {
   const ref = useRef<HTMLElement>(null);
@@ -30,11 +34,45 @@ export function Reveal({
     <Tag
       ref={ref}
       data-visible={visible}
+      data-direction={direction}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn("reveal", className)}
     >
       {children}
     </Tag>
+  );
+}
+
+/** Gentle scroll-linked depth movement; disabled under prefers-reduced-motion */
+export function Parallax({ children, className, speed = 0.08 }: { children: ReactNode; className?: string; speed?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0;
+    const update = () => {
+      const r = el.getBoundingClientRect();
+      const mid = r.top + r.height / 2 - window.innerHeight / 2;
+      el.style.transform = `translateY(${(-mid * speed).toFixed(1)}px)`;
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [speed]);
+  return (
+    <div ref={ref} className={cn("will-change-transform", className)}>
+      {children}
+    </div>
   );
 }
 
