@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import logo from "@/assets/akura-logo.png.asset.json";
+import logoWhite from "@/assets/akura-logo-white.png";
 import { useI18n } from "@/lib/i18n";
 import { specialties, WHATSAPP_URL } from "@/lib/specialties";
 import { WaButton } from "./ui";
