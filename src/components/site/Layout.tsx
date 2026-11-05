@@ -140,9 +140,33 @@ export function Footer() {
           <p className="text-sm leading-relaxed">{t.countries.join(" · ")}</p>
           <h3 className="eyebrow mb-4 mt-8">{t.nav.contact}</h3>
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline">{t.footerContact} →</a>
+          <ul className="mt-6 space-y-3 text-sm">
+            <li>
+              <a href="https://instagram.com/akurawellbeing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 transition-opacity hover:opacity-70">
+                <Instagram className="h-4 w-4" aria-hidden /> @akurawellbeing
+              </a>
+            </li>
+            <li>
+              <a href="https://tiktok.com/@akurawellbeing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 transition-opacity hover:opacity-70">
+                <Music2 className="h-4 w-4" aria-hidden /> @akurawellbeing
+              </a>
+            </li>
+            <li>
+              <a href="mailto:akurawellbeing@gmail.com" className="inline-flex items-center gap-3 transition-opacity hover:opacity-70">
+                <Mail className="h-4 w-4" aria-hidden /> akurawellbeing@gmail.com
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className="gold-line mx-auto mt-16 max-w-7xl" />
+      <div className="mx-auto mt-14 flex max-w-7xl justify-center">
+        <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full border-2 border-gold text-center" aria-label="Certificada APNB">
+          <span className="text-[9px] font-bold uppercase tracking-[0.28em]">Certificada</span>
+          <span className="display mt-1 text-2xl font-bold tracking-[0.12em]">APNB</span>
+          <span className="mt-1 h-px w-10 bg-gold" aria-hidden />
+        </div>
+      </div>
+      <div className="gold-line mx-auto mt-14 max-w-7xl" />
       <p className="mx-auto mt-6 max-w-7xl text-center text-xs tracking-widest">© {new Date().getFullYear()} AKURA · {t.rights}</p>
     </footer>
   );
