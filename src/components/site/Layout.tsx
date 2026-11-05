@@ -25,7 +25,7 @@ export function Header() {
     <header className="akura-header fixed inset-x-0 top-0 z-50">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-2.5">
         <Link to="/" aria-label="AKURA" className="shrink-0">
-          <img src={logo.url} alt="AKURA" className="h-9 w-auto md:h-10" />
+          <img src={logoWhite} alt="AKURA" className="h-9 w-auto md:h-10" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
