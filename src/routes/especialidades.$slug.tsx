@@ -34,7 +34,7 @@ function Specialty() {
   const flip = idx % 2 === 1;
   return (
     <>
-      <PageHero eyebrow={s.tagline} title={s.name} text={s.description} image={s.image} />
+      <PageHero eyebrow={s.tagline} title={s.name} text={s.description} {...(s.image ? { image: s.image } : {})} />
       {s.services.length === 0 && <section className="bg-ivory px-6 py-28">
         <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
           <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa.url} alt="Salle de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" /></Parallax></Reveal>
