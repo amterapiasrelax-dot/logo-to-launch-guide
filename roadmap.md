@@ -1,4 +1,7 @@
 # AKURA — aplicação do planejamento aprovado
+- [x] Passar todo o conteúdo visível e metadados para francês, preservando URLs e identidade visual.
+- [x] Adicionar foto de cuidado dos pés em domicílio à Akura Homecare e ao carrossel.
+- [x] Verificar idioma, foto, navegação e testes no computador e celular.
 - [x] Consolidar os textos em português e permitir tradução pelo Google Chrome/Google Tradutor, sem tradutor incorporado.
 - [x] Preservar as nove páginas de áreas e organizar os serviços confirmados em suas áreas.
 - [x] Manter apresentação internacional geral, identidade visual, fotos e WhatsApp.

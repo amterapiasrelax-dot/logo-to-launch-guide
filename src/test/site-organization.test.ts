@@ -3,8 +3,14 @@ import { SITE_LANGUAGE } from "@/lib/i18n";
 import { findSpecialty, specialties } from "@/lib/specialties";
 
 describe("AKURA site organization", () => {
-  it("uses Portuguese as the original language for automatic translation", () => {
-    expect(SITE_LANGUAGE).toBe("pt-BR");
+  it("uses French as the original site language", () => {
+    expect(SITE_LANGUAGE).toBe("fr-FR");
+  });
+
+  it("places the approved home care photo in its owning area", () => {
+    const homecare = findSpecialty("akura-homecare");
+    expect(homecare?.services.map(({ id }) => id)).toEqual(["soins-pieds-domicile"]);
+    expect(homecare?.image).toBe(homecare?.services[0]?.image);
   });
 
   it("preserves the nine individual areas", () => {

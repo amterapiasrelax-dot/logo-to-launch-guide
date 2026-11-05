@@ -167,7 +167,8 @@
   .akura-procedures { padding: 24px 20px 12px; }
   .procedure-stage { aspect-ratio: 4 / 5; }
   .procedure-name { bottom: 18px; right: 18px; max-width: calc(100% - 36px); font-size: 13px; }
-  .procedure-controls { gap: 4px; }
+  .procedure-controls { gap: 4px; flex-wrap: wrap; }
+  .procedure-controls > div:first-child { flex-wrap: wrap; justify-content: center; max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

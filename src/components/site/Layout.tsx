@@ -28,7 +28,7 @@ export function Header() {
           <img src={logoWhite} alt="AKURA" className="h-9 w-auto md:h-10" />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigation principale">
           <Link to="/" className={linkCls} activeProps={{ className: "active" }} activeOptions={{ exact: true }}>{links[0].label}</Link>
           <Link to="/sobre" className={linkCls}>{t.nav.about}</Link>
           <div className="group relative" onMouseLeave={() => setSub(false)}>
@@ -87,7 +87,7 @@ export function Header() {
 
       {open && (
         <div className="glass mx-4 mt-2 max-h-[80vh] overflow-y-auto rounded-3xl border border-champagne p-6 lg:hidden">
-          <nav className="flex flex-col gap-4" aria-label="Mobile">
+          <nav className="flex flex-col gap-4" aria-label="Navigation mobile">
             {links.slice(0, 2).map((l) => (
               <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={mobileLinkCls}>{l.label}</Link>
             ))}
@@ -115,9 +115,9 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3">
         <div>
           <img src={logoGold} alt="AKURA" className="h-24 w-auto" loading="lazy" />
-          <p className="mt-6 max-w-xs text-sm leading-relaxed">Bem-estar, conhecimento e cuidado em cada experiência.</p>
-          <div className="mt-8 flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-gold text-center" aria-label="Certificada APNB">
-            <span className="text-[8px] font-bold uppercase tracking-[0.28em]">Certificada</span>
+          <p className="mt-6 max-w-xs text-sm leading-relaxed">Bien-être, savoir et soin dans chaque expérience.</p>
+          <div className="mt-8 flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-gold text-center" aria-label="Certifiée APNB">
+            <span className="text-[8px] font-bold uppercase tracking-[0.28em]">Certifiée</span>
             <span className="display mt-1 text-xl font-bold tracking-[0.12em]">APNB</span>
             <span className="mt-1 h-px w-8 bg-gold" aria-hidden />
           </div>
@@ -162,8 +162,8 @@ export function Footer() {
       <div className="mx-auto mt-6 flex max-w-7xl flex-col items-center justify-between gap-4 text-xs tracking-widest md:flex-row">
         <p>© {new Date().getFullYear()} AKURA · {t.rights}</p>
         <div className="flex items-center gap-6">
-          <Link to="/politica-de-privacidade" className="hover:underline">Política de Privacidade</Link>
-          <Link to="/aviso-legal" className="hover:underline">Aviso Legal</Link>
+          <Link to="/politica-de-privacidade" className="hover:underline">Politique de confidentialité</Link>
+          <Link to="/aviso-legal" className="hover:underline">Mentions légales</Link>
         </div>
       </div>
     </footer>

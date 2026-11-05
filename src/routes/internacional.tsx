@@ -6,10 +6,10 @@ import { ContactBlock, PageHero, Reveal } from "@/components/site/ui";
 export const Route = createFileRoute("/internacional")({
   head: () => ({
     meta: [
-      { title: "Presença Internacional — AKURA" },
-      { name: "description", content: "AKURA: França, Suíça, Espanha e Brasil." },
-      { property: "og:title", content: "Presença Internacional — AKURA" },
-      { property: "og:description", content: "França · Suíça · Espanha · Brasil" },
+      { title: "Présence internationale — AKURA" },
+      { name: "description", content: "AKURA : France, Suisse, Espagne et Brésil." },
+      { property: "og:title", content: "Présence internationale — AKURA" },
+      { property: "og:description", content: "France · Suisse · Espagne · Brésil" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

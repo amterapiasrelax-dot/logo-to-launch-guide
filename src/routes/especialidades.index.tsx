@@ -7,10 +7,10 @@ import { ContactBlock, PageHero, Reveal, SpecIcon } from "@/components/site/ui";
 export const Route = createFileRoute("/especialidades/")({
   head: () => ({
     meta: [
-      { title: "Especialidades — AKURA" },
-      { name: "description", content: "Conheça as nove especialidades AKURA de estética e bem-estar." },
-      { property: "og:title", content: "Especialidades — AKURA" },
-      { property: "og:description", content: "Nove universos de cuidado AKURA." },
+      { title: "Spécialités — AKURA" },
+      { name: "description", content: "Découvrez les neuf spécialités AKURA d’esthétique et de bien-être." },
+      { property: "og:title", content: "Spécialités — AKURA" },
+      { property: "og:description", content: "Neuf univers de soins AKURA." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

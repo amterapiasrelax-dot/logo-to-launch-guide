@@ -50,7 +50,7 @@ export function ProcedureCarousel() {
   }, [active, reduced]);
   const move = (direction: number) => select(nextSlide(active, direction, heroSlides.length));
   return (
-    <section className="procedure-carousel" aria-label="Procedimentos AKURA" aria-roledescription="carrossel"
+    <section className="procedure-carousel" aria-label="Soins AKURA" aria-roledescription="carrousel"
       onFocusCapture={() => setFocused(true)}
       onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false); }}
       onKeyDown={(e) => { if (e.key === "ArrowRight") move(1); if (e.key === "ArrowLeft") move(-1); }}
@@ -73,14 +73,14 @@ export function ProcedureCarousel() {
       </div>
       <div className="procedure-controls">
         <div className="flex items-center">
-          {heroSlides.map((slide, i) => <Button key={slide.id} variant="ghost" size="icon" className="h-8 w-8 rounded-full" aria-label={`Mostrar ${slide.name}`} aria-pressed={active === i} onClick={() => select(i)}>
+          {heroSlides.map((slide, i) => <Button key={slide.id} variant="ghost" size="icon" className="h-8 w-8 rounded-full" aria-label={`Afficher ${slide.name}`} aria-pressed={active === i} onClick={() => select(i)}>
             <span className={cn("h-1 w-1 rounded-full bg-photo-label transition-opacity", active === i ? "opacity-100" : "opacity-40")} />
           </Button>)}
         </div>
         <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon" title="Foto anterior" aria-label="Foto anterior" onClick={() => move(-1)}><ChevronLeft /></Button>
-          {!reduced && <Button variant="ghost" size="icon" title={paused ? "Retomar carrossel" : "Pausar carrossel"} aria-label={paused ? "Retomar carrossel" : "Pausar carrossel"} onClick={() => setPaused(!paused)}>{paused ? <Play /> : <Pause />}</Button>}
-          <Button variant="ghost" size="icon" title="Próxima foto" aria-label="Próxima foto" onClick={() => move(1)}><ChevronRight /></Button>
+          <Button variant="ghost" size="icon" title="Photo précédente" aria-label="Photo précédente" onClick={() => move(-1)}><ChevronLeft /></Button>
+          {!reduced && <Button variant="ghost" size="icon" title={paused ? "Reprendre le carrousel" : "Mettre le carrousel en pause"} aria-label={paused ? "Reprendre le carrousel" : "Mettre le carrousel en pause"} onClick={() => setPaused(!paused)}>{paused ? <Play /> : <Pause />}</Button>}
+          <Button variant="ghost" size="icon" title="Photo suivante" aria-label="Photo suivante" onClick={() => move(1)}><ChevronRight /></Button>
         </div>
       </div>
     </section>
