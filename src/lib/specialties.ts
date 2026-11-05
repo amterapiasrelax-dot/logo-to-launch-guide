@@ -15,6 +15,7 @@ import kidsSpace from "@/assets/akura-kids-espaco.webp.asset.json";
 import microblading from "@/assets/microblading-akura.webp.asset.json";
 import esteticaFacial from "@/assets/estetica-facial-akura.webp.asset.json";
 import esteticaCorporal from "@/assets/estetica-corporal-akura.webp.asset.json";
+import massagemRelaxante from "@/assets/massagem-relaxante-corporate.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
@@ -52,7 +53,8 @@ export const specialties: Specialty[] = [
     ctaLabel: "Consulte a disponibilidade", image: salaSpa.url, services: [] },
   { slug: "akura-corporate", name: "Akura Corporate", tagline: "Bem-estar para empresas e eventos",
     description: "Experiências de bem-estar pensadas para organizações que valorizam as pessoas. A Akura Corporate desenvolve propostas personalizadas para empresas, hotéis, equipes e eventos, criando momentos especiais de cuidado e acolhimento.",
-    ctaLabel: "Solicite uma proposta", image: realSpace.url, services: [
+    ctaLabel: "Solicite uma proposta", image: massagemRelaxante.url, services: [
+    { id: "massagem-relaxante", title: "Massagem relaxante", image: massagemRelaxante.url, alt: "Massagem relaxante AKURA Corporate — quick massage em ambiente moderno" },
     { id: "foot-spa", title: "Foot Spa", image: footBath.url, alt: "Foot Spa — banho dos pés com pedras em bacia dourada", gallery: [
       { image: footMassage.url, alt: "Foot Spa — massagem dos pés" },
       { image: footFeet.url, alt: "Foot Spa — cuidado dos pés" },
