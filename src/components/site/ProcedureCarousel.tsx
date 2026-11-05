@@ -60,7 +60,6 @@ export function ProcedureCarousel() {
         if (touchStart.current !== null && end !== undefined && Math.abs(end - touchStart.current) > 45) move(end < touchStart.current ? 1 : -1);
         touchStart.current = null;
       }}>
-      <h1 className="sr-only">AKURA — Estética e bem-estar</h1>
       <div className="procedure-stage">
         {heroSlides.map((slide, i) => (
           <Link key={slide.id} to="/especialidades/$slug" params={{ slug: slide.slug }} hash={slide.id}

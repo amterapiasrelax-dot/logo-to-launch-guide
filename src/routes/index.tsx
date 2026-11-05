@@ -40,7 +40,18 @@ function Index() {
   return (
     <>
       {/* HERO */}
-      <ProcedureCarousel />
+      <section className="akura-introduction">
+        <img src={realSpace.url} alt="Espaço de atendimento AKURA" className="akura-introduction-photo" fetchPriority="high" />
+        <div className="akura-introduction-content">
+          <h1 className="display text-6xl md:text-8xl">AKURA</h1>
+          <p className="mt-6 max-w-xl text-2xl font-light leading-snug md:text-3xl">{t.heroTitle}</p>
+          <p className="mt-5 max-w-xl text-base leading-relaxed md:text-lg">{t.heroText}</p>
+          <WaButton className="mt-8" />
+        </div>
+      </section>
+      <div className="akura-procedures">
+        <ProcedureCarousel />
+      </div>
 
       {/* SOBRE */}
       <section className="bg-ivory px-6 py-28 md:py-36">

@@ -30,10 +30,10 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-all duration-700",
-        scrolled ? "glass border-champagne py-3" : "border-transparent py-5",
+        scrolled ? "glass border-champagne" : "border-transparent",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6">
+      <div className={cn("mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 transition-all duration-700", scrolled ? "py-3" : "py-5")}>
         <Link to="/" aria-label="AKURA" className="shrink-0">
           <img src={logo.url} alt="AKURA" className="h-12 w-auto md:h-14" />
         </Link>
@@ -80,6 +80,20 @@ export function Header() {
           <span className={cn("h-px w-5 bg-gold transition-transform", open && "translate-y-[3.5px] rotate-45")} />
           <span className={cn("h-px w-5 bg-gold transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
         </button>
+      </div>
+
+      <div className="country-strip" aria-label={t.countries.join(" · ")}>
+        <div className="country-track" aria-hidden="true">
+          {[0, 1].map((group) => (
+            <div className="country-sequence" key={group}>
+              {[0, 1, 2].map((repeat) => t.countries.map((country) => (
+                <span className="country-item" key={`${repeat}-${country}`}>
+                  {country}<span className="country-separator">✦</span>
+                </span>
+              )))}
+            </div>
+          ))}
+        </div>
       </div>
 
       {open && (
