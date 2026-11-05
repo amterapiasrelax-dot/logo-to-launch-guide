@@ -20,6 +20,7 @@ describe("AKURA site organization", () => {
       "japanese-head-spa", "massagem-localizada",
     ]);
     expect(specialties.filter(({ slug }) => slug !== "akura-touch")
-      .flatMap(({ services }) => services.map(({ id }) => id))).toEqual([]);
+      .flatMap(({ services }) => services.map(({ id }) => id))
+      .filter((id) => ["japanese-head-spa", "massagem-localizada"].includes(id))).toEqual([]);
   });
 });

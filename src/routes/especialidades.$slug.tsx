@@ -50,16 +50,21 @@ function Specialty() {
           <section key={x.id} id={x.id} className="px-6 py-24">
             <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${(flip ? k % 2 === 0 : k % 2 === 1) ? "md:[&>*:first-child]:order-2" : ""}`}>
               <Reveal>
-                <img src={x.image} alt={x.alt} loading="lazy" className="aspect-[4/5] w-full rounded-[2rem] rounded-bl-[8rem] object-cover shadow-[var(--shadow-soft)]" />
+                <img src={x.image} alt={x.alt} loading="lazy" className={`${x.gallery ? "aspect-video" : "aspect-[4/5]"} w-full rounded-[2rem] rounded-bl-[8rem] object-cover shadow-[var(--shadow-soft)]`} />
               </Reveal>
               <Reveal delay={150}>
                 <Eyebrow>{s.name}</Eyebrow>
                 <h2 className="display mt-8 text-4xl md:text-5xl">{x.title}</h2>
                 <div className="gold-line my-10 w-40" />
-                <p className="max-w-lg text-lg leading-relaxed">{x.text}</p>
+                {x.text && <p className="max-w-lg text-lg leading-relaxed">{x.text}</p>}
                 <div className="mt-10"><WaButton /></div>
               </Reveal>
             </div>
+            {x.gallery && <div className="mx-auto mt-10 grid max-w-7xl gap-6 md:grid-cols-2">
+              {x.gallery.map((photo) => <Reveal key={photo.image}>
+                <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
+              </Reveal>)}
+            </div>}
           </section>
         ))}
       <section className="px-6 py-24">
