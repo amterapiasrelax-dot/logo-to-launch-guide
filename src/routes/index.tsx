@@ -166,7 +166,7 @@ function Index() {
 
 function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i];
+  const s = specialties[i]!;
   return (
     <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group relative block h-full overflow-hidden rounded-[2rem]">
       <img src={img} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
@@ -180,7 +180,7 @@ function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean 
 
 function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i];
+  const s = specialties[i]!;
   return (
     <Link
       to="/especialidades/$slug"
