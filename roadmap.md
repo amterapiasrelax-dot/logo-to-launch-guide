@@ -7,5 +7,5 @@
 - [x] Adicionar as três fotos enviadas do Foot Spa em Akura Corporate, conforme a página visualizada.
 - [x] Criar carrossel inicial de procedimentos aprovados com dissolução automática, controles e links.
 - [x] Verificar navegação, movimento suave e enquadramento no celular, tablet e computador.
-- [ ] Mostrar apresentação primeiro e carrossel oval abaixo; verificar a nova disposição.
-- [ ] Adicionar faixa fixa de países com movimento contínuo abaixo do cabeçalho e verificar celular e computador.
+- [x] Mostrar apresentação primeiro e carrossel oval abaixo; verificar a nova disposição.
+- [x] Adicionar faixa fixa de países com movimento contínuo abaixo do cabeçalho e verificar celular e computador.
