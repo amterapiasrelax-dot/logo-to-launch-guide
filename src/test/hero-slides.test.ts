@@ -6,6 +6,7 @@ describe("Approved procedure carousel", () => {
     expect(heroSlides.map(({ id, slug }) => [id, slug])).toEqual([
       ["japanese-head-spa", "akura-touch"],
       ["massagem-localizada", "akura-touch"],
+      ["microblading", "akura-pmu"],
       ["podologia", "akura-podologia-pro"],
       ["foot-spa", "akura-corporate"],
       ["akura-kids", "huellas-kids-teens"],
