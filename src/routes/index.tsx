@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import heroSpa from "@/assets/hero-spa.jpg";
-import spaRoom from "@/assets/spa-room.jpg";
+import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
 import { useI18n } from "@/lib/i18n";
@@ -43,14 +42,14 @@ function Index() {
       <section className="relative min-h-[100svh] overflow-hidden px-4 pt-28 pb-10 md:px-6">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="order-2 lg:order-1">
-            <Eyebrow>Bienestar · Bien-être · Well-being</Eyebrow>
+            <Eyebrow>Estética · Cuidado · Bem-estar</Eyebrow>
             <h1 className="display mt-8 text-[2.6rem] sm:text-6xl xl:text-7xl">{t.heroTitle}</h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed">{t.heroText}</p>
             <div className="mt-10"><WaButton /></div>
           </Reveal>
           <Reveal delay={200} className="order-1 lg:order-2">
             <div className="relative overflow-hidden rounded-[3rem] rounded-tl-[12rem] shadow-[var(--shadow-soft)]">
-              <img src={heroSpa} alt="Ambiente AKURA iluminado e acolhedor" width={1920} height={1088} className="kenburns h-[55svh] w-full object-cover lg:h-[78svh]" />
+              <img src={realSpace.url} alt="Espaço real de atendimento AKURA" width={768} height={1024} className="kenburns h-auto max-h-[78svh] w-full object-contain" />
             </div>
             <div className="pointer-events-none absolute -bottom-6 -left-6 hidden h-40 w-40 rounded-full border border-gold/50 lg:block" />
           </Reveal>
@@ -64,7 +63,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
           <Reveal className="relative">
             <div className="overflow-hidden arch">
-              <img src={spaRoom} alt="Sala de tratamento AKURA" loading="lazy" width={1200} height={1504} style={{ transform: `translateY(${-y * 0.2}px) scale(1.08)` }} className="aspect-[4/5] w-full object-cover" />
+              <img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" width={768} height={1024} style={{ transform: `translateY(${-y * 0.2}px) scale(1.08)` }} className="aspect-[4/5] w-full object-cover" />
             </div>
           </Reveal>
           <Reveal delay={150}>
@@ -91,7 +90,7 @@ function Index() {
           <div className="mt-16 grid gap-6 md:grid-cols-6">
             {/* Featured large */}
             <Reveal className="md:col-span-3 md:row-span-2">
-              <SpecFeature i={0} img={specialties[0]!.image} tall />
+              <SpecFeature i={0} tall />
             </Reveal>
             <Reveal delay={100} className="md:col-span-3">
               <SpecFeature i={1} img={careHands} />
@@ -139,7 +138,7 @@ function Index() {
           </Reveal>
           <div className="mt-16 grid gap-6 md:grid-cols-12">
             <Reveal className="md:col-span-7"><img src={stillLife} alt="Detalhes AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] object-cover transition-transform duration-[1.5s] hover:scale-[1.02]" /></Reveal>
-            <Reveal delay={150} className="md:col-span-5 md:mt-24"><img src={spaRoom} alt="Ambiente AKURA" loading="lazy" className="aspect-[4/5] w-full arch object-cover" /></Reveal>
+            <Reveal delay={150} className="md:col-span-5 md:mt-24"><img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" className="aspect-[4/5] w-full arch object-cover" /></Reveal>
           </div>
         </div>
       </section>
@@ -164,12 +163,13 @@ function Index() {
   );
 }
 
-function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean }) {
+function SpecFeature({ i, img, tall }: { i: number; img?: string; tall?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i]!;
+  const s = specialties[i];
+  if (!s) return null;
   return (
     <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group relative block h-full overflow-hidden rounded-[2rem]">
-      <img src={img} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
+      <img src={img ?? s.image} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
       <div className="glass absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl px-6 py-5">
         <div className="flex items-center gap-4"><SpecIcon i={i} /><span className="text-xl font-bold">{s.name}</span></div>
         <span className="text-xs font-bold tracking-[0.2em] uppercase">{t.discover} →</span>
@@ -180,7 +180,8 @@ function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean 
 
 function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i]!;
+  const s = specialties[i];
+  if (!s) return null;
   return (
     <Link
       to="/especialidades/$slug"
