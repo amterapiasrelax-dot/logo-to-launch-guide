@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import stillLife from "@/assets/still-life.jpg";
+import headSpa from "@/assets/head-spa.webp.asset.json";
 import { useI18n } from "@/lib/i18n";
 import { findSpecialty, specialties } from "@/lib/specialties";
 import { ContactBlock, Eyebrow, PageHero, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
