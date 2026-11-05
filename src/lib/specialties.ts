@@ -3,6 +3,7 @@ import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
 import heroSpa from "@/assets/hero-spa.jpg";
 import espacoAtendimento from "@/assets/espaco-atendimento.webp.asset.json";
+import akuraTouchMassage from "@/assets/akura-touch-massage.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
