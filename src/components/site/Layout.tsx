@@ -43,7 +43,7 @@ export function Header() {
             >
               <div className="grid grid-cols-2 gap-1 rounded-2xl border border-champagne bg-background p-4 shadow-[var(--shadow-soft)]">
                 {specialties.map((s) => (
-                  <Link key={s.slug} to="/especialidades/$slug" params={{ slug: s.slug }} onClick={() => setSub(false)} className="rounded-xl px-4 py-3 text-sm font-bold text-gold/80 transition-colors hover:bg-ivory hover:text-gold">
+                  <Link key={s.slug} to="/" hash={s.slug} onClick={() => setSub(false)} className="rounded-xl px-4 py-3 text-sm font-bold text-gold/80 transition-colors hover:bg-ivory hover:text-gold">
                     {s.name}
                   </Link>
                 ))}
@@ -94,7 +94,7 @@ export function Header() {
             <Link to="/especialidades" onClick={() => setOpen(false)} className={mobileLinkCls}>{t.nav.specialties}</Link>
             <div className="ml-3 flex flex-col gap-2 border-l border-champagne pl-4">
               {specialties.map((s) => (
-                <Link key={s.slug} to="/especialidades/$slug" params={{ slug: s.slug }} onClick={() => setOpen(false)} className="text-sm text-gold/80">{s.name}</Link>
+                <Link key={s.slug} to="/" hash={s.slug} onClick={() => setOpen(false)} className="text-sm text-gold/80">{s.name}</Link>
               ))}
             </div>
             {links.slice(2).map((l) => (

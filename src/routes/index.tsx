@@ -4,7 +4,7 @@ import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
 import { useI18n } from "@/lib/i18n";
 import { specialties } from "@/lib/specialties";
-import { ContactBlock, Eyebrow, Parallax, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
+import { ContactBlock, Eyebrow, Parallax, Reveal, WaButton } from "@/components/site/ui";
 import { ProcedureCarousel } from "@/components/site/ProcedureCarousel";
 
 export const Route = createFileRoute("/")({
@@ -154,36 +154,4 @@ function Index() {
   );
 }
 
-function SpecFeature({ i, img, tall }: { i: number; img?: string; tall?: boolean }) {
-  const { t } = useI18n();
-  const s = specialties[i];
-  if (!s) return null;
-  return (
-    <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group relative block h-full overflow-hidden rounded-[2rem]">
-      <img src={img ?? s.image} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
-      <div className="glass absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl px-6 py-5">
-        <div className="flex items-center gap-4"><SpecIcon i={i} /><span className="text-xl font-bold">{s.name}</span></div>
-        <span className="text-xs font-bold tracking-[0.2em] uppercase">{t.discover} →</span>
-      </div>
-    </Link>
-  );
-}
 
-function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
-  const { t } = useI18n();
-  const s = specialties[i];
-  if (!s) return null;
-  return (
-    <Link
-      to="/especialidades/$slug"
-      params={{ slug: s.slug }}
-      className={`group flex h-full min-w-0 flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-champagne p-8 transition-all duration-700 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${soft ? "bg-champagne/40" : "bg-background"}`}
-    >
-      <div className="flex min-w-0 items-center gap-5">
-        <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-sand transition-colors group-hover:bg-ivory"><SpecIcon i={i} /></span>
-        <span className="text-lg font-bold">{s.name}</span>
-      </div>
-      <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-0 transition-opacity group-hover:opacity-100">{t.discover}</span>
-    </Link>
-  );
-}
