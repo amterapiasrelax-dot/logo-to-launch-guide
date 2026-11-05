@@ -16,11 +16,10 @@ export function Header() {
   const links = [
     { to: "/", label: t.nav.home },
     { to: "/sobre", label: t.nav.about },
-    { to: "/internacional", label: t.nav.intl },
     { to: "/contato", label: t.nav.contact },
   ] as const;
-  const linkCls = "akura-nav-link text-sm font-bold tracking-[0.14em] uppercase";
-  const mobileLinkCls = "text-sm font-bold tracking-[0.14em] uppercase text-gold/80 transition-colors hover:text-gold";
+  const linkCls = "akura-nav-link text-xs font-bold tracking-[0.12em] uppercase";
+  const mobileLinkCls = "text-xs font-bold tracking-[0.12em] uppercase text-gold/80 transition-colors hover:text-gold";
 
   return (
     <header className="akura-header fixed inset-x-0 top-0 z-50">
@@ -54,7 +53,6 @@ export function Header() {
               </div>
             </div>
           </div>
-          <Link to="/internacional" className={linkCls}>{t.nav.intl}</Link>
           <Link to="/contato" className={linkCls}>{t.nav.contact}</Link>
         </nav>
 
