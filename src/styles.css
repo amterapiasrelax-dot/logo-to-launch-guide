@@ -34,6 +34,7 @@
   --color-champagne: var(--champagne);
   --color-sand: var(--sand);
   --color-gold: var(--gold);
+  --color-photo-label: var(--photo-label);
 }
 
 :root {
@@ -43,6 +44,8 @@
   --champagne: oklch(0.912 0.034 70);  /* #F0E0CE */
   --sand: oklch(0.823 0.05 70);        /* #DCC3A9 */
   --gold: oklch(0.72 0.085 72);        /* #C9A16B */
+  --photo-label: var(--white);
+  --shadow-photo-label: 0 1px 4px color-mix(in oklab, var(--gold) 70%, transparent);
 
   --background: var(--white);
   --foreground: var(--gold);
@@ -129,8 +132,20 @@
   to { transform: scale(1.12) translate(-1%, -1%); }
 }
 
+.procedure-carousel { padding-top: 96px; background: var(--ivory); }
+.procedure-stage { position: relative; width: 100%; height: min(72svh, 820px); min-height: 260px; }
+.procedure-slide { position: absolute; inset: 0; display: flex; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 1800ms ease-in-out; }
+.procedure-slide.is-active { opacity: 1; pointer-events: auto; z-index: 1; }
+.procedure-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.procedure-name { position: absolute; bottom: 22px; right: 24px; font-family: var(--font-sans); font-size: 14px; font-weight: 300; letter-spacing: 0; color: var(--photo-label); text-shadow: var(--shadow-photo-label); }
+@media (max-width: 767px) {
+  .procedure-stage { height: min(65svh, 620px); min-height: 240px; }
+  .procedure-name { bottom: 18px; right: 18px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .kenburns { animation: none; }
   html { scroll-behavior: auto; }
+  .procedure-slide { transition: none; }
 }

@@ -6,6 +6,7 @@ import stillLife from "@/assets/still-life.jpg";
 import { useI18n } from "@/lib/i18n";
 import { specialties } from "@/lib/specialties";
 import { ContactBlock, Curve, Eyebrow, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
+import { ProcedureCarousel } from "@/components/site/ProcedureCarousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,22 +40,7 @@ function Index() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[100svh] overflow-hidden px-4 pt-28 pb-10 md:px-6">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="order-2 lg:order-1">
-            <Eyebrow>Estética · Cuidado · Bem-estar</Eyebrow>
-            <h1 className="display mt-8 text-[2.6rem] sm:text-6xl xl:text-7xl">{t.heroTitle}</h1>
-            <p className="mt-8 max-w-lg text-lg leading-relaxed">{t.heroText}</p>
-            <div className="mt-10"><WaButton /></div>
-          </Reveal>
-          <Reveal delay={200} className="order-1 lg:order-2">
-            <div className="relative overflow-hidden rounded-[3rem] rounded-tl-[12rem] shadow-[var(--shadow-soft)]">
-              <img src={realSpace.url} alt="Espaço real de atendimento AKURA" width={768} height={1024} className="kenburns h-auto max-h-[78svh] w-full object-contain" />
-            </div>
-            <div className="pointer-events-none absolute -bottom-6 -left-6 hidden h-40 w-40 rounded-full border border-gold/50 lg:block" />
-          </Reveal>
-        </div>
-      </section>
+      <ProcedureCarousel />
 
       <Curve className="h-16" />
 
@@ -186,9 +172,9 @@ function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
     <Link
       to="/especialidades/$slug"
       params={{ slug: s.slug }}
-      className={`group flex h-full items-center justify-between gap-6 rounded-[2rem] border border-champagne p-8 transition-all duration-700 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${soft ? "bg-champagne/40" : "bg-background"}`}
+      className={`group flex h-full min-w-0 flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-champagne p-8 transition-all duration-700 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${soft ? "bg-champagne/40" : "bg-background"}`}
     >
-      <div className="flex items-center gap-5">
+      <div className="flex min-w-0 items-center gap-5">
         <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-sand transition-colors group-hover:bg-ivory"><SpecIcon i={i} /></span>
         <span className="text-lg font-bold">{s.name}</span>
       </div>
