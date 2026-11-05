@@ -139,10 +139,6 @@ function Index() {
             <p className="display mt-10 text-2xl md:text-3xl">{t.expSlogan}</p>
             <div className="mt-10"><WaButton /></div>
           </Reveal>
-          <div className="mt-10 grid gap-6 md:grid-cols-12">
-            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
-            <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
-          </div>
         </div>
       </section>
 
@@ -159,6 +155,20 @@ function Index() {
             ))}
           </p>
         </Reveal>
+      </section>
+
+      {/* NOSSO ESPAÇO */}
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <Reveal direction="fade" className="mx-auto max-w-2xl text-center">
+            <div className="flex justify-center"><Eyebrow>{t.spaceEyebrow}</Eyebrow></div>
+            <h2 className="display mt-8 text-4xl md:text-6xl">{t.spaceTitle}</h2>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-12">
+            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
+            <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
+          </div>
+        </div>
       </section>
 
       <ContactBlock />
