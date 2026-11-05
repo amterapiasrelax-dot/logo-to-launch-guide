@@ -1,31 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logo from "@/assets/akura-logo.png.asset.json";
-import { langs, useI18n } from "@/lib/i18n";
+import { useI18n } from "@/lib/i18n";
 import { specialties, WHATSAPP_URL } from "@/lib/specialties";
 import { WaButton } from "./ui";
 import { cn } from "@/lib/utils";
-
-function LangSwitch({ className }: { className?: string }) {
-  const { lang, setLang } = useI18n();
-  return (
-    <div className={cn("flex items-center gap-1 text-xs font-bold tracking-widest", className)} role="group" aria-label="Idioma">
-      {langs.map((l) => (
-        <button
-          key={l}
-          onClick={() => setLang(l)}
-          aria-pressed={lang === l}
-          className={cn(
-            "rounded-full px-2 py-1 uppercase transition-colors",
-            lang === l ? "bg-champagne text-gold" : "text-sand hover:text-gold",
-          )}
-        >
-          {l}
-        </button>
-      ))}
-    </div>
-  );
-}
 
 export function Header() {
   const { t } = useI18n();
@@ -89,7 +68,6 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <LangSwitch />
           <WaButton className="px-5 py-2.5 text-xs" />
         </div>
 
@@ -119,7 +97,6 @@ export function Header() {
             {links.slice(2).map((l) => (
               <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={linkCls}>{l.label}</Link>
             ))}
-            <LangSwitch className="mt-2" />
             <WaButton className="mt-2" />
           </nav>
         </div>

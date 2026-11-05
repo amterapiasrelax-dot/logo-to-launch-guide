@@ -43,7 +43,7 @@ function Index() {
       <section className="relative min-h-[100svh] overflow-hidden px-4 pt-28 pb-10 md:px-6">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="order-2 lg:order-1">
-            <Eyebrow>Bienestar · Bien-être · Well-being</Eyebrow>
+            <Eyebrow>Estética · Cuidado · Bem-estar</Eyebrow>
             <h1 className="display mt-8 text-[2.6rem] sm:text-6xl xl:text-7xl">{t.heroTitle}</h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed">{t.heroText}</p>
             <div className="mt-10"><WaButton /></div>
@@ -91,7 +91,7 @@ function Index() {
           <div className="mt-16 grid gap-6 md:grid-cols-6">
             {/* Featured large */}
             <Reveal className="md:col-span-3 md:row-span-2">
-              <SpecFeature i={0} img={specialties[0]!.image} tall />
+              <SpecFeature i={0} tall />
             </Reveal>
             <Reveal delay={100} className="md:col-span-3">
               <SpecFeature i={1} img={careHands} />
@@ -164,12 +164,13 @@ function Index() {
   );
 }
 
-function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean }) {
+function SpecFeature({ i, img, tall }: { i: number; img?: string; tall?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i]!;
+  const s = specialties[i];
+  if (!s) return null;
   return (
     <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group relative block h-full overflow-hidden rounded-[2rem]">
-      <img src={img} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
+      <img src={img ?? s.image} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
       <div className="glass absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl px-6 py-5">
         <div className="flex items-center gap-4"><SpecIcon i={i} /><span className="text-xl font-bold">{s.name}</span></div>
         <span className="text-xs font-bold tracking-[0.2em] uppercase">{t.discover} →</span>
@@ -180,7 +181,8 @@ function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean 
 
 function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i]!;
+  const s = specialties[i];
+  if (!s) return null;
   return (
     <Link
       to="/especialidades/$slug"
