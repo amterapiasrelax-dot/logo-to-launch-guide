@@ -10,6 +10,7 @@ describe("Approved procedure carousel", () => {
       ["estetica-corporal", "akura-estetica"],
       ["microblading", "akura-pmu"],
       ["podologia", "akura-podologia-pro"],
+      ["massagem-relaxante", "akura-corporate"],
       ["foot-spa", "akura-corporate"],
       ["akura-kids", "huellas-kids-teens"],
     ]);
