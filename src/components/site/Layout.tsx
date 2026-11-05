@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Instagram, Mail, Music2 } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/akura-logo.png.asset.json";
 import logoWhite from "@/assets/akura-logo-white.png";
