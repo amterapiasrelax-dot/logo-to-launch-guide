@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import heroSpa from "@/assets/hero-spa.jpg";
-import spaRoom from "@/assets/spa-room.jpg";
+import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
 import { useI18n } from "@/lib/i18n";
@@ -50,7 +49,7 @@ function Index() {
           </Reveal>
           <Reveal delay={200} className="order-1 lg:order-2">
             <div className="relative overflow-hidden rounded-[3rem] rounded-tl-[12rem] shadow-[var(--shadow-soft)]">
-              <img src={heroSpa} alt="Ambiente AKURA iluminado e acolhedor" width={1920} height={1088} className="kenburns h-[55svh] w-full object-cover lg:h-[78svh]" />
+              <img src={realSpace.url} alt="Espaço real de atendimento AKURA" width={768} height={1024} className="kenburns h-auto max-h-[78svh] w-full object-contain" />
             </div>
             <div className="pointer-events-none absolute -bottom-6 -left-6 hidden h-40 w-40 rounded-full border border-gold/50 lg:block" />
           </Reveal>
@@ -64,7 +63,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
           <Reveal className="relative">
             <div className="overflow-hidden arch">
-              <img src={spaRoom} alt="Sala de tratamento AKURA" loading="lazy" width={1200} height={1504} style={{ transform: `translateY(${-y * 0.2}px) scale(1.08)` }} className="aspect-[4/5] w-full object-cover" />
+              <img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" width={768} height={1024} style={{ transform: `translateY(${-y * 0.2}px) scale(1.08)` }} className="aspect-[4/5] w-full object-cover" />
             </div>
           </Reveal>
           <Reveal delay={150}>
@@ -139,7 +138,7 @@ function Index() {
           </Reveal>
           <div className="mt-16 grid gap-6 md:grid-cols-12">
             <Reveal className="md:col-span-7"><img src={stillLife} alt="Detalhes AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] object-cover transition-transform duration-[1.5s] hover:scale-[1.02]" /></Reveal>
-            <Reveal delay={150} className="md:col-span-5 md:mt-24"><img src={spaRoom} alt="Ambiente AKURA" loading="lazy" className="aspect-[4/5] w-full arch object-cover" /></Reveal>
+            <Reveal delay={150} className="md:col-span-5 md:mt-24"><img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" className="aspect-[4/5] w-full arch object-cover" /></Reveal>
           </div>
         </div>
       </section>

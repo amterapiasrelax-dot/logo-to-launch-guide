@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import spaRoom from "@/assets/spa-room.jpg";
+import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import stillLife from "@/assets/still-life.jpg";
 import { useI18n } from "@/lib/i18n";
 import { ContactBlock, Eyebrow, PageHero, Reveal } from "@/components/site/ui";
@@ -22,7 +22,7 @@ function Sobre() {
   const { t } = useI18n();
   return (
     <>
-      <PageHero eyebrow={t.aboutEyebrow} title={t.aboutTitle} text={t.aboutText} image={spaRoom} />
+      <PageHero eyebrow={t.aboutEyebrow} title={t.aboutTitle} text={t.aboutText} image={realSpace.url} />
       <section className="bg-ivory px-6 py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
           <Reveal>

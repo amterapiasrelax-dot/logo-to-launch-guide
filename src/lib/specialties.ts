@@ -1,10 +1,9 @@
-import spaRoom from "@/assets/spa-room.jpg";
+import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
 import headSpa from "@/assets/head-spa.webp.asset.json";
 import massageCible from "@/assets/massage-cible.webp.asset.json";
 import { siteContent } from "@/lib/i18n";
-import espacoAtendimento from "@/assets/espaco-atendimento.webp.asset.json";
 import akuraTouchMassage from "@/assets/akura-touch-massage.webp.asset.json";
 import podologiaPro from "@/assets/podologia-pro.webp.asset.json";
 
@@ -21,9 +20,9 @@ export const specialties: Specialty[] = [
   { slug: "akura-estetica", name: "Akura Estética", image: careHands, services: [] },
   { slug: "akura-pmu", name: "Akura PMU", image: stillLife, services: [] },
   { slug: "akura-podologia-pro", name: "Akura Podologia PRO", image: podologiaPro.url, services: [] },
-  { slug: "akura-therapy-ec", name: "Akura Therapy EC", image: spaRoom, services: [] },
+  { slug: "akura-therapy-ec", name: "Akura Therapy EC", image: realSpace.url, services: [] },
   { slug: "akura-homecare", name: "Akura Homecare", image: stillLife, services: [] },
-  { slug: "akura-corporate", name: "Akura Corporate", image: espacoAtendimento.url, services: [] },
+  { slug: "akura-corporate", name: "Akura Corporate", image: realSpace.url, services: [] },
   { slug: "huellas-kids-teens", name: "Huellas Kids & Teens", image: careHands, services: [] },
   { slug: "akura-formations", name: "Akura Formations", image: stillLife, services: [] },
 ];
