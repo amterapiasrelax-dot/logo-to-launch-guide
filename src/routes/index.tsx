@@ -41,12 +41,12 @@ function Index() {
       </div>
 
       {/* SOBRE */}
-      <section className="bg-ivory px-6 py-28 md:py-36">
+      <section className="bg-ivory px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal delay={150}>
             <Eyebrow>{t.aboutEyebrow}</Eyebrow>
             <h2 className="display mt-8 text-4xl md:text-6xl">{t.aboutTitle}</h2>
-            <div className="gold-line my-10 w-40" />
+            <div className="gold-line my-8 w-40" />
             <p className="max-w-lg text-lg leading-relaxed">{t.aboutText}</p>
             <Link to="/sobre" className="mt-10 inline-block border-b border-gold pb-1 text-sm font-bold tracking-[0.2em] uppercase">{t.nav.about} →</Link>
           </Reveal>
@@ -54,7 +54,7 @@ function Index() {
       </section>
 
       {/* ESPECIALIDADES — editorial, varied proportions */}
-      <section className="px-6 py-28 md:py-36">
+      <section className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
@@ -64,7 +64,7 @@ function Index() {
             <Link to="/especialidades" className="text-sm font-bold tracking-[0.2em] uppercase">{t.nav.all} →</Link>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-6">
+          <div className="mt-10 grid gap-6 md:grid-cols-6">
             {/* Featured large */}
             <Reveal className="md:col-span-3 md:row-span-2">
               <SpecFeature i={0} tall />
@@ -93,7 +93,7 @@ function Index() {
       </section>
 
       {/* PERSONALIZADO */}
-      <section className="relative overflow-hidden bg-ivory py-28 md:py-40">
+      <section className="relative overflow-hidden bg-ivory py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:grid-cols-[1.2fr_0.8fr]">
           <Reveal className="relative">
             <img src={careHands} alt="Cuidado personalizado" loading="lazy" width={1200} height={1504} className="aspect-[5/4] w-full rounded-[2rem] rounded-br-[10rem] object-cover" />
@@ -107,13 +107,13 @@ function Index() {
       </section>
 
       {/* EXPERIÊNCIA */}
-      <section className="px-6 py-28 md:py-36">
+      <section className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal className="mx-auto max-w-2xl text-center">
             <div className="flex justify-center"><Eyebrow>{t.expEyebrow}</Eyebrow></div>
             <h2 className="display mt-8 text-4xl md:text-6xl">{t.expTitle}</h2>
           </Reveal>
-          <div className="mt-16 grid gap-6 md:grid-cols-12">
+          <div className="mt-10 grid gap-6 md:grid-cols-12">
             <Reveal className="md:col-span-7"><img src={stillLife} alt="Detalhes AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] object-cover transition-transform duration-[1.5s] hover:scale-[1.02]" /></Reveal>
             <Reveal delay={150} className="md:col-span-5 md:mt-24"><img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" className="aspect-[4/5] w-full arch object-cover" /></Reveal>
           </div>
@@ -121,7 +121,7 @@ function Index() {
       </section>
 
       {/* INTERNACIONAL */}
-      <section className="border-y border-champagne px-6 py-24">
+      <section className="border-y border-champagne px-6 py-14">
         <div className="mx-auto max-w-6xl text-center">
           <div className="flex justify-center"><Eyebrow>{t.intlEyebrow}</Eyebrow></div>
           <p className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-3xl font-light md:text-5xl">
