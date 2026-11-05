@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail, Music2 } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Music2 } from "lucide-react";
 import { useState } from "react";
 import logoGold from "@/assets/akura-logo-gold.png";
 import logoWhite from "@/assets/akura-logo-white.png";
@@ -114,9 +114,15 @@ export function Footer() {
   const { t } = useI18n();
   return (
     <footer className="border-t border-champagne bg-ivory px-6 pt-20 pb-10">
-      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-3">
         <div>
           <img src={logoGold} alt="AKURA" className="h-24 w-auto" loading="lazy" />
+          <p className="mt-6 max-w-xs text-sm leading-relaxed">Bem-estar, conhecimento e cuidado em cada experiência.</p>
+          <div className="mt-8 flex h-24 w-24 flex-col items-center justify-center rounded-full border-2 border-gold text-center" aria-label="Certificada APNB">
+            <span className="text-[8px] font-bold uppercase tracking-[0.28em]">Certificada</span>
+            <span className="display mt-1 text-xl font-bold tracking-[0.12em]">APNB</span>
+            <span className="mt-1 h-px w-8 bg-gold" aria-hidden />
+          </div>
         </div>
         <div>
           <h3 className="eyebrow mb-5">{t.footerNav}</h3>
@@ -129,19 +135,13 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="eyebrow mb-5">{t.nav.specialties}</h3>
+          <h3 className="eyebrow mb-5">{t.nav.contact}</h3>
           <ul className="space-y-3 text-sm">
-            {specialties.map((s) => (
-              <li key={s.slug}><Link to="/especialidades/$slug" params={{ slug: s.slug }} className="hover:underline">{s.name}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 className="eyebrow mb-5">{t.intlEyebrow}</h3>
-          <p className="text-sm leading-relaxed">{t.countries.join(" · ")}</p>
-          <h3 className="eyebrow mb-4 mt-8">{t.nav.contact}</h3>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:underline">{t.footerContact} →</a>
-          <ul className="mt-6 space-y-3 text-sm">
+            <li>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 font-bold transition-opacity hover:opacity-70">
+                <MessageCircle className="h-4 w-4" aria-hidden /> WhatsApp
+              </a>
+            </li>
             <li>
               <a href="https://instagram.com/akurawellbeing" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 transition-opacity hover:opacity-70">
                 <Instagram className="h-4 w-4" aria-hidden /> @akurawellbeing
@@ -160,15 +160,14 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="mx-auto mt-14 flex max-w-7xl justify-center">
-        <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full border-2 border-gold text-center" aria-label="Certificada APNB">
-          <span className="text-[9px] font-bold uppercase tracking-[0.28em]">Certificada</span>
-          <span className="display mt-1 text-2xl font-bold tracking-[0.12em]">APNB</span>
-          <span className="mt-1 h-px w-10 bg-gold" aria-hidden />
+      <div className="gold-line mx-auto mt-14 max-w-7xl" />
+      <div className="mx-auto mt-6 flex max-w-7xl flex-col items-center justify-between gap-4 text-xs tracking-widest md:flex-row">
+        <p>© {new Date().getFullYear()} AKURA · {t.rights}</p>
+        <div className="flex items-center gap-6">
+          <Link to="/politica-de-privacidade" className="hover:underline">Política de Privacidade</Link>
+          <Link to="/aviso-legal" className="hover:underline">Aviso Legal</Link>
         </div>
       </div>
-      <div className="gold-line mx-auto mt-14 max-w-7xl" />
-      <p className="mx-auto mt-6 max-w-7xl text-center text-xs tracking-widest">© {new Date().getFullYear()} AKURA · {t.rights}</p>
     </footer>
   );
 }
