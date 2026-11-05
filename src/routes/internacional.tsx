@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import realSpace from "@/assets/espaco-real-akura.png.asset.json";
+const realSpace = "/images/espaco-real-akura.png";
 import { useI18n } from "@/lib/i18n";
 import { ContactBlock, PageHero, Reveal } from "@/components/site/ui";
 
@@ -21,7 +21,7 @@ function Intl() {
   const { t } = useI18n();
   return (
     <>
-      <PageHero eyebrow={t.intlEyebrow} title={t.countries.join(" · ")} image={realSpace.url} />
+      <PageHero eyebrow={t.intlEyebrow} title={t.countries.join(" · ")} image={realSpace} />
       <section className="px-6 pb-28">
         <div className="mx-auto grid max-w-7xl border-y border-champagne sm:grid-cols-2 lg:grid-cols-4">
           {t.countries.map((c, i) => (

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import realSpace from "@/assets/espaco-real-akura.png.asset.json";
+const realSpace = "/images/espaco-real-akura.png";
 import careHands from "@/assets/care-hands.jpg";
-import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
+const salaSpa = "/images/sala-spa-akura.png";
 import { useI18n } from "@/lib/i18n";
 import { specialties } from "@/lib/specialties";
 import { ContactBlock, Eyebrow, Parallax, Reveal, WaButton } from "@/components/site/ui";
@@ -28,7 +28,7 @@ function Index() {
     <>
       {/* HERO */}
       <section className="akura-introduction">
-        <img src={realSpace.url} alt="Espace de soins AKURA" className="akura-introduction-photo" fetchPriority="high" />
+        <img src={realSpace} alt="Espace de soins AKURA" className="akura-introduction-photo" fetchPriority="high" />
         <div className="akura-introduction-content">
           <h1 className="display text-6xl md:text-8xl">AKURA</h1>
           <p className="mt-6 max-w-xl text-2xl font-light leading-snug md:text-3xl">{t.heroTitle}</p>
@@ -165,8 +165,8 @@ function Index() {
             <h2 className="display mt-8 text-4xl md:text-6xl">{t.spaceTitle}</h2>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-12">
-            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa.url} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
-            <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace.url} alt="Espace de soins AKURA" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
+            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
+            <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace} alt="Espace de soins AKURA" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
           </div>
         </div>
       </section>
