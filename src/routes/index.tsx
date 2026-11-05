@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
@@ -22,20 +21,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-function useParallax(factor = 0.15) {
-  const [y, setY] = useState(0);
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const on = () => setY(window.scrollY * factor);
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, [factor]);
-  return y;
-}
-
 function Index() {
   const { t } = useI18n();
-  const y = useParallax();
 
   return (
     <>
@@ -55,12 +42,7 @@ function Index() {
 
       {/* SOBRE */}
       <section className="bg-ivory px-6 py-28 md:py-36">
-        <div className="mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
-          <Reveal className="relative">
-            <div className="overflow-hidden arch">
-              <img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" width={768} height={1024} style={{ transform: `translateY(${-y * 0.2}px) scale(1.08)` }} className="aspect-[4/5] w-full object-cover" />
-            </div>
-          </Reveal>
+        <div className="mx-auto max-w-7xl">
           <Reveal delay={150}>
             <Eyebrow>{t.aboutEyebrow}</Eyebrow>
             <h2 className="display mt-8 text-4xl md:text-6xl">{t.aboutTitle}</h2>
