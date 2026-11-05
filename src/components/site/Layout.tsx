@@ -28,7 +28,7 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
-          <Link to="/" className={linkCls} activeProps={{ className: "text-gold" }} activeOptions={{ exact: true }}>{links[0].label}</Link>
+          <Link to="/" className={linkCls} activeProps={{ className: "active" }} activeOptions={{ exact: true }}>{links[0].label}</Link>
           <Link to="/sobre" className={linkCls}>{t.nav.about}</Link>
           <div className="group relative" onMouseLeave={() => setSub(false)}>
             <Link to="/especialidades" className={linkCls} onMouseEnter={() => setSub(true)} onFocus={() => setSub(true)}>
@@ -57,17 +57,17 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <WaButton className="px-5 py-2.5 text-xs" />
+          <WaButton variant="light" className="px-5 py-2 text-xs" />
         </div>
 
         <button
-          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-champagne lg:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-primary-foreground/60 lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
           aria-expanded={open}
         >
-          <span className={cn("h-px w-5 bg-gold transition-transform", open && "translate-y-[3.5px] rotate-45")} />
-          <span className={cn("h-px w-5 bg-gold transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
+          <span className={cn("h-px w-5 bg-primary-foreground transition-transform", open && "translate-y-[3.5px] rotate-45")} />
+          <span className={cn("h-px w-5 bg-primary-foreground transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
         </button>
       </div>
 
