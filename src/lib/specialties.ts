@@ -1,4 +1,3 @@
-import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import careHands from "@/assets/care-hands.jpg";
 import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
 import headSpa from "@/assets/head-spa.webp.asset.json";
