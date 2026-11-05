@@ -15,6 +15,7 @@ import microblading from "@/assets/microblading-akura.webp.asset.json";
 import esteticaFacial from "@/assets/estetica-facial-akura.webp.asset.json";
 import esteticaCorporal from "@/assets/estetica-corporal-akura.webp.asset.json";
 import massagemRelaxante from "@/assets/massagem-relaxante-corporate.webp.asset.json";
+import laserterapia from "@/assets/laserterapia-akura.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
@@ -46,7 +47,9 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", tagline: "Laserterapia e fotobiomodulação",
     description: "Conhecimento e tecnologia reunidos em uma área dedicada à laserterapia e à fotobiomodulação. A Akura Therapy EC apresenta experiências profissionais em diferentes contextos, com aplicações e disponibilidade conforme a localidade.",
-    ctaLabel: "Conheça a Therapy EC", image: salaSpa.url, services: [] },
+    ctaLabel: "Conheça a Therapy EC", image: laserterapia.url, services: [
+    { id: "laserterapia", title: "Laserterapia", image: laserterapia.url, alt: "Laserterapia AKURA Therapy EC — tratamento a laser nas costas" },
+  ] },
   { slug: "akura-homecare", name: "Akura Homecare", tagline: "Experiências e cuidados em domicílio",
     description: "A proposta de levar atenção, conforto e cuidado até você. A Akura Homecare reúne possibilidades de atendimento domiciliar, respeitando as necessidades individuais e a disponibilidade de cada região.",
     ctaLabel: "Consulte a disponibilidade", image: salaSpa.url, services: [] },
