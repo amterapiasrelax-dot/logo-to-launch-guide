@@ -68,39 +68,47 @@ function Index() {
 
       {specialties.map((s, k) => {
         const flip = k % 2 === 1;
+        const photo = s.services[0]?.image;
+        const text = (
+          <>
+            <Eyebrow>{`${String(k + 1).padStart(2, "0")} — ${t.specEyebrow}`}</Eyebrow>
+            <h3 className="display mt-8 text-4xl md:text-5xl">{s.name}</h3>
+            <p className="mt-4 text-xl font-light leading-snug">{s.tagline}</p>
+            <div className={`gold-line my-8 w-40 ${photo ? "" : "mx-auto"}`} />
+            <p className="max-w-lg text-lg leading-relaxed">{s.description}</p>
+            {s.services.length > 0 && (
+              <ul className={`mt-8 flex flex-wrap gap-3 ${photo ? "" : "justify-center"}`}>
+                {s.services.map((x) => (
+                  <li key={x.id}>
+                    <Link to="/especialidades/$slug" params={{ slug: s.slug }} hash={x.id} className="inline-block rounded-full border border-champagne px-4 py-2 text-sm font-bold transition-colors hover:bg-champagne/50">
+                      {x.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <div className="mt-10">
+              <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group inline-flex items-center gap-3 rounded-full border border-gold px-7 py-3.5 text-sm font-bold tracking-[0.12em] uppercase transition-all duration-500 ease-[var(--ease-soft)] hover:bg-gold hover:text-primary-foreground">
+                {s.ctaLabel}
+                <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          </>
+        );
         return (
           <section key={s.slug} id={s.slug} className={`scroll-mt-32 px-6 py-14 md:py-20 ${flip ? "bg-ivory" : ""}`}>
-            <div className={`mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
-              <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
-                <Parallax speed={0.05}>
-                  <img src={s.image} alt={s.name} loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" />
-                </Parallax>
-              </Reveal>
-              <Reveal delay={150} direction={flip ? "left" : "right"}>
-                <Eyebrow>{`${String(k + 1).padStart(2, "0")} — ${t.specEyebrow}`}</Eyebrow>
-                <h3 className="display mt-8 text-4xl md:text-5xl">{s.name}</h3>
-                <p className="mt-4 text-xl font-light leading-snug">{s.tagline}</p>
-                <div className="gold-line my-8 w-40" />
-                <p className="max-w-lg text-lg leading-relaxed">{s.description}</p>
-                {s.services.length > 0 && (
-                  <ul className="mt-8 flex flex-wrap gap-3">
-                    {s.services.map((x) => (
-                      <li key={x.id}>
-                        <Link to="/especialidades/$slug" params={{ slug: s.slug }} hash={x.id} className="inline-block rounded-full border border-champagne px-4 py-2 text-sm font-bold transition-colors hover:bg-champagne/50">
-                          {x.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <div className="mt-10">
-                  <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group inline-flex items-center gap-3 rounded-full border border-gold px-7 py-3.5 text-sm font-bold tracking-[0.12em] uppercase transition-all duration-500 ease-[var(--ease-soft)] hover:bg-gold hover:text-primary-foreground">
-                    {s.ctaLabel}
-                    <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
-                  </Link>
-                </div>
-              </Reveal>
-            </div>
+            {photo ? (
+              <div className={`mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
+                <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
+                  <Parallax speed={0.05}>
+                    <img src={photo} alt={s.name} loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" />
+                  </Parallax>
+                </Reveal>
+                <Reveal delay={150} direction={flip ? "left" : "right"}>{text}</Reveal>
+              </div>
+            ) : (
+              <Reveal direction="fade" className="mx-auto flex max-w-2xl flex-col items-center text-center">{text}</Reveal>
+            )}
           </section>
         );
       })}

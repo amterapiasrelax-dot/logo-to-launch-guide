@@ -19,6 +19,8 @@ export const siteContent = {
     expTitle: "Mais do que um cuidado, uma experiência para sentir",
     expText: "Na AKURA, cada detalhe é pensado para proporcionar momentos de tranquilidade, acolhimento e bem-estar. Um convite para desacelerar, despertar os sentidos e descobrir o prazer de dedicar um momento exclusivamente a você.",
     expSlogan: "AKURA — Porque o verdadeiro luxo está na experiência de sentir.",
+    spaceEyebrow: "Nosso Espaço",
+    spaceTitle: "Ambientes pensados para o seu bem-estar",
     intlEyebrow: "Presença internacional",
     countries: ["França", "Suíça", "Espanha", "Brasil"],
     contactTitle: "Sua próxima experiência começa aqui",
