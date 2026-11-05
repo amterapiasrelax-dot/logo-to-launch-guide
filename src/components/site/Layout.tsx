@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import logo from "@/assets/akura-logo.png.asset.json";
 import { useI18n } from "@/lib/i18n";
 import { specialties, WHATSAPP_URL } from "@/lib/specialties";
@@ -86,19 +86,19 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="glass mx-4 mt-3 max-h-[80vh] overflow-y-auto rounded-3xl border border-champagne p-6 lg:hidden">
+        <div className="glass mx-4 mt-2 max-h-[80vh] overflow-y-auto rounded-3xl border border-champagne p-6 lg:hidden">
           <nav className="flex flex-col gap-4" aria-label="Mobile">
             {links.slice(0, 2).map((l) => (
-              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={linkCls}>{l.label}</Link>
+              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={mobileLinkCls}>{l.label}</Link>
             ))}
-            <Link to="/especialidades" onClick={() => setOpen(false)} className={linkCls}>{t.nav.specialties}</Link>
+            <Link to="/especialidades" onClick={() => setOpen(false)} className={mobileLinkCls}>{t.nav.specialties}</Link>
             <div className="ml-3 flex flex-col gap-2 border-l border-champagne pl-4">
               {specialties.map((s) => (
                 <Link key={s.slug} to="/especialidades/$slug" params={{ slug: s.slug }} onClick={() => setOpen(false)} className="text-sm text-gold/80">{s.name}</Link>
               ))}
             </div>
             {links.slice(2).map((l) => (
-              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={linkCls}>{l.label}</Link>
+              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={mobileLinkCls}>{l.label}</Link>
             ))}
             <WaButton className="mt-2" />
           </nav>
