@@ -1,4 +1,7 @@
 # AKURA — aplicação do planejamento aprovado
+- [ ] Exportar todas as fotografias originais para public/images e remover dependência de caminhos internos.
+- [ ] Verificar imagens em todas as páginas, nove especialidades, computador e celular, e testes de portabilidade.
+- [ ] Confirmar resultado da compilação automática e esclarecer sincronização GitHub/publicação Vercel.
 - [x] Colocar a nova foto na Podologie PRO com enquadramento adequado, sem reutilizar a foto antiga.
 - [x] Remover fotografias de podologia de todo o site, preservando a área e o serviço.
 - [x] Passar todo o conteúdo visível e metadados para francês, preservando URLs e identidade visual.
