@@ -15,3 +15,4 @@
 - Specialty and service photos are optional; render text-only when absent and exclude imageless services from the carousel to preserve information without replacement photos.
 - Keep the outgoing carousel photo opaque beneath the incoming fading photo until the transition completes; this avoids exposing the background during crossfades. Decode approved photos before starting autoplay.
 - Render the header country strip from the single French country list with two identical repeated sequences; equal-width tracks ensure seamless motion without duplicate content sources.
+- Serve approved photographs from checked-in `public/images` originals using `/images/` URLs; this keeps exports portable to Vercel without Lovable's internal asset gateway. Keep existing bundled logos and images as normal Vite imports.

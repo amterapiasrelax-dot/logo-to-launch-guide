@@ -1,4 +1,8 @@
 # AKURA — aplicação do planejamento aprovado
+- [x] Exportar as 17 fotografias originais para public/images e remover dependência de caminhos internos no código em uso.
+- [x] Verificar imagens nas 16 páginas, nove especialidades no celular, carrossel, e 27 testes, com gateway de imagens Lovable bloqueado.
+- [x] Confirmar compilação automática sem erros; preservar aparência e links existentes.
+- [ ] Confirmar sincronização de amterapiasrelax-dot/logo-to-launch-guide, branch main, e novo deploy Vercel — depende do painel Git e da Vercel, cujo estado não está acessível ao agente.
 - [x] Colocar a nova foto na Podologie PRO com enquadramento adequado, sem reutilizar a foto antiga.
 - [x] Remover fotografias de podologia de todo o site, preservando a área e o serviço.
 - [x] Passar todo o conteúdo visível e metadados para francês, preservando URLs e identidade visual.

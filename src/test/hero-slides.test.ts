@@ -16,7 +16,7 @@ describe("Approved procedure carousel", () => {
       ["foot-spa", "akura-corporate"],
       ["akura-kids", "huellas-kids-teens"],
     ]);
-    expect(heroSlides.every(({ image }) => image.startsWith("/__l5e/assets-v1/"))).toBe(true);
+    expect(heroSlides.every(({ image }) => image.startsWith("/images/"))).toBe(true);
   });
   it("cycles forwards and backwards", () => {
     expect(nextSlide(2, 1, 3)).toBe(0);

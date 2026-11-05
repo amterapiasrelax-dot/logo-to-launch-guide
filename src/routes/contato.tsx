@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
+const salaSpa = "/images/sala-spa-akura.png";
 import { useI18n } from "@/lib/i18n";
 import { ContactBlock, PageHero } from "@/components/site/ui";
 
@@ -21,7 +21,7 @@ function Contato() {
   const { t } = useI18n();
   return (
     <>
-      <PageHero eyebrow={t.nav.contact} title={t.contactTitle} text={t.contactText} image={salaSpa.url} />
+      <PageHero eyebrow={t.nav.contact} title={t.contactTitle} text={t.contactText} image={salaSpa} />
       <ContactBlock />
     </>
   );
