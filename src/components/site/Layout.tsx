@@ -8,15 +8,8 @@ import { cn } from "@/lib/utils";
 
 export function Header() {
   const { t } = useI18n();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [sub, setSub] = useState(false);
-  useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 24);
-    on();
-    window.addEventListener("scroll", on, { passive: true });
-    return () => window.removeEventListener("scroll", on);
-  }, []);
 
   const links = [
     { to: "/", label: t.nav.home },
@@ -24,18 +17,14 @@ export function Header() {
     { to: "/internacional", label: t.nav.intl },
     { to: "/contato", label: t.nav.contact },
   ] as const;
-  const linkCls = "text-sm font-bold tracking-[0.14em] uppercase text-gold/80 transition-colors hover:text-gold";
+  const linkCls = "akura-nav-link text-sm font-bold tracking-[0.14em] uppercase";
+  const mobileLinkCls = "text-sm font-bold tracking-[0.14em] uppercase text-gold/80 transition-colors hover:text-gold";
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b transition-all duration-700",
-        scrolled ? "glass border-champagne" : "border-transparent",
-      )}
-    >
-      <div className={cn("mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 transition-all duration-700", scrolled ? "py-3" : "py-5")}>
+    <header className="akura-header fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-2.5">
         <Link to="/" aria-label="AKURA" className="shrink-0">
-          <img src={logo.url} alt="AKURA" className="h-12 w-auto md:h-14" />
+          <img src={logo.url} alt="AKURA" className="h-9 w-auto md:h-10" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">

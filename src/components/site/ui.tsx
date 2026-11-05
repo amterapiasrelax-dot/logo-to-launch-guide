@@ -49,7 +49,9 @@ export function WaButton({ variant = "solid", className }: { variant?: "solid" |
         "group inline-flex items-center justify-center gap-3 rounded-full px-7 py-3.5 text-sm font-bold tracking-[0.12em] uppercase transition-all duration-500 ease-[var(--ease-soft)]",
         variant === "solid"
           ? "bg-gold text-primary-foreground shadow-[var(--shadow-soft)] hover:bg-sand hover:-translate-y-0.5"
-          : "border border-gold text-gold hover:bg-gold hover:text-primary-foreground",
+          : variant === "light"
+            ? "bg-primary-foreground text-gold hover:bg-ivory hover:-translate-y-0.5"
+            : "border border-gold text-gold hover:bg-gold hover:text-primary-foreground",
         className,
       )}
     >
