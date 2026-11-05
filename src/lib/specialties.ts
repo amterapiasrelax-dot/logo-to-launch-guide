@@ -10,7 +10,7 @@ export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 export type Specialty = { slug: string; name: string; image: string };
 
 export const specialties: Specialty[] = [
-  { slug: "akura-touch", name: "Akura Touch", image: spaRoom },
+  { slug: "akura-touch", name: "Akura Touch", image: akuraTouchMassage.url },
   { slug: "akura-estetica", name: "Akura Estética", image: careHands },
   { slug: "akura-pmu", name: "Akura PMU", image: stillLife },
   { slug: "akura-podologia-pro", name: "Akura Podologia PRO", image: heroSpa },
