@@ -41,7 +41,7 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", tagline: "Laserterapia e fotobiomodulação",
     description: "Conhecimento e tecnologia reunidos em uma área dedicada à laserterapia e à fotobiomodulação. A Akura Therapy EC apresenta experiências profissionais em diferentes contextos, com aplicações e disponibilidade conforme a localidade.",
-    ctaLabel: "Conheça a Therapy EC", image: realSpace.url, services: [] },
+    ctaLabel: "Conheça a Therapy EC", image: salaSpa.url, services: [] },
   { slug: "akura-homecare", name: "Akura Homecare", tagline: "Experiências e cuidados em domicílio",
     description: "A proposta de levar atenção, conforto e cuidado até você. A Akura Homecare reúne possibilidades de atendimento domiciliar, respeitando as necessidades individuais e a disponibilidade de cada região.",
     ctaLabel: "Consulte a disponibilidade", image: salaSpa.url, services: [] },
