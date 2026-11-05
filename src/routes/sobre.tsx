@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import realSpace from "@/assets/espaco-real-akura.png.asset.json";
-import stillLife from "@/assets/still-life.jpg";
+import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
 import { useI18n } from "@/lib/i18n";
 import { ContactBlock, Eyebrow, PageHero, Reveal } from "@/components/site/ui";
 
@@ -30,7 +30,7 @@ function Sobre() {
             <h2 className="display mt-8 text-4xl md:text-5xl">{t.persTitle}</h2>
             <p className="mt-8 text-lg leading-relaxed">{t.persText}</p>
           </Reveal>
-          <Reveal delay={150}><img src={stillLife} alt="" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] rounded-tr-[8rem] object-cover" /></Reveal>
+          <Reveal delay={150}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] rounded-tr-[8rem] object-cover" /></Reveal>
         </div>
       </section>
       <ContactBlock />

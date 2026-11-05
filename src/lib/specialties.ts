@@ -1,6 +1,6 @@
 import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import careHands from "@/assets/care-hands.jpg";
-import stillLife from "@/assets/still-life.jpg";
+import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
 import headSpa from "@/assets/head-spa.webp.asset.json";
 import massageCible from "@/assets/massage-cible.webp.asset.json";
 import { siteContent } from "@/lib/i18n";
@@ -32,7 +32,7 @@ export const specialties: Specialty[] = [
     { id: "podologia", title: "Podologia", image: podologiaAkura.url, alt: "Podologia AKURA — cuidado profissional dos pés" },
   ] },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", image: realSpace.url, services: [] },
-  { slug: "akura-homecare", name: "Akura Homecare", image: stillLife, services: [] },
+  { slug: "akura-homecare", name: "Akura Homecare", image: salaSpa.url, services: [] },
   { slug: "akura-corporate", name: "Akura Corporate", image: realSpace.url, services: [
     { id: "foot-spa", title: "Foot Spa", image: footBath.url, alt: "Foot Spa — banho dos pés com pedras em bacia dourada", gallery: [
       { image: footMassage.url, alt: "Foot Spa — massagem dos pés" },
@@ -44,7 +44,7 @@ export const specialties: Specialty[] = [
       { image: kidsSpace.url, alt: "Espaço Akura Kids — cantinho preparado para as crianças" },
     ] },
   ] },
-  { slug: "akura-formations", name: "Akura Formations", image: stillLife, services: [] },
+  { slug: "akura-formations", name: "Akura Formations", image: salaSpa.url, services: [] },
 ];
 
 export const findSpecialty = (slug: string) => specialties.find((s) => s.slug === slug);

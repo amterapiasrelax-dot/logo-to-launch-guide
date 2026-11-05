@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import stillLife from "@/assets/still-life.jpg";
+import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
 import { useI18n } from "@/lib/i18n";
 import { findSpecialty, specialties } from "@/lib/specialties";
 import { ContactBlock, Eyebrow, PageHero, Parallax, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
@@ -37,7 +37,7 @@ function Specialty() {
       <PageHero eyebrow={t.specIntro} title={s.name} text={t.specPlaceholder} image={s.image} />
       {s.services.length === 0 && <section className="bg-ivory px-6 py-28">
         <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
-          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={stillLife} alt="" loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" /></Parallax></Reveal>
+          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" /></Parallax></Reveal>
           <Reveal delay={150} direction={flip ? "left" : "right"}>
             <Eyebrow>{t.aboutService}</Eyebrow>
             <h2 className="display mt-8 text-4xl md:text-5xl">{s.name}</h2>
