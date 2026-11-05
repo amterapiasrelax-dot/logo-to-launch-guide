@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import stillLife from "@/assets/still-life.jpg";
+import headSpa from "@/assets/head-spa.webp.asset.json";
 import { useI18n } from "@/lib/i18n";
 import { findSpecialty, specialties } from "@/lib/specialties";
 import { ContactBlock, Eyebrow, PageHero, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
@@ -45,6 +46,22 @@ function Specialty() {
           </Reveal>
         </div>
       </section>
+      {slug === "akura-touch" && (
+        <section className="px-6 py-24">
+          <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${flip ? "" : "md:[&>*:first-child]:order-2"}`}>
+            <Reveal>
+              <img src={headSpa.url} alt="Japanese Head Spa AKURA" loading="lazy" className="aspect-[4/5] w-full rounded-[2rem] rounded-bl-[8rem] object-cover shadow-[var(--shadow-soft)]" />
+            </Reveal>
+            <Reveal delay={150}>
+              <Eyebrow>Akura Touch</Eyebrow>
+              <h2 className="display mt-8 text-4xl md:text-5xl">{t.headSpaTitle}</h2>
+              <div className="gold-line my-10 w-40" />
+              <p className="max-w-lg text-lg leading-relaxed">{t.headSpaText}</p>
+              <div className="mt-10"><WaButton /></div>
+            </Reveal>
+          </div>
+        </section>
+      )}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <Eyebrow>{t.others}</Eyebrow>
