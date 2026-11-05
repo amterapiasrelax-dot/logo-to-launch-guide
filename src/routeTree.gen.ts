@@ -10,8 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as InternacionalRouteImport } from './routes/internacional'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as EspecialidadesIndexRouteImport } from './routes/especialidades.index'
 import { Route as EspecialidadesSlugRouteImport } from './routes/especialidades.$slug'
@@ -19,6 +21,11 @@ import { Route as EspecialidadesSlugRouteImport } from './routes/especialidades.
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvisoLegalRoute = AvisoLegalRouteImport.update({
+  id: '/aviso-legal',
+  path: '/aviso-legal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -29,6 +36,11 @@ const ContatoRoute = ContatoRouteImport.update({
 const InternacionalRoute = InternacionalRouteImport.update({
   id: '/internacional',
   path: '/internacional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SobreRoute = SobreRouteImport.update({
@@ -49,16 +61,20 @@ const EspecialidadesSlugRoute = EspecialidadesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/contato': typeof ContatoRoute
   '/internacional': typeof InternacionalRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
   '/especialidades/': typeof EspecialidadesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/contato': typeof ContatoRoute
   '/internacional': typeof InternacionalRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
   '/especialidades': typeof EspecialidadesIndexRoute
@@ -66,8 +82,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aviso-legal': typeof AvisoLegalRoute
   '/contato': typeof ContatoRoute
   '/internacional': typeof InternacionalRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
   '/especialidades/': typeof EspecialidadesIndexRoute
@@ -76,24 +94,30 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/aviso-legal'
     | '/contato'
     | '/internacional'
+    | '/politica-de-privacidade'
     | '/sobre'
     | '/especialidades/$slug'
     | '/especialidades/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/aviso-legal'
     | '/contato'
     | '/internacional'
+    | '/politica-de-privacidade'
     | '/sobre'
     | '/especialidades/$slug'
     | '/especialidades'
   id:
     | '__root__'
     | '/'
+    | '/aviso-legal'
     | '/contato'
     | '/internacional'
+    | '/politica-de-privacidade'
     | '/sobre'
     | '/especialidades/$slug'
     | '/especialidades/'
@@ -101,8 +125,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisoLegalRoute: typeof AvisoLegalRoute
   ContatoRoute: typeof ContatoRoute
   InternacionalRoute: typeof InternacionalRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   SobreRoute: typeof SobreRoute
   EspecialidadesSlugRoute: typeof EspecialidadesSlugRoute
   EspecialidadesIndexRoute: typeof EspecialidadesIndexRoute
@@ -117,6 +143,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aviso-legal': {
+      id: '/aviso-legal'
+      path: '/aviso-legal'
+      fullPath: '/aviso-legal'
+      preLoaderRoute: typeof AvisoLegalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contato': {
       id: '/contato'
       path: '/contato'
@@ -129,6 +162,13 @@ declare module '@tanstack/react-router' {
       path: '/internacional'
       fullPath: '/internacional'
       preLoaderRoute: typeof InternacionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sobre': {
@@ -157,8 +197,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisoLegalRoute: AvisoLegalRoute,
   ContatoRoute: ContatoRoute,
   InternacionalRoute: InternacionalRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   SobreRoute: SobreRoute,
   EspecialidadesSlugRoute: EspecialidadesSlugRoute,
   EspecialidadesIndexRoute: EspecialidadesIndexRoute,
