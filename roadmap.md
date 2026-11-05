@@ -9,3 +9,4 @@
 - [x] Verificar navegação, movimento suave e enquadramento no celular, tablet e computador.
 - [x] Mostrar apresentação primeiro e carrossel oval abaixo; verificar a nova disposição.
 - [x] Adicionar faixa fixa de países com movimento contínuo abaixo do cabeçalho e verificar celular e computador.
+- [x] Afinar o cabeçalho, aplicar fundo dourado com logotipo branco transparente e suavizar o tom com gradiente.

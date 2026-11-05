@@ -132,7 +132,10 @@
   to { transform: scale(1.12) translate(-1%, -1%); }
 }
 
-.country-strip { height: 26px; overflow: hidden; background: var(--ivory); color: var(--gold); }
+.akura-header { background: linear-gradient(120deg, var(--sand) 0%, var(--gold) 55%, var(--sand) 100%); }
+.akura-nav-link { color: color-mix(in oklab, var(--white) 88%, transparent); transition: color 0.4s var(--ease-soft); }
+.akura-nav-link:hover, .akura-nav-link.active { color: var(--white); }
+.country-strip { height: 26px; overflow: hidden; background: linear-gradient(90deg, var(--ivory), var(--champagne) 50%, var(--ivory)); color: var(--gold); }
 .country-track { display: flex; width: max-content; height: 100%; animation: country-drift 90s linear infinite; }
 .country-sequence { display: flex; align-items: center; flex-shrink: 0; }
 .country-item { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; text-transform: uppercase; font-family: var(--font-sans); font-size: 10px; font-weight: 300; letter-spacing: 0; }
