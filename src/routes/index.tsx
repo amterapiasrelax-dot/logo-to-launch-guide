@@ -91,7 +91,7 @@ function Index() {
           <div className="mt-16 grid gap-6 md:grid-cols-6">
             {/* Featured large */}
             <Reveal className="md:col-span-3 md:row-span-2">
-              <SpecFeature i={0} img={specialties[0].image} tall />
+              <SpecFeature i={0} img={specialties[0]!.image} tall />
             </Reveal>
             <Reveal delay={100} className="md:col-span-3">
               <SpecFeature i={1} img={careHands} />
@@ -100,7 +100,7 @@ function Index() {
               <Reveal key={s.slug} delay={150 + k * 80} className="md:col-span-3 lg:col-span-3">
                 <SpecRow i={k + 2} />
               </Reveal>
-            )).reduce<React.ReactNode[]>((a, n) => [...a, n], [])}
+            ))}
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-3">
@@ -166,7 +166,7 @@ function Index() {
 
 function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i];
+  const s = specialties[i]!;
   return (
     <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group relative block h-full overflow-hidden rounded-[2rem]">
       <img src={img} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
@@ -180,7 +180,7 @@ function SpecFeature({ i, img, tall }: { i: number; img: string; tall?: boolean 
 
 function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
   const { t } = useI18n();
-  const s = specialties[i];
+  const s = specialties[i]!;
   return (
     <Link
       to="/especialidades/$slug"

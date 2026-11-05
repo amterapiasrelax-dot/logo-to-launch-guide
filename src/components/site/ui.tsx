@@ -19,7 +19,7 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => setVisible(e.isIntersecting), {
+    const io = new IntersectionObserver(([e]) => setVisible(!!e?.isIntersecting), {
       threshold: 0.15,
       rootMargin: "0px 0px -8% 0px",
     });
