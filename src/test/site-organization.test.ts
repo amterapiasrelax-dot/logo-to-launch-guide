@@ -3,11 +3,11 @@ import { SITE_LANGUAGE } from "@/lib/i18n";
 import { findSpecialty, specialties } from "@/lib/specialties";
 
 describe("AKURA site organization", () => {
-  it("retains podology information without photographs anywhere in its shared data or carousel", () => {
+  it("uses the new podology photo and excludes both old photographs", () => {
     const podology = findSpecialty("akura-podologia-pro");
     expect(podology?.services.map(({ id }) => id)).toEqual(["podologia"]);
-    expect(podology?.image).toBeUndefined();
-    expect(podology?.services[0]?.image).toBeUndefined();
+    expect(podology?.image).toContain("podologie-pro-soin.webp");
+    expect(podology?.services[0]?.image).toBe(podology?.image);
     expect(specialties.flatMap((area) => [area.image, ...area.services.map((service) => service.image)])
       .filter((image) => image?.includes("podologia"))).toEqual([]);
   });

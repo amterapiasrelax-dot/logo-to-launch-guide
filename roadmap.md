@@ -1,5 +1,5 @@
 # AKURA — aplicação do planejamento aprovado
-- [ ] Colocar a nova foto na Podologie PRO com enquadramento adequado, sem reutilizar a foto antiga.
+- [x] Colocar a nova foto na Podologie PRO com enquadramento adequado, sem reutilizar a foto antiga.
 - [x] Remover fotografias de podologia de todo o site, preservando a área e o serviço.
 - [x] Passar todo o conteúdo visível e metadados para francês, preservando URLs e identidade visual.
 - [x] Adicionar foto de cuidado dos pés em domicílio à Akura Homecare e ao carrossel.

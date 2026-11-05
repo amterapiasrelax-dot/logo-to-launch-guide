@@ -152,7 +152,7 @@ export function ContactBlock() {
   );
 }
 
-export function PageHero({ eyebrow, title, text, image }: { eyebrow: string; title: string; text?: string; image?: string }) {
+export function PageHero({ eyebrow, title, text, image, fullPhoto = false }: { eyebrow: string; title: string; text?: string; image?: string; fullPhoto?: boolean }) {
   return (
     <section className="relative px-6 pb-20 pt-36 md:pt-44">
       <div className={cn("mx-auto grid max-w-7xl items-end gap-12", image && "md:grid-cols-[1.1fr_0.9fr]")}>
@@ -162,8 +162,8 @@ export function PageHero({ eyebrow, title, text, image }: { eyebrow: string; tit
           {text && <p className="mt-8 max-w-xl text-lg leading-relaxed">{text}</p>}
           <div className="mt-10"><WaButton /></div>
         </Reveal>
-        {image && <Reveal delay={150} className="overflow-hidden arch shadow-[var(--shadow-soft)]">
-          <img src={image} alt="" className="kenburns aspect-[4/5] w-full object-cover" />
+        {image && <Reveal delay={150} className={cn("overflow-hidden shadow-[var(--shadow-soft)]", fullPhoto ? "rounded-2xl" : "arch")}>
+          <img src={image} alt="" className={fullPhoto ? "h-auto w-full" : "kenburns aspect-[4/5] w-full object-cover"} />
         </Reveal>}
       </div>
     </section>
