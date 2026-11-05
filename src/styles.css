@@ -132,6 +132,9 @@
   to { transform: scale(1.12) translate(-1%, -1%); }
 }
 
+.akura-header { background: var(--gold); }
+.akura-nav-link { color: color-mix(in oklab, var(--white) 88%, transparent); transition: color 0.4s var(--ease-soft); }
+.akura-nav-link:hover, .akura-nav-link.active { color: var(--white); }
 .country-strip { height: 26px; overflow: hidden; background: var(--ivory); color: var(--gold); }
 .country-track { display: flex; width: max-content; height: 100%; animation: country-drift 90s linear infinite; }
 .country-sequence { display: flex; align-items: center; flex-shrink: 0; }

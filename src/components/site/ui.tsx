@@ -38,7 +38,7 @@ export function Reveal({
   );
 }
 
-export function WaButton({ variant = "solid", className }: { variant?: "solid" | "outline"; className?: string }) {
+export function WaButton({ variant = "solid", className }: { variant?: "solid" | "outline" | "light"; className?: string }) {
   const { t } = useI18n();
   return (
     <a
