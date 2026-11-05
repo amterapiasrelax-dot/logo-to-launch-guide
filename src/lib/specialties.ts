@@ -13,6 +13,8 @@ import footFeet from "@/assets/foot-spa-pes.webp.asset.json";
 import kidsCare from "@/assets/akura-kids-atendimento.webp.asset.json";
 import kidsSpace from "@/assets/akura-kids-espaco.webp.asset.json";
 import microblading from "@/assets/microblading-akura.webp.asset.json";
+import esteticaFacial from "@/assets/estetica-facial-akura.webp.asset.json";
+import esteticaCorporal from "@/assets/estetica-corporal-akura.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
