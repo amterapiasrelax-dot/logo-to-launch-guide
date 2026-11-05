@@ -4,7 +4,7 @@ import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
 import { useI18n } from "@/lib/i18n";
 import { specialties } from "@/lib/specialties";
-import { ContactBlock, Eyebrow, Parallax, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
+import { ContactBlock, Eyebrow, Parallax, Reveal, WaButton } from "@/components/site/ui";
 import { ProcedureCarousel } from "@/components/site/ProcedureCarousel";
 
 export const Route = createFileRoute("/")({
@@ -53,44 +53,56 @@ function Index() {
         </div>
       </section>
 
-      {/* ESPECIALIDADES — editorial, varied proportions */}
+      {/* ESPECIALIDADES — todas as nove áreas em seções completas */}
       <section className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <Reveal className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+          <Reveal direction="fade" className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
               <Eyebrow>{t.specEyebrow}</Eyebrow>
               <h2 className="display mt-8 text-4xl md:text-6xl">{t.specTitle}</h2>
             </div>
             <Link to="/especialidades" className="text-sm font-bold tracking-[0.2em] uppercase">{t.nav.all} →</Link>
           </Reveal>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-6">
-            {/* Featured large */}
-            <Reveal direction="left" className="md:col-span-3 md:row-span-2">
-              <SpecFeature i={0} tall />
-            </Reveal>
-            <Reveal delay={100} direction="right" className="md:col-span-3">
-              <SpecFeature i={1} img={careHands} />
-            </Reveal>
-            {specialties.slice(2, 4).map((s, k) => (
-              <Reveal key={s.slug} delay={150 + k * 80} direction={k % 2 === 0 ? "up" : "fade"} className="md:col-span-3 lg:col-span-3">
-                <SpecRow i={k + 2} />
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {specialties.slice(4).map((s, k) => (
-              <Reveal key={s.slug} delay={k * 80} direction={k % 2 === 0 ? "left" : "right"} className={k === 2 ? "md:row-span-1" : ""}>
-                <SpecRow i={k + 4} soft={k % 2 === 1} />
-              </Reveal>
-            ))}
-            <Reveal delay={400} direction="fade" className="flex items-center justify-center rounded-[2rem] border border-dashed border-sand p-10">
-              <WaButton variant="outline" />
-            </Reveal>
-          </div>
         </div>
       </section>
+
+      {specialties.map((s, k) => {
+        const flip = k % 2 === 1;
+        return (
+          <section key={s.slug} id={s.slug} className={`scroll-mt-32 px-6 py-14 md:py-20 ${flip ? "bg-ivory" : ""}`}>
+            <div className={`mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
+              <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
+                <Parallax speed={0.05}>
+                  <img src={s.image} alt={s.name} loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" />
+                </Parallax>
+              </Reveal>
+              <Reveal delay={150} direction={flip ? "left" : "right"}>
+                <Eyebrow>{`${String(k + 1).padStart(2, "0")} — ${t.specEyebrow}`}</Eyebrow>
+                <h3 className="display mt-8 text-4xl md:text-5xl">{s.name}</h3>
+                <div className="gold-line my-8 w-40" />
+                <p className="max-w-lg text-lg leading-relaxed">{t.specPlaceholder}</p>
+                {s.services.length > 0 && (
+                  <ul className="mt-8 flex flex-wrap gap-3">
+                    {s.services.map((x) => (
+                      <li key={x.id}>
+                        <Link to="/especialidades/$slug" params={{ slug: s.slug }} hash={x.id} className="inline-block rounded-full border border-champagne px-4 py-2 text-sm font-bold transition-colors hover:bg-champagne/50">
+                          {x.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <div className="mt-10">
+                  <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group inline-flex items-center gap-3 rounded-full border border-gold px-7 py-3.5 text-sm font-bold tracking-[0.12em] uppercase transition-all duration-500 ease-[var(--ease-soft)] hover:bg-gold hover:text-primary-foreground">
+                    {t.knowMore}
+                    <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
+          </section>
+        );
+      })}
 
       {/* PERSONALIZADO */}
       <section className="relative overflow-hidden bg-ivory py-16 md:py-24">
@@ -142,36 +154,4 @@ function Index() {
   );
 }
 
-function SpecFeature({ i, img, tall }: { i: number; img?: string; tall?: boolean }) {
-  const { t } = useI18n();
-  const s = specialties[i];
-  if (!s) return null;
-  return (
-    <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group relative block h-full overflow-hidden rounded-[2rem]">
-      <img src={img ?? s.image} alt={s.name} loading="lazy" className={`w-full object-cover transition-transform duration-[1.4s] ease-[var(--ease-soft)] group-hover:scale-105 ${tall ? "h-full min-h-[28rem]" : "aspect-[16/10]"}`} />
-      <div className="glass absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl px-6 py-5">
-        <div className="flex items-center gap-4"><SpecIcon i={i} /><span className="text-xl font-bold">{s.name}</span></div>
-        <span className="text-xs font-bold tracking-[0.2em] uppercase">{t.discover} →</span>
-      </div>
-    </Link>
-  );
-}
 
-function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
-  const { t } = useI18n();
-  const s = specialties[i];
-  if (!s) return null;
-  return (
-    <Link
-      to="/especialidades/$slug"
-      params={{ slug: s.slug }}
-      className={`group flex h-full min-w-0 flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-champagne p-8 transition-all duration-700 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${soft ? "bg-champagne/40" : "bg-background"}`}
-    >
-      <div className="flex min-w-0 items-center gap-5">
-        <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-sand transition-colors group-hover:bg-ivory"><SpecIcon i={i} /></span>
-        <span className="text-lg font-bold">{s.name}</span>
-      </div>
-      <span className="text-xs font-bold tracking-[0.2em] uppercase opacity-0 transition-opacity group-hover:opacity-100">{t.discover}</span>
-    </Link>
-  );
-}

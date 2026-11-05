@@ -12,6 +12,7 @@ export const siteContent = {
     specEyebrow: "Nossas especialidades",
     specTitle: "Nove universos de cuidado",
     discover: "Descobrir",
+    knowMore: "Conhecer mais",
     persEyebrow: "Atendimento personalizado",
     persTitle: "Um cuidado pensado para você",
     persText: "Cada pessoa possui suas próprias necessidades e expectativas. Por isso, valorizamos uma experiência de atendimento personalizada, com atenção, escuta e cuidado em cada etapa.",
