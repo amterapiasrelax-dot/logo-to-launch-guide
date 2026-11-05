@@ -5,5 +5,5 @@
 - [x] Verificar testes, páginas e navegação em celular e computador.
 - [x] Usar a nova foto real do espaço na página inicial e no lugar das imagens de ambiente geradas por IA.
 - [x] Adicionar as três fotos enviadas do Foot Spa em Akura Corporate, conforme a página visualizada.
-- [ ] Criar carrossel inicial de procedimentos aprovados com dissolução automática, controles e links.
-- [ ] Verificar navegação, movimento suave e enquadramento no celular, tablet e computador.
+- [x] Criar carrossel inicial de procedimentos aprovados com dissolução automática, controles e links.
+- [x] Verificar navegação, movimento suave e enquadramento no celular, tablet e computador.
