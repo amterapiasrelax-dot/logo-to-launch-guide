@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import realSpace from "@/assets/espaco-real-akura.png.asset.json";
 import careHands from "@/assets/care-hands.jpg";
-import stillLife from "@/assets/still-life.jpg";
+import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
 import { useI18n } from "@/lib/i18n";
 import { specialties } from "@/lib/specialties";
 import { ContactBlock, Eyebrow, Parallax, Reveal, WaButton } from "@/components/site/ui";
@@ -128,7 +128,7 @@ function Index() {
             <h2 className="display mt-8 text-4xl md:text-6xl">{t.expTitle}</h2>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-12">
-            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={stillLife} alt="Detalhes AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
+            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
             <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace.url} alt="Espaço real de atendimento AKURA" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
           </div>
         </div>
