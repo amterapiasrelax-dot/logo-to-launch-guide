@@ -15,3 +15,9 @@
 - [x] Mostrar apresentação primeiro e carrossel oval abaixo; verificar a nova disposição.
 - [x] Adicionar faixa fixa de países com movimento contínuo abaixo do cabeçalho e verificar celular e computador.
 - [x] Afinar o cabeçalho, aplicar fundo dourado com logotipo branco transparente e suavizar o tom com gradiente.
+## Revisão técnica pré-publicação (fev/2026)
+- [x] Dependências: sem conflito esbuild/vite no projeto; adicionado .npmrc (legacy-peer-deps) para npm/Vercel
+- [x] Build e 8 testes passando
+- [x] Links WhatsApp/Instagram/TikTok/e-mail verificados (fonte única)
+- [x] 9 botões CTA, menu, rodapé e carrossel testados em desktop e mobile
+- [x] Reforço contra rolagem horizontal (overflow-x: clip no html)
