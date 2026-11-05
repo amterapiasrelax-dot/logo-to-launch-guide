@@ -172,9 +172,9 @@ function SpecRow({ i, soft }: { i: number; soft?: boolean }) {
     <Link
       to="/especialidades/$slug"
       params={{ slug: s.slug }}
-      className={`group flex h-full items-center justify-between gap-6 rounded-[2rem] border border-champagne p-8 transition-all duration-700 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${soft ? "bg-champagne/40" : "bg-background"}`}
+      className={`group flex h-full min-w-0 flex-wrap items-center justify-between gap-6 rounded-[2rem] border border-champagne p-8 transition-all duration-700 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)] ${soft ? "bg-champagne/40" : "bg-background"}`}
     >
-      <div className="flex items-center gap-5">
+      <div className="flex min-w-0 items-center gap-5">
         <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-sand transition-colors group-hover:bg-ivory"><SpecIcon i={i} /></span>
         <span className="text-lg font-bold">{s.name}</span>
       </div>

@@ -52,7 +52,7 @@ export function ProcedureCarousel() {
       <div className="flex h-16 items-center justify-between px-5 md:px-10">
         <span className="text-xs font-light tracking-normal" aria-hidden="true">AKURA</span>
         <div className="flex items-center gap-2">
-          {heroSlides.map((slide, i) => <Button key={slide.id} variant="ghost" size="icon" className="h-9 w-9 rounded-full" aria-label={`Afficher ${slide.name}`.replace("Afficher", "Mostrar")} aria-pressed={active === i} onClick={() => setActive(i)}>
+          {heroSlides.map((slide, i) => <Button key={slide.id} variant="ghost" size="icon" className="h-9 w-9 rounded-full" aria-label={`Mostrar ${slide.name}`} aria-pressed={active === i} onClick={() => setActive(i)}>
             <span className={cn("h-1.5 w-1.5 rounded-full bg-gold transition-opacity", active === i ? "opacity-100" : "opacity-30")} />
           </Button>)}
         </div>
