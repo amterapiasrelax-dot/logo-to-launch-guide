@@ -9,8 +9,8 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep one Portuguese content source in `src/lib/i18n.tsx` with `pt-BR` on the root document; browser/Google translation replaces manually maintained language catalogs.
+- Keep one French content source in `src/lib/i18n.tsx` with `fr-FR` on the root document; browser/Google translation replaces manually maintained language catalogs.
 - Keep confirmed procedures/services in their owning specialty's shared data and render them on its existing detail route; this preserves area URLs and avoids country or service page duplication.
 - Derive home carousel slides from confirmed service photography and link to the owning area plus service anchor; never infer a procedure name from an unlabeled area image.
 - Keep the outgoing carousel photo opaque beneath the incoming fading photo until the transition completes; this avoids exposing the background during crossfades. Decode approved photos before starting autoplay.
-- Render the header country strip from the single Portuguese country list with two identical repeated sequences; equal-width tracks ensure seamless motion without duplicate content sources.
+- Render the header country strip from the single French country list with two identical repeated sequences; equal-width tracks ensure seamless motion without duplicate content sources.

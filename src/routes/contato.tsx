@@ -6,10 +6,10 @@ import { ContactBlock, PageHero } from "@/components/site/ui";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — AKURA" },
-      { name: "description", content: "Agende sua experiência AKURA pelo WhatsApp." },
-      { property: "og:title", content: "Contato — AKURA" },
-      { property: "og:description", content: "Agende sua experiência pelo WhatsApp." },
+      { title: "Contact — AKURA" },
+      { name: "description", content: "Réservez votre expérience AKURA par WhatsApp." },
+      { property: "og:title", content: "Contact — AKURA" },
+      { property: "og:description", content: "Réservez votre expérience par WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

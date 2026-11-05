@@ -14,13 +14,13 @@ export const Route = createFileRoute("/especialidades/$slug")({
     meta: loaderData
       ? [
           { title: `${loaderData.name} — AKURA` },
-          { name: "description", content: `${loaderData.name}: uma especialidade AKURA de atendimento personalizado.` },
+          { name: "description", content: `${loaderData.name}: une spécialité AKURA de soins personnalisés.` },
           { property: "og:title", content: `${loaderData.name} — AKURA` },
-          { property: "og:description", content: `Conheça ${loaderData.name}, especialidade AKURA.` },
+          { property: "og:description", content: `Découvrez ${loaderData.name}, une spécialité AKURA.` },
           { property: "og:type", content: "website" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
-      : [{ title: "Especialidade — AKURA" }, { name: "robots", content: "noindex" }],
+      : [{ title: "Spécialité — AKURA" }, { name: "robots", content: "noindex" }],
   }),
   component: Specialty,
 });
@@ -37,7 +37,7 @@ function Specialty() {
       <PageHero eyebrow={s.tagline} title={s.name} text={s.description} image={s.image} />
       {s.services.length === 0 && <section className="bg-ivory px-6 py-28">
         <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
-          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" /></Parallax></Reveal>
+          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa.url} alt="Salle de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" /></Parallax></Reveal>
           <Reveal delay={150} direction={flip ? "left" : "right"}>
             <Eyebrow>{t.aboutService}</Eyebrow>
             <h2 className="display mt-8 text-4xl md:text-5xl">{s.name}</h2>

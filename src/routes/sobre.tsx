@@ -7,10 +7,10 @@ import { ContactBlock, Eyebrow, PageHero, Reveal } from "@/components/site/ui";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre a AKURA — Filosofia e atendimento personalizado" },
-      { name: "description", content: "Conheça a identidade e a filosofia de cuidado da AKURA." },
-      { property: "og:title", content: "Sobre a AKURA" },
-      { property: "og:description", content: "Identidade, filosofia e atendimento personalizado." },
+      { title: "À propos d’AKURA — Philosophie et accompagnement personnalisé" },
+      { name: "description", content: "Découvrez l’identité et la philosophie de soin d’AKURA." },
+      { property: "og:title", content: "À propos d’AKURA" },
+      { property: "og:description", content: "Identité, philosophie et accompagnement personnalisé." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -30,7 +30,7 @@ function Sobre() {
             <h2 className="display mt-8 text-4xl md:text-5xl">{t.persTitle}</h2>
             <p className="mt-8 text-lg leading-relaxed">{t.persText}</p>
           </Reveal>
-          <Reveal delay={150}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] rounded-tr-[8rem] object-cover" /></Reveal>
+          <Reveal delay={150}><img src={salaSpa.url} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] rounded-tr-[8rem] object-cover" /></Reveal>
         </div>
       </section>
       <ContactBlock />

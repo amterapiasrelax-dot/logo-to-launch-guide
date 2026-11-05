@@ -1,4 +1,4 @@
-import careHands from "@/assets/care-hands.jpg";
+import homecare from "@/assets/homecare-soins-pieds.webp.asset.json";
 import salaSpa from "@/assets/sala-spa-akura.png.asset.json";
 import headSpa from "@/assets/head-spa.webp.asset.json";
 import massageCible from "@/assets/massage-cible.webp.asset.json";
@@ -23,55 +23,57 @@ export type Service = { id: string; title: string; text?: string; image: string;
 export type Specialty = { slug: string; name: string; tagline: string; description: string; ctaLabel: string; image: string; services: Service[] };
 
 export const specialties: Specialty[] = [
-  { slug: "akura-touch", name: "Akura Touch", tagline: "Massagens e experiências de relaxamento",
-    description: "Um convite para desacelerar e reconectar-se com o seu bem-estar. A Akura Touch reúne experiências sensoriais, massagens e rituais de relaxamento que valorizam o conforto, o toque e a atenção individual.",
-    ctaLabel: "Descubra nossas experiências", image: akuraTouchMassage.url, services: [
+  { slug: "akura-touch", name: "Akura Touch", tagline: "Massages et expériences de relaxation",
+    description: "Une invitation à ralentir et à renouer avec votre bien-être. Akura Touch réunit des expériences sensorielles, des massages et des rituels de relaxation qui privilégient le confort, le toucher et l’attention individuelle.",
+    ctaLabel: "Découvrez nos expériences", image: akuraTouchMassage.url, services: [
     { id: "japanese-head-spa", title: siteContent.headSpaTitle, text: siteContent.headSpaText, image: headSpa.url, alt: "Japanese Head Spa AKURA" },
-    { id: "massagem-localizada", title: siteContent.massageTitle, text: siteContent.massageText, image: massageCible.url, alt: "Massagem localizada AKURA" },
+    { id: "massagem-localizada", title: siteContent.massageTitle, text: siteContent.massageText, image: massageCible.url, alt: "Massage ciblé AKURA" },
   ] },
-  { slug: "akura-estetica", name: "Akura Estética", tagline: "Estética facial e corporal",
-    description: "O cuidado estético como uma experiência de atenção e valorização pessoal. Cada proposta é apresentada com sensibilidade, respeitando as particularidades e necessidades de cada pessoa.",
-    ctaLabel: "Conheça nossos cuidados", image: esteticaFacial.url, services: [
-    { id: "estetica-facial", title: "Estética facial", image: esteticaFacial.url, alt: "Estética facial AKURA — cuidado delicado do rosto" },
-    { id: "estetica-corporal", title: "Estética corporal", image: esteticaCorporal.url, alt: "Estética corporal AKURA — cuidado do corpo" },
+  { slug: "akura-estetica", name: "Akura Esthétique", tagline: "Soins esthétiques du visage et du corps",
+    description: "Le soin esthétique comme une expérience d’attention et de valorisation de soi. Chaque proposition est présentée avec sensibilité, dans le respect des particularités et des besoins de chacun.",
+    ctaLabel: "Découvrez nos soins", image: esteticaFacial.url, services: [
+    { id: "estetica-facial", title: "Soins du visage", image: esteticaFacial.url, alt: "Soins du visage AKURA — soin délicat du visage" },
+    { id: "estetica-corporal", title: "Soins du corps", image: esteticaCorporal.url, alt: "Soins du corps AKURA — soin du corps" },
   ] },
-  { slug: "akura-pmu", name: "Akura PMU", tagline: "Micropigmentação profissional",
-    description: "Precisão, delicadeza e conhecimento técnico em uma área dedicada à micropigmentação. A Akura PMU valoriza a individualidade e a apresentação responsável de cada procedimento.",
-    ctaLabel: "Conheça a especialidade", image: microblading.url, services: [
-    { id: "microblading", title: "Microblading", image: microblading.url, alt: "Microblading AKURA — sobrancelhas em destaque" },
+  { slug: "akura-pmu", name: "Akura PMU", tagline: "Micropigmentation professionnelle",
+    description: "Précision, délicatesse et savoir-faire technique dans un univers dédié à la micropigmentation. Akura PMU valorise l’individualité et la présentation responsable de chaque prestation.",
+    ctaLabel: "Découvrez la spécialité", image: microblading.url, services: [
+    { id: "microblading", title: "Microblading", image: microblading.url, alt: "Microblading AKURA — mise en valeur des sourcils" },
   ] },
-  { slug: "akura-podologia-pro", name: "Akura Podologia PRO", tagline: "Conhecimento especializado no cuidado dos pés",
-    description: "Uma trajetória construída sobre formação profissional e experiência em Podologia. A Akura Podologia PRO reúne conhecimentos em Podopediatria, Podologia Esportiva, Pé Diabético e Feridas, valorizando a responsabilidade e o cuidado especializado.",
-    ctaLabel: "Explore a Podologia PRO", image: podologiaPro.url, services: [
-    { id: "podologia", title: "Podologia", image: podologiaAkura.url, alt: "Podologia AKURA — cuidado profissional dos pés" },
+  { slug: "akura-podologia-pro", name: "Akura Podologie PRO", tagline: "Une expertise dédiée au soin des pieds",
+    description: "Uma trajetória construída sobre formação profissional e experiência em Podologia. A Akura Podologie PRO reúne conhecimentos em Podopediatria, Podologia Esportiva, Pé Diabético e Feridas, valorizando a responsabilidade e o cuidado especializado.",
+    ctaLabel: "Explorez la Podologie PRO", image: podologiaPro.url, services: [
+    { id: "podologia", title: "Podologie", image: podologiaAkura.url, alt: "Podologie AKURA — soin professionnel des pieds" },
   ] },
-  { slug: "akura-therapy-ec", name: "Akura Therapy EC", tagline: "Laserterapia e fotobiomodulação",
-    description: "Conhecimento e tecnologia reunidos em uma área dedicada à laserterapia e à fotobiomodulação. A Akura Therapy EC apresenta experiências profissionais em diferentes contextos, com aplicações e disponibilidade conforme a localidade.",
-    ctaLabel: "Conheça a Therapy EC", image: laserterapia.url, services: [
-    { id: "laserterapia", title: "Laserterapia", image: laserterapia.url, alt: "Laserterapia AKURA Therapy EC — tratamento a laser nas costas" },
+  { slug: "akura-therapy-ec", name: "Akura Therapy EC", tagline: "Thérapie laser et photobiomodulation",
+    description: "Le savoir-faire et la technologie réunis dans un univers dédié à la thérapie laser et à la photobiomodulation. Akura Therapy EC présente des expériences professionnelles dans différents contextes, avec des applications et une disponibilité selon la localité.",
+    ctaLabel: "Découvrez Therapy EC", image: laserterapia.url, services: [
+    { id: "laserterapia", title: "Thérapie laser", image: laserterapia.url, alt: "Thérapie laser AKURA Therapy EC — soin au laser du dos" },
   ] },
-  { slug: "akura-homecare", name: "Akura Homecare", tagline: "Experiências e cuidados em domicílio",
-    description: "A proposta de levar atenção, conforto e cuidado até você. A Akura Homecare reúne possibilidades de atendimento domiciliar, respeitando as necessidades individuais e a disponibilidade de cada região.",
-    ctaLabel: "Consulte a disponibilidade", image: salaSpa.url, services: [] },
-  { slug: "akura-corporate", name: "Akura Corporate", tagline: "Bem-estar para empresas e eventos",
-    description: "Experiências de bem-estar pensadas para organizações que valorizam as pessoas. A Akura Corporate desenvolve propostas personalizadas para empresas, hotéis, equipes e eventos, criando momentos especiais de cuidado e acolhimento.",
-    ctaLabel: "Solicite uma proposta", image: massagemRelaxante.url, services: [
-    { id: "massagem-relaxante", title: "Massagem relaxante", image: massagemRelaxante.url, alt: "Massagem relaxante AKURA Corporate — quick massage em ambiente moderno" },
-    { id: "foot-spa", title: "Foot Spa", image: footBath.url, alt: "Foot Spa — banho dos pés com pedras em bacia dourada", gallery: [
-      { image: footMassage.url, alt: "Foot Spa — massagem dos pés" },
-      { image: footFeet.url, alt: "Foot Spa — cuidado dos pés" },
+  { slug: "akura-homecare", name: "Akura Homecare", tagline: "Expériences et soins à domicile",
+    description: "Une approche qui vous apporte attention, confort et soins à domicile. Akura Homecare propose des possibilités de soins à domicile, dans le respect des besoins individuels et de la disponibilité dans chaque région.",
+    ctaLabel: "Renseignez-vous sur les disponibilités", image: homecare.url, services: [
+    { id: "soins-pieds-domicile", title: "Soins des pieds à domicile", image: homecare.url, alt: "Akura Homecare — soin professionnel des pieds à domicile" },
+  ] },
+  { slug: "akura-corporate", name: "Akura Corporate", tagline: "Bien-être pour les entreprises et les événements",
+    description: "Des expériences de bien-être pensées pour les organisations qui placent les personnes au cœur de leurs priorités. Akura Corporate développe des propositions personnalisées pour les entreprises, les hôtels, les équipes et les événements, créant des moments privilégiés de soin et de douceur.",
+    ctaLabel: "Demandez une proposition", image: massagemRelaxante.url, services: [
+    { id: "massagem-relaxante", title: "Massage relaxant", image: massagemRelaxante.url, alt: "Massage relaxant AKURA Corporate — massage express dans un cadre moderne" },
+    { id: "foot-spa", title: "Foot Spa", image: footBath.url, alt: "Foot Spa — bain de pieds avec des pierres dans une bassine dorée", gallery: [
+      { image: footMassage.url, alt: "Foot Spa — massage des pieds" },
+      { image: footFeet.url, alt: "Foot Spa — soin des pieds" },
     ] },
   ] },
-  { slug: "huellas-kids-teens", name: "Huellas Kids & Teens", tagline: "Educação, movimento e cuidado desde a infância",
-    description: "Um universo dedicado à descoberta, ao aprendizado e ao cuidado preventivo. O Projeto Huellas aproxima crianças e adolescentes de experiências educativas e sensoriais por meio de atividades lúdicas, movimento e autocuidado.",
-    ctaLabel: "Descubra o Projeto Huellas", image: kidsCare.url, services: [
-    { id: "akura-kids", title: "Akura Kids", image: kidsCare.url, alt: "Akura Kids — atendimento delicado para crianças", gallery: [
-      { image: kidsSpace.url, alt: "Espaço Akura Kids — cantinho preparado para as crianças" },
+  { slug: "huellas-kids-teens", name: "Huellas Kids & Teens", tagline: "Éducation, mouvement et soin dès l’enfance",
+    description: "Un univers dédié à la découverte, à l’apprentissage et aux soins préventifs. Le Projet Huellas propose aux enfants et aux adolescents des expériences éducatives et sensorielles à travers des activités ludiques, le mouvement et le soin de soi.",
+    ctaLabel: "Découvrez le Projet Huellas", image: kidsCare.url, services: [
+    { id: "akura-kids", title: "Akura Kids", image: kidsCare.url, alt: "Akura Kids — un accompagnement délicat pour les enfants", gallery: [
+      { image: kidsSpace.url, alt: "Espace Akura Kids — un coin aménagé pour les enfants" },
     ] },
   ] },
-  { slug: "akura-formations", name: "Akura Formations", tagline: "Conhecimento que se transforma em prática",
-    description: "Compartilhar conhecimento é também uma forma de cuidar. A Akura Formations reúne propostas de cursos, oficinas e workshops que conectam experiência profissional, aprendizado e desenvolvimento.",
-    ctaLabel: "Conheça nossas formações", image: salaSpa.url, services: [] },
+  { slug: "akura-formations", name: "Akura Formations", tagline: "Des connaissances qui deviennent une pratique",
+    description: "Partager les connaissances est aussi une façon de prendre soin. Akura Formations réunit des propositions de cours, d’ateliers et de workshops qui relient expérience professionnelle, apprentissage et développement.",
+    ctaLabel: "Découvrez nos formations", image: salaSpa.url, services: [] },
 ];
 
 export const findSpecialty = (slug: string) => specialties.find((s) => s.slug === slug);
