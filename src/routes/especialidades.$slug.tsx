@@ -48,12 +48,12 @@ function Specialty() {
       </section>}
       {s.services.map((x, k) => (
           <section key={x.id} id={x.id} className="px-6 py-24">
-            <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${(flip ? k % 2 === 0 : k % 2 === 1) ? "md:[&>*:first-child]:order-2" : ""}`}>
-              <Reveal direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem] shadow-[var(--shadow-soft)]">
+            <div className={`mx-auto grid max-w-7xl items-center gap-16 ${x.image ? "md:grid-cols-2" : ""} ${x.image && (flip ? k % 2 === 0 : k % 2 === 1) ? "md:[&>*:first-child]:order-2" : ""}`}>
+              {x.image && <Reveal direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem] shadow-[var(--shadow-soft)]">
                 <Parallax speed={0.06}>
                   <img src={x.image} alt={x.alt} loading="lazy" className={`${x.gallery ? "aspect-video" : "aspect-[4/5]"} w-full scale-110 object-cover`} />
                 </Parallax>
-              </Reveal>
+              </Reveal>}
               <Reveal delay={150} direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "left" : "right"}>
                 <Eyebrow>{s.name}</Eyebrow>
                 <h2 className="display mt-8 text-4xl md:text-5xl">{x.title}</h2>

@@ -9,7 +9,6 @@ describe("Approved procedure carousel", () => {
       ["estetica-facial", "akura-estetica"],
       ["estetica-corporal", "akura-estetica"],
       ["microblading", "akura-pmu"],
-      ["podologia", "akura-podologia-pro"],
       ["laserterapia", "akura-therapy-ec"],
       ["soins-pieds-domicile", "akura-homecare"],
       ["massagem-relaxante", "akura-corporate"],

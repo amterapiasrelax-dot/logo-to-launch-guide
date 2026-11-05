@@ -3,6 +3,14 @@ import { SITE_LANGUAGE } from "@/lib/i18n";
 import { findSpecialty, specialties } from "@/lib/specialties";
 
 describe("AKURA site organization", () => {
+  it("retains podology information without photographs anywhere in its shared data or carousel", () => {
+    const podology = findSpecialty("akura-podologia-pro");
+    expect(podology?.services.map(({ id }) => id)).toEqual(["podologia"]);
+    expect(podology?.image).toBeUndefined();
+    expect(podology?.services[0]?.image).toBeUndefined();
+    expect(specialties.flatMap((area) => [area.image, ...area.services.map((service) => service.image)])
+      .filter((image) => image?.includes("podologia"))).toEqual([]);
+  });
   it("uses French as the original site language", () => {
     expect(SITE_LANGUAGE).toBe("fr-FR");
   });
