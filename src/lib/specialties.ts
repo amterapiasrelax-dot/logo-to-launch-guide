@@ -6,6 +6,7 @@ import massageCible from "@/assets/massage-cible.webp.asset.json";
 import { siteContent } from "@/lib/i18n";
 import akuraTouchMassage from "@/assets/akura-touch-massage.webp.asset.json";
 import podologiaPro from "@/assets/podologia-pro.webp.asset.json";
+import podologiaAkura from "@/assets/podologia-akura.webp.asset.json";
 import footBath from "@/assets/foot-spa-banho.webp.asset.json";
 import footMassage from "@/assets/foot-spa-massagem.webp.asset.json";
 import footFeet from "@/assets/foot-spa-pes.webp.asset.json";
@@ -22,7 +23,9 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-estetica", name: "Akura Estética", image: careHands, services: [] },
   { slug: "akura-pmu", name: "Akura PMU", image: stillLife, services: [] },
-  { slug: "akura-podologia-pro", name: "Akura Podologia PRO", image: podologiaPro.url, services: [] },
+  { slug: "akura-podologia-pro", name: "Akura Podologia PRO", image: podologiaPro.url, services: [
+    { id: "podologia", title: "Podologia", image: podologiaAkura.url, alt: "Podologia AKURA — cuidado profissional dos pés" },
+  ] },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", image: realSpace.url, services: [] },
   { slug: "akura-homecare", name: "Akura Homecare", image: stillLife, services: [] },
   { slug: "akura-corporate", name: "Akura Corporate", image: realSpace.url, services: [
