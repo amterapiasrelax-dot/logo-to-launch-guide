@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, Music2 } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/akura-logo.png.asset.json";
+import logoGold from "@/assets/akura-logo-gold.png";
 import logoWhite from "@/assets/akura-logo-white.png";
 import { useI18n } from "@/lib/i18n";
 import { specialties, WHATSAPP_URL } from "@/lib/specialties";
@@ -116,7 +116,7 @@ export function Footer() {
     <footer className="border-t border-champagne bg-ivory px-6 pt-20 pb-10">
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-4">
         <div>
-          <img src={logo.url} alt="AKURA" className="h-24 w-auto" loading="lazy" />
+          <img src={logoGold} alt="AKURA" className="h-24 w-auto" loading="lazy" />
         </div>
         <div>
           <h3 className="eyebrow mb-5">{t.footerNav}</h3>
