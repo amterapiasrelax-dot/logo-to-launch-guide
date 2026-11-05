@@ -12,6 +12,7 @@ import footMassage from "@/assets/foot-spa-massagem.webp.asset.json";
 import footFeet from "@/assets/foot-spa-pes.webp.asset.json";
 import kidsCare from "@/assets/akura-kids-atendimento.webp.asset.json";
 import kidsSpace from "@/assets/akura-kids-espaco.webp.asset.json";
+import microblading from "@/assets/microblading-akura.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
@@ -24,7 +25,9 @@ export const specialties: Specialty[] = [
     { id: "massagem-localizada", title: siteContent.massageTitle, text: siteContent.massageText, image: massageCible.url, alt: "Massagem localizada AKURA" },
   ] },
   { slug: "akura-estetica", name: "Akura Estética", image: careHands, services: [] },
-  { slug: "akura-pmu", name: "Akura PMU", image: stillLife, services: [] },
+  { slug: "akura-pmu", name: "Akura PMU", image: microblading.url, services: [
+    { id: "microblading", title: "Microblading", image: microblading.url, alt: "Microblading AKURA — sobrancelhas em destaque" },
+  ] },
   { slug: "akura-podologia-pro", name: "Akura Podologia PRO", image: podologiaPro.url, services: [
     { id: "podologia", title: "Podologia", image: podologiaAkura.url, alt: "Podologia AKURA — cuidado profissional dos pés" },
   ] },
