@@ -91,7 +91,7 @@ function Index() {
           <div className="mt-16 grid gap-6 md:grid-cols-6">
             {/* Featured large */}
             <Reveal className="md:col-span-3 md:row-span-2">
-              <SpecFeature i={0} img={specialties[0].image} tall />
+              <SpecFeature i={0} img={specialties[0]!.image} tall />
             </Reveal>
             <Reveal delay={100} className="md:col-span-3">
               <SpecFeature i={1} img={careHands} />
