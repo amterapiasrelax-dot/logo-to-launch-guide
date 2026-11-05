@@ -13,6 +13,8 @@ import footFeet from "@/assets/foot-spa-pes.webp.asset.json";
 import kidsCare from "@/assets/akura-kids-atendimento.webp.asset.json";
 import kidsSpace from "@/assets/akura-kids-espaco.webp.asset.json";
 import microblading from "@/assets/microblading-akura.webp.asset.json";
+import esteticaFacial from "@/assets/estetica-facial-akura.webp.asset.json";
+import esteticaCorporal from "@/assets/estetica-corporal-akura.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
@@ -28,7 +30,10 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-estetica", name: "Akura Estética", tagline: "Estética facial e corporal",
     description: "O cuidado estético como uma experiência de atenção e valorização pessoal. Cada proposta é apresentada com sensibilidade, respeitando as particularidades e necessidades de cada pessoa.",
-    ctaLabel: "Conheça nossos cuidados", image: careHands, services: [] },
+    ctaLabel: "Conheça nossos cuidados", image: esteticaFacial.url, services: [
+    { id: "estetica-facial", title: "Estética facial", image: esteticaFacial.url, alt: "Estética facial AKURA — cuidado delicado do rosto" },
+    { id: "estetica-corporal", title: "Estética corporal", image: esteticaCorporal.url, alt: "Estética corporal AKURA — cuidado do corpo" },
+  ] },
   { slug: "akura-pmu", name: "Akura PMU", tagline: "Micropigmentação profissional",
     description: "Precisão, delicadeza e conhecimento técnico em uma área dedicada à micropigmentação. A Akura PMU valoriza a individualidade e a apresentação responsável de cada procedimento.",
     ctaLabel: "Conheça a especialidade", image: microblading.url, services: [
