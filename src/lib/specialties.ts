@@ -15,7 +15,7 @@ export const specialties: Specialty[] = [
   { slug: "akura-podologia-pro", name: "Akura Podologia PRO", image: heroSpa },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", image: spaRoom },
   { slug: "akura-homecare", name: "Akura Homecare", image: stillLife },
-  { slug: "akura-corporate", name: "Akura Corporate", image: heroSpa },
+  { slug: "akura-corporate", name: "Akura Corporate", image: espacoAtendimento.url },
   { slug: "huellas-kids-teens", name: "Huellas Kids & Teens", image: careHands },
   { slug: "akura-formations", name: "Akura Formations", image: stillLife },
 ];
