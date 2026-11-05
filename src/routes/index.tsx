@@ -79,8 +79,9 @@ function Index() {
               <Reveal delay={150} direction={flip ? "left" : "right"}>
                 <Eyebrow>{`${String(k + 1).padStart(2, "0")} — ${t.specEyebrow}`}</Eyebrow>
                 <h3 className="display mt-8 text-4xl md:text-5xl">{s.name}</h3>
+                <p className="mt-4 text-xl font-light leading-snug">{s.tagline}</p>
                 <div className="gold-line my-8 w-40" />
-                <p className="max-w-lg text-lg leading-relaxed">{t.specPlaceholder}</p>
+                <p className="max-w-lg text-lg leading-relaxed">{s.description}</p>
                 {s.services.length > 0 && (
                   <ul className="mt-8 flex flex-wrap gap-3">
                     {s.services.map((x) => (
@@ -94,7 +95,7 @@ function Index() {
                 )}
                 <div className="mt-10">
                   <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group inline-flex items-center gap-3 rounded-full border border-gold px-7 py-3.5 text-sm font-bold tracking-[0.12em] uppercase transition-all duration-500 ease-[var(--ease-soft)] hover:bg-gold hover:text-primary-foreground">
-                    {t.knowMore}
+                    {s.ctaLabel}
                     <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
                   </Link>
                 </div>
@@ -123,9 +124,12 @@ function Index() {
       {/* EXPERIÊNCIA */}
       <section className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <Reveal className="mx-auto max-w-2xl text-center">
+          <Reveal direction="fade" className="mx-auto max-w-2xl text-center">
             <div className="flex justify-center"><Eyebrow>{t.expEyebrow}</Eyebrow></div>
             <h2 className="display mt-8 text-4xl md:text-6xl">{t.expTitle}</h2>
+            <p className="mt-8 text-lg leading-relaxed">{t.expText}</p>
+            <p className="display mt-10 text-2xl md:text-3xl">{t.expSlogan}</p>
+            <div className="mt-10"><WaButton /></div>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-12">
             <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa.url} alt="Sala de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
