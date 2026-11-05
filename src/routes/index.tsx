@@ -100,7 +100,7 @@ function Index() {
               <Reveal key={s.slug} delay={150 + k * 80} className="md:col-span-3 lg:col-span-3">
                 <SpecRow i={k + 2} />
               </Reveal>
-            )).reduce<React.ReactNode[]>((a, n) => [...a, n], [])}
+            ))}
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-3">
