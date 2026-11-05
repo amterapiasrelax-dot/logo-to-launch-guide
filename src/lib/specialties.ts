@@ -4,8 +4,6 @@ import headSpa from "@/assets/head-spa.webp.asset.json";
 import massageCible from "@/assets/massage-cible.webp.asset.json";
 import { siteContent } from "@/lib/i18n";
 import akuraTouchMassage from "@/assets/akura-touch-massage.webp.asset.json";
-import podologiaPro from "@/assets/podologia-pro.webp.asset.json";
-import podologiaAkura from "@/assets/podologia-akura.webp.asset.json";
 import footBath from "@/assets/foot-spa-banho.webp.asset.json";
 import footMassage from "@/assets/foot-spa-massagem.webp.asset.json";
 import footFeet from "@/assets/foot-spa-pes.webp.asset.json";
@@ -16,11 +14,12 @@ import esteticaFacial from "@/assets/estetica-facial-akura.webp.asset.json";
 import esteticaCorporal from "@/assets/estetica-corporal-akura.webp.asset.json";
 import massagemRelaxante from "@/assets/massagem-relaxante-corporate.webp.asset.json";
 import laserterapia from "@/assets/laserterapia-akura.webp.asset.json";
+import podologyCare from "@/assets/podologie-pro-soin.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
-export type Service = { id: string; title: string; text?: string; image: string; alt: string; gallery?: { image: string; alt: string }[] };
-export type Specialty = { slug: string; name: string; tagline: string; description: string; ctaLabel: string; image: string; services: Service[] };
+export type Service = { id: string; title: string; text?: string; image?: string; alt: string; gallery?: { image: string; alt: string }[] };
+export type Specialty = { slug: string; name: string; tagline: string; description: string; ctaLabel: string; image?: string; services: Service[] };
 
 export const specialties: Specialty[] = [
   { slug: "akura-touch", name: "Akura Touch", tagline: "Massages et expériences de relaxation",
@@ -42,8 +41,8 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-podologia-pro", name: "Akura Podologie PRO", tagline: "Une expertise dédiée au soin des pieds",
     description: "Uma trajetória construída sobre formação profissional e experiência em Podologia. A Akura Podologie PRO reúne conhecimentos em Podopediatria, Podologia Esportiva, Pé Diabético e Feridas, valorizando a responsabilidade e o cuidado especializado.",
-    ctaLabel: "Explorez la Podologie PRO", image: podologiaPro.url, services: [
-    { id: "podologia", title: "Podologie", image: podologiaAkura.url, alt: "Podologie AKURA — soin professionnel des pieds" },
+    ctaLabel: "Explorez la Podologie PRO", image: podologyCare.url, services: [
+    { id: "podologia", title: "Podologie", image: podologyCare.url, alt: "Podologie AKURA — soin des ongles des pieds avec des mains gantées" },
   ] },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", tagline: "Thérapie laser et photobiomodulation",
     description: "Le savoir-faire et la technologie réunis dans un univers dédié à la thérapie laser et à la photobiomodulation. Akura Therapy EC présente des expériences professionnelles dans différents contextes, avec des applications et une disponibilité selon la localité.",

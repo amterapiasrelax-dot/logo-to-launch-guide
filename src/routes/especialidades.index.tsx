@@ -30,7 +30,7 @@ function Especialidades() {
               <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group grid items-center gap-6 py-8 md:grid-cols-[4rem_1fr_10rem_auto]">
                 <span className="text-sm font-bold tracking-widest text-sand">{String(i + 1).padStart(2, "0")}</span>
                 <span className="flex items-center gap-5 text-2xl font-light md:text-4xl"><SpecIcon i={i} />{s.name}</span>
-                <img src={s.image} alt="" loading="lazy" className="hidden h-20 w-40 rounded-full object-cover opacity-0 transition-all duration-700 group-hover:opacity-100 md:block" />
+                <span className="hidden h-20 w-40 md:block">{s.image && <img src={s.image} alt="" loading="lazy" className="h-20 w-40 rounded-full object-cover opacity-0 transition-all duration-700 group-hover:opacity-100" />}</span>
                 <span className="text-xs font-bold tracking-[0.2em] uppercase">{t.discover} →</span>
               </Link>
             </Reveal>
