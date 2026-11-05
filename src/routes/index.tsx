@@ -5,7 +5,7 @@ import careHands from "@/assets/care-hands.jpg";
 import stillLife from "@/assets/still-life.jpg";
 import { useI18n } from "@/lib/i18n";
 import { specialties } from "@/lib/specialties";
-import { ContactBlock, Curve, Eyebrow, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
+import { ContactBlock, Eyebrow, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
 import { ProcedureCarousel } from "@/components/site/ProcedureCarousel";
 
 export const Route = createFileRoute("/")({
@@ -41,8 +41,6 @@ function Index() {
     <>
       {/* HERO */}
       <ProcedureCarousel />
-
-      <Curve className="h-16" />
 
       {/* SOBRE */}
       <section className="bg-ivory px-6 py-28 md:py-36">
