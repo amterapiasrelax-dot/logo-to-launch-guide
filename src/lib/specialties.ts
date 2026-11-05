@@ -30,7 +30,10 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-estetica", name: "Akura Estética", tagline: "Estética facial e corporal",
     description: "O cuidado estético como uma experiência de atenção e valorização pessoal. Cada proposta é apresentada com sensibilidade, respeitando as particularidades e necessidades de cada pessoa.",
-    ctaLabel: "Conheça nossos cuidados", image: careHands, services: [] },
+    ctaLabel: "Conheça nossos cuidados", image: esteticaFacial.url, services: [
+    { id: "estetica-facial", title: "Estética facial", image: esteticaFacial.url, alt: "Estética facial AKURA — cuidado delicado do rosto" },
+    { id: "estetica-corporal", title: "Estética corporal", image: esteticaCorporal.url, alt: "Estética corporal AKURA — cuidado do corpo" },
+  ] },
   { slug: "akura-pmu", name: "Akura PMU", tagline: "Micropigmentação profissional",
     description: "Precisão, delicadeza e conhecimento técnico em uma área dedicada à micropigmentação. A Akura PMU valoriza a individualidade e a apresentação responsável de cada procedimento.",
     ctaLabel: "Conheça a especialidade", image: microblading.url, services: [
