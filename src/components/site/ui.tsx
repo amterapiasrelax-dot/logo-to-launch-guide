@@ -101,7 +101,7 @@ export function SpecIcon({ i }: { i: number }) {
 export function ContactBlock() {
   const { t } = useI18n();
   return (
-    <section className="relative overflow-hidden bg-champagne/50 px-6 py-28 md:py-40">
+    <section className="relative overflow-hidden bg-champagne/50 px-6 py-16 md:py-24">
       <div className="pointer-events-none absolute -left-40 -top-40 h-[30rem] w-[30rem] rounded-full border border-gold/30" />
       <div className="pointer-events-none absolute -bottom-52 -right-24 h-[34rem] w-[34rem] rounded-full border border-gold/30" />
       <Reveal className="relative mx-auto max-w-3xl text-center">

@@ -145,7 +145,7 @@
 .akura-introduction-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; z-index: -2; }
 .akura-introduction::before { content: ""; position: absolute; inset: 0; z-index: -1; background: color-mix(in oklab, var(--white) 88%, transparent); }
 .akura-introduction-content { width: 100%; max-width: 1152px; margin-inline: auto; }
-.akura-procedures { padding: 48px 24px 24px; background: var(--ivory); }
+.akura-procedures { padding: 32px 24px 16px; background: var(--ivory); }
 .procedure-carousel { position: relative; width: 100%; max-width: 1000px; margin-inline: auto; isolation: isolate; }
 .procedure-stage { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gold); }
 .procedure-slide { position: absolute; inset: 0; display: block; opacity: 0; pointer-events: none; z-index: 0; transition: opacity 1800ms ease-in-out; }
