@@ -8,6 +8,7 @@ describe("Approved procedure carousel", () => {
       ["massagem-localizada", "akura-touch"],
       ["podologia", "akura-podologia-pro"],
       ["foot-spa", "akura-corporate"],
+      ["akura-kids", "huellas-kids-teens"],
     ]);
     expect(heroSlides.every(({ image }) => image.startsWith("/__l5e/assets-v1/"))).toBe(true);
   });

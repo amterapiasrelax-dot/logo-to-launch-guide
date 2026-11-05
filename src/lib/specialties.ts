@@ -10,6 +10,8 @@ import podologiaAkura from "@/assets/podologia-akura.webp.asset.json";
 import footBath from "@/assets/foot-spa-banho.webp.asset.json";
 import footMassage from "@/assets/foot-spa-massagem.webp.asset.json";
 import footFeet from "@/assets/foot-spa-pes.webp.asset.json";
+import kidsCare from "@/assets/akura-kids-atendimento.webp.asset.json";
+import kidsSpace from "@/assets/akura-kids-espaco.webp.asset.json";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
@@ -34,7 +36,11 @@ export const specialties: Specialty[] = [
       { image: footFeet.url, alt: "Foot Spa — cuidado dos pés" },
     ] },
   ] },
-  { slug: "huellas-kids-teens", name: "Huellas Kids & Teens", image: careHands, services: [] },
+  { slug: "huellas-kids-teens", name: "Huellas Kids & Teens", image: kidsCare.url, services: [
+    { id: "akura-kids", title: "Akura Kids", image: kidsCare.url, alt: "Akura Kids — atendimento delicado para crianças", gallery: [
+      { image: kidsSpace.url, alt: "Espaço Akura Kids — cantinho preparado para as crianças" },
+    ] },
+  ] },
   { slug: "akura-formations", name: "Akura Formations", image: stillLife, services: [] },
 ];
 
