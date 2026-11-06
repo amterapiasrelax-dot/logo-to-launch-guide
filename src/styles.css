@@ -141,10 +141,11 @@
   to { transform: scale(1.12) translate(-1%, -1%); }
 }
 
-.akura-header { background: var(--button-champagne); box-shadow: none; }
+.akura-header { background: transparent; box-shadow: none; }
+.akura-header > div:first-child { background: var(--button-champagne); max-width: none; }
 .akura-nav-link { color: var(--ink); transition: opacity 0.4s var(--ease-soft); }
 .akura-nav-link:hover, .akura-nav-link.active { color: var(--ink); opacity: 0.75; }
-.country-strip { height: 26px; overflow: hidden; background: var(--button-champagne); color: var(--white); }
+.country-strip { height: 26px; overflow: hidden; background: color-mix(in oklab, var(--white) 52%, transparent); backdrop-filter: blur(12px); color: var(--white); }
 .country-track { display: flex; width: max-content; height: 100%; animation: country-drift 90s linear infinite; }
 .country-sequence { display: flex; align-items: center; flex-shrink: 0; }
 .country-item { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; text-transform: uppercase; font-family: var(--font-sans); font-size: 10px; font-weight: 300; letter-spacing: 0; }
@@ -185,7 +186,7 @@
 
 /* Flat, restrained surfaces and thin brand-gold action borders. */
 .bg-ivory, .akura-procedures, section[class*="bg-champagne"] { background: var(--white); }
-.country-strip { text-shadow: none; border-top: 1px solid var(--white); border-bottom: 1px solid var(--gold); }
+.country-strip { text-shadow: 0 1px 2px var(--ink), 0 0 1px var(--ink); border-top: 1px solid color-mix(in oklab, var(--white) 80%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--gold) 50%, transparent); }
 .country-item { font-weight: 700; }
 .akura-btn, .pearl-action { position: relative; overflow: hidden; border-radius: 6px; border: 1px solid var(--gold); color: var(--ink); text-shadow: none; text-align: center; justify-content: center;
   background: var(--button-champagne); background-size: 180% 100%; background-position: 0 50%; box-shadow: var(--button-shadow);
@@ -195,6 +196,7 @@
 .akura-btn { max-width: 100%; white-space: normal; letter-spacing: 0; }
 .akura-header nav a:not(.akura-nav-link) { color: var(--ink); }
 .text-gold, [class*="text-gold/"] { color: var(--ink); }
+.header-menu-toggle, .header-menu-toggle:hover, .header-menu-toggle:active { background: transparent; border: none; box-shadow: none; color: var(--white); }
 @media (prefers-reduced-motion: reduce) {
   .akura-btn, .pearl-action { transition: none; }
   .akura-btn:hover, .pearl-action:hover, .akura-btn:active, .pearl-action:active { transform: none; }
