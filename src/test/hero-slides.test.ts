@@ -4,11 +4,12 @@ import { heroSlides, nextSlide } from "@/lib/hero-slides";
 describe("Approved procedure carousel", () => {
   it("uses only the identified procedure photos and their owning pages", () => {
     expect(heroSlides.map(({ id, slug }) => [id, slug])).toEqual([
-      ["japanese-head-spa", "akura-touch"],
-      ["massagem-localizada", "akura-touch"],
+      ["head-face-ritual", "akura-touch"],
+      ["touch-relax", "akura-touch"],
+      ["touch-cible", "akura-touch"],
       ["estetica-corporal", "akura-estetica"],
       ["laserterapia", "akura-therapy-ec"],
-      ["soins-pieds-domicile", "akura-homecare"],
+      ["soin-lumiere-pieds-ongles", "akura-homecare"],
       ["massagem-relaxante", "akura-corporate"],
       ["foot-spa", "akura-corporate"],
       ["akura-kids", "huellas-kids-teens"],

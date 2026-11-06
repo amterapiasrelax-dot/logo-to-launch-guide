@@ -28,7 +28,7 @@ describe("AKURA site organization", () => {
 
   it("places the approved home care photo in its owning area", () => {
     const homecare = findSpecialty("akura-homecare");
-    expect(homecare?.services.map(({ id }) => id)).toEqual(["soins-pieds-domicile"]);
+    expect(homecare?.services.map(({ id }) => id)).toEqual(["soin-lumiere-pieds-ongles"]);
     expect(homecare?.image).toBe(homecare?.services[0]?.image);
   });
 
@@ -45,12 +45,13 @@ describe("AKURA site organization", () => {
     ]);
   });
 
-  it("keeps Japanese Head Spa and localized massage in Akura Touch", () => {
+  it("keeps the relaxation rituals in Akura Touch", () => {
     expect(findSpecialty("akura-touch")?.services.map(({ id }) => id)).toEqual([
-      "japanese-head-spa", "massagem-localizada",
+      "head-face-ritual", "touch-relax", "touch-cible", "reflexologie-plantaire",
+      "head-relax-essentiel", "head-relax-corps", "massage-femme-enceinte",
     ]);
     expect(specialties.filter(({ slug }) => slug !== "akura-touch")
       .flatMap(({ services }) => services.map(({ id }) => id))
-      .filter((id) => ["japanese-head-spa", "massagem-localizada"].includes(id))).toEqual([]);
+      .filter((id) => ["head-face-ritual", "touch-cible"].includes(id))).toEqual([]);
   });
 });
