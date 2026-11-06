@@ -14,6 +14,7 @@ import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as InternacionalRouteImport } from './routes/internacional'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as EspecialidadesIndexRouteImport } from './routes/especialidades.index'
 import { Route as EspecialidadesSlugRouteImport } from './routes/especialidades.$slug'
@@ -43,6 +44,11 @@ const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/contato': typeof ContatoRoute
   '/internacional': typeof InternacionalRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
   '/especialidades/': typeof EspecialidadesIndexRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/contato': typeof ContatoRoute
   '/internacional': typeof InternacionalRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
   '/especialidades': typeof EspecialidadesIndexRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/contato': typeof ContatoRoute
   '/internacional': typeof InternacionalRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
   '/especialidades/': typeof EspecialidadesIndexRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/internacional'
     | '/politica-de-privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/especialidades/$slug'
     | '/especialidades/'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/internacional'
     | '/politica-de-privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/especialidades/$slug'
     | '/especialidades'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/contato'
     | '/internacional'
     | '/politica-de-privacidade'
+    | '/sitemap.xml'
     | '/sobre'
     | '/especialidades/$slug'
     | '/especialidades/'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   ContatoRoute: typeof ContatoRoute
   InternacionalRoute: typeof InternacionalRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   EspecialidadesSlugRoute: typeof EspecialidadesSlugRoute
   EspecialidadesIndexRoute: typeof EspecialidadesIndexRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContatoRoute: ContatoRoute,
   InternacionalRoute: InternacionalRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   EspecialidadesSlugRoute: EspecialidadesSlugRoute,
   EspecialidadesIndexRoute: EspecialidadesIndexRoute,
