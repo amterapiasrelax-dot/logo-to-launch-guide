@@ -32,3 +32,4 @@
 - [x] Substituir a imagem da Akura Corporate pela foto de massage assis en entreprise.
 - [x] Adicionar as duas fotos do espaço (salle de soins e station de soins) à seção Notre Espace.
 - [x] Criar a seção "Nos Prestations": catálogo com 15 cartões, 11 serviços oficiais com durações (sem preços), páginas individuais /prestations/$id com descrição, benefícios e botão Réserver; navegação, home e sitemap atualizados.
+- [ ] Aproximar os textos da abertura e integrar o carrossel de fotos à seção de apresentação.
