@@ -7,12 +7,12 @@ describe("Approved procedure carousel", () => {
       ["head-face-ritual", "akura-touch"],
       ["touch-relax", "akura-touch"],
       ["touch-cible", "akura-touch"],
-      ["estetica-corporal", "akura-estetica"],
       ["laserterapia", "akura-therapy-ec"],
       ["soin-lumiere-pieds-ongles", "akura-homecare"],
       ["massagem-relaxante", "akura-corporate"],
       ["foot-spa", "akura-corporate"],
       ["akura-kids", "huellas-kids-teens"],
+      ["babymassage", "huellas-kids-teens"],
     ]);
     expect(heroSlides.every(({ image }) => image.startsWith("/images/"))).toBe(true);
   });

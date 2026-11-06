@@ -19,9 +19,9 @@ describe("AKURA site organization", () => {
     expect(images.filter((image) => /podologie|microblading|estetica-facial/.test(image))).toEqual([]);
   });
 
-  it("keeps only the body care service in Akura Esthétique", () => {
+  it("keeps Akura Esthétique as an area without listed services", () => {
     const estetica = findSpecialty("akura-estetica");
-    expect(estetica?.services.map(({ id }) => id)).toEqual(["estetica-corporal"]);
+    expect(estetica?.services).toEqual([]);
     expect(estetica?.image).toBe("/images/estetica-corporal-akura.webp");
     expect(estetica?.tagline).toBe("Soins esthétiques du corps");
   });
