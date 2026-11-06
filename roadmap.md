@@ -1,5 +1,5 @@
 # AKURA — aplicação do planejamento aprovado
-- [ ] Aprimorar acabamento perolado dos fundos, cabeçalho, faixa de países e ações com champagne claríssimo; verificar páginas e navegação no computador e celular.
+- [x] Aprimorar acabamento perolado dos fundos, cabeçalho, faixa de países e ações com champagne claríssimo; 16 páginas, navegação móvel e 31 testes verificados.
 - [x] Criar e verificar sitemap XML com todas as 16 páginas públicas e referência no robots.txt para o domínio www.akurawellbeing.com; XML retorna 200 no ambiente de teste, publicação Vercel pendente.
 - [x] Exportar as 17 fotografias originais para public/images e remover dependência de caminhos internos no código em uso.
 - [x] Verificar imagens nas 16 páginas, nove especialidades no celular, carrossel, e 27 testes, com gateway de imagens Lovable bloqueado.
