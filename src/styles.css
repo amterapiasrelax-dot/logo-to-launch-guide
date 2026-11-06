@@ -146,7 +146,7 @@
   to { transform: scale(1.12) translate(-1%, -1%); }
 }
 
-.akura-header { background: linear-gradient(90deg, var(--gold) 0%, var(--sand) 25%, var(--ivory) 50%, var(--sand) 75%, var(--gold) 100%); text-shadow: 0 1px 2px color-mix(in oklab, var(--gold) 90%, transparent); }
+.akura-header { background: linear-gradient(90deg, var(--champagne) 0%, var(--ivory) 50%, var(--champagne) 100%); text-shadow: 0 1px 2px color-mix(in oklab, var(--gold) 90%, transparent); }
 .akura-nav-link { color: var(--white); transition: opacity 0.4s var(--ease-soft); }
 .akura-nav-link:hover, .akura-nav-link.active { color: var(--white); opacity: 0.75; }
 .country-strip { height: 26px; overflow: hidden; background: linear-gradient(90deg, var(--ivory), var(--champagne) 50%, var(--ivory)); color: var(--gold); }
