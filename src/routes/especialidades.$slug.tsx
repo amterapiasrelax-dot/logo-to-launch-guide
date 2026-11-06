@@ -47,20 +47,23 @@ function Specialty() {
           </Reveal>
         </div>
       </section>}
-      {s.services.map((x, k) => (
+      {s.services.map((x, k) => {
+        const dir = (flip ? k % 2 === 0 : k % 2 === 1) ? "left" : "right";
+        const center = !x.image;
+        return (
           <section key={x.id} id={x.id} className="px-6 py-24">
-            <div className={`mx-auto grid max-w-7xl items-center gap-16 ${x.image ? "md:grid-cols-2" : ""} ${x.image && (flip ? k % 2 === 0 : k % 2 === 1) ? "md:[&>*:first-child]:order-2" : ""}`}>
-              {x.image && <Reveal direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem] shadow-[var(--shadow-soft)]">
+            <div className={`mx-auto grid max-w-7xl items-center gap-16 ${x.image ? "md:grid-cols-2" : ""} ${x.image && dir === "left" ? "md:[&>*:first-child]:order-2" : ""}`}>
+              {x.image && <Reveal direction={dir === "left" ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem] shadow-[var(--shadow-soft)]">
                 <Parallax speed={0.06}>
                   <img src={x.image} alt={x.alt} loading="lazy" className={`${x.gallery ? "aspect-video" : "aspect-[4/5]"} w-full scale-110 object-cover`} />
                 </Parallax>
               </Reveal>}
-              <Reveal delay={150} direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "left" : "right"} className={x.image ? "" : "mx-auto max-w-3xl text-center"}>
-                <div className={x.image ? "" : "flex justify-center"><Eyebrow>{s.name}</Eyebrow></div>
+              <Reveal delay={150} direction={dir} className={center ? "mx-auto max-w-3xl text-center" : ""}>
+                <div className={center ? "flex justify-center" : ""}><Eyebrow>{s.name}</Eyebrow></div>
                 <h2 className="display mt-8 text-4xl md:text-5xl">{x.title}</h2>
-                <div className={`gold-line my-10 w-40 ${x.image ? "" : "mx-auto"}`} />
-                {x.text && <p className={`max-w-lg text-lg leading-relaxed ${x.image ? "" : "mx-auto"}`}>{x.text}</p>}
-                <div className={`mt-10 ${x.image ? "" : "flex justify-center"}`}><WaButton /></div>
+                <div className={`gold-line my-10 w-40 ${center ? "mx-auto" : ""}`} />
+                {x.text && <p className={`max-w-lg text-lg leading-relaxed ${center ? "mx-auto" : ""}`}>{x.text}</p>}
+                <div className={`mt-10 ${center ? "flex justify-center" : ""}`}><WaButton /></div>
               </Reveal>
             </div>
             {x.gallery && <div className={`mx-auto mt-10 grid gap-6 ${x.gallery.length === 1 ? "max-w-3xl" : "max-w-7xl md:grid-cols-2"}`}>
@@ -69,7 +72,8 @@ function Specialty() {
               </Reveal>)}
             </div>}
           </section>
-        ))}
+        );
+      })}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <Eyebrow>{t.others}</Eyebrow>
