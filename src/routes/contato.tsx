@@ -4,6 +4,7 @@ import { useI18n } from "@/lib/i18n";
 import { ContactBlock, PageHero } from "@/components/site/ui";
 
 export const Route = createFileRoute("/contato")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Contact — AKURA" },

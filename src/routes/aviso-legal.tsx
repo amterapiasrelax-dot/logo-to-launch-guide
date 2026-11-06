@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow, Reveal } from "@/components/site/ui";
 
 export const Route = createFileRoute("/aviso-legal")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Mentions légales — AKURA" },

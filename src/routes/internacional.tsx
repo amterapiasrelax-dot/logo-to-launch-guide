@@ -4,6 +4,7 @@ import { useI18n } from "@/lib/i18n";
 import { ContactBlock, PageHero, Reveal } from "@/components/site/ui";
 
 export const Route = createFileRoute("/internacional")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Présence internationale — AKURA" },

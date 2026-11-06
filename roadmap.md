@@ -1,4 +1,5 @@
 # AKURA — aplicação do planejamento aprovado
+- [ ] Criar e verificar sitemap XML com todas as páginas públicas e referência no robots.txt para o domínio www.akurawellbeing.com.
 - [x] Exportar as 17 fotografias originais para public/images e remover dependência de caminhos internos no código em uso.
 - [x] Verificar imagens nas 16 páginas, nove especialidades no celular, carrossel, e 27 testes, com gateway de imagens Lovable bloqueado.
 - [x] Confirmar compilação automática sem erros; preservar aparência e links existentes.

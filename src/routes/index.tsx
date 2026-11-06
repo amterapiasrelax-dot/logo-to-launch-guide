@@ -8,6 +8,7 @@ import { ContactBlock, Eyebrow, Parallax, Reveal, WaButton } from "@/components/
 import { ProcedureCarousel } from "@/components/site/ProcedureCarousel";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "AKURA — Esthétique et bien-être personnalisés" },

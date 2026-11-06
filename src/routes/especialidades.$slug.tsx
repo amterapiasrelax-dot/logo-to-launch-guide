@@ -5,6 +5,7 @@ import { findSpecialty, specialties } from "@/lib/specialties";
 import { ContactBlock, Eyebrow, PageHero, Parallax, Reveal, SpecIcon, WaButton } from "@/components/site/ui";
 
 export const Route = createFileRoute("/especialidades/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const s = findSpecialty(params.slug);
     if (!s) throw notFound();

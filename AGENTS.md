@@ -16,3 +16,4 @@
 - Keep the outgoing carousel photo opaque beneath the incoming fading photo until the transition completes; this avoids exposing the background during crossfades. Decode approved photos before starting autoplay.
 - Render the header country strip from the single French country list with two identical repeated sequences; equal-width tracks ensure seamless motion without duplicate content sources.
 - Serve approved photographs from checked-in `public/images` originals using `/images/` URLs; this keeps exports portable to Vercel without Lovable's internal asset gateway. Keep existing bundled logos and images as normal Vite imports.
+- Derive sitemap static URLs from explicit route decisions and specialty URLs from the shared public specialty collection; omit lastmod without authoritative page-specific content dates to avoid stale or invented entries.
