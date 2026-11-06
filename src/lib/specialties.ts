@@ -12,6 +12,7 @@ const kidsSpace = "/images/akura-kids-espaco.webp";
 const esteticaCorporal = "/images/estetica-corporal-akura.webp";
 const massageCorporate = "/images/massage-corporative-akura.png";
 const laserterapia = "/images/laserterapia-akura.webp";
+const babyMassage = "/images/babymassage-akura.png";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
@@ -88,7 +89,7 @@ export const specialties: Specialty[] = [
     { id: "akura-kids", title: "Akura Kids", image: kidsCare, alt: "Akura Kids — un accompagnement délicat pour les enfants", gallery: [
       { image: kidsSpace, alt: "Espace Akura Kids — un coin aménagé pour les enfants" },
     ] },
-    { id: "babymassage", title: "Babymassage", duration: "30–40 min", alt: "Babymassage — massage doux pour bébés",
+    { id: "babymassage", title: "Babymassage", duration: "30–40 min", image: babyMassage, alt: "Babymassage — massage doux du dos d’un bébé sur une serviette crème",
       text: "Un massage tout en douceur pour les bébés, avec des gestes tendres et rassurants qui favorisent le calme, le confort et le lien affectif.",
       benefits: ["Apaise et rassure le bébé", "Favorise le calme et le sommeil", "Renforce le lien affectif"] },
     { id: "massage-enfant-adolescent", title: "Massage Enfant & Adolescent", duration: "30 min", alt: "Massage Enfant & Adolescent — massage adapté aux jeunes",

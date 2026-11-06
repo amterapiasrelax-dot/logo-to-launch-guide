@@ -13,6 +13,7 @@ describe("Approved procedure carousel", () => {
       ["massagem-relaxante", "akura-corporate"],
       ["foot-spa", "akura-corporate"],
       ["akura-kids", "huellas-kids-teens"],
+      ["babymassage", "huellas-kids-teens"],
     ]);
     expect(heroSlides.every(({ image }) => image.startsWith("/images/"))).toBe(true);
   });
