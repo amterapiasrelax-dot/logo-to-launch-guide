@@ -7,6 +7,7 @@ import { useI18n } from "@/lib/i18n";
 import { specialties, WHATSAPP_URL } from "@/lib/specialties";
 import { WaButton } from "./ui";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
   const { t } = useI18n();
@@ -60,15 +61,15 @@ export function Header() {
           <WaButton variant="light" className="px-5 py-2 text-xs" />
         </div>
 
-        <button
+        <Button
           className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-primary-foreground/60 lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
           aria-expanded={open}
         >
-          <span className={cn("h-px w-5 bg-primary-foreground transition-transform", open && "translate-y-[3.5px] rotate-45")} />
-          <span className={cn("h-px w-5 bg-primary-foreground transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
-        </button>
+          <span className={cn("h-px w-5 shrink-0 bg-ink transition-transform", open && "translate-y-[3.5px] rotate-45")} />
+          <span className={cn("h-px w-5 shrink-0 bg-ink transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
+        </Button>
       </div>
 
       <div className="country-strip" aria-label={t.countries.join(" · ")}>
