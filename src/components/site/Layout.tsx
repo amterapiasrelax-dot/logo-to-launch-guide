@@ -54,6 +54,7 @@ export function Header() {
               </div>
             </div>
           </div>
+          <Link to="/prestations" className={linkCls}>{t.nav.prestations}</Link>
           <Link to="/contato" className={linkCls}>{t.nav.contact}</Link>
         </nav>
 
@@ -96,6 +97,7 @@ export function Header() {
                 <Link key={s.slug} to="/" hash={s.slug} onClick={() => setOpen(false)} className="text-sm text-gold/80">{s.name}</Link>
               ))}
             </div>
+            <Link to="/prestations" onClick={() => setOpen(false)} className={mobileLinkCls}>{t.nav.prestations}</Link>
             {links.slice(2).map((l) => (
               <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={mobileLinkCls}>{l.label}</Link>
             ))}
@@ -132,6 +134,7 @@ export function Footer() {
             <li><Link to="/" className="hover:underline">{t.nav.home}</Link></li>
             <li><Link to="/sobre" className="hover:underline">{t.nav.about}</Link></li>
             <li><Link to="/especialidades" className="hover:underline">{t.nav.specialties}</Link></li>
+            <li><Link to="/prestations" className="hover:underline">{t.nav.prestations}</Link></li>
             <li><Link to="/internacional" className="hover:underline">{t.nav.intl}</Link></li>
             <li><Link to="/contato" className="hover:underline">{t.nav.contact}</Link></li>
           </ul>

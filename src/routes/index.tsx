@@ -81,7 +81,7 @@ function Index() {
               <ul className={`mt-8 flex flex-wrap gap-3 ${photo ? "" : "justify-center"}`}>
                 {s.services.map((x) => (
                   <li key={x.id}>
-                    <Link to="/especialidades/$slug" params={{ slug: s.slug }} hash={x.id} className="inline-block rounded-full border border-champagne px-4 py-2 text-sm font-bold transition-colors hover:bg-champagne/50">
+                    <Link to="/prestations/$id" params={{ id: x.id }} className="inline-block rounded-full border border-champagne px-4 py-2 text-sm font-bold transition-colors hover:bg-champagne/50">
                       {x.title}
                     </Link>
                   </li>

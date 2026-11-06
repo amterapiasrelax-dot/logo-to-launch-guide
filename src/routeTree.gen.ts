@@ -18,6 +18,8 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as EspecialidadesIndexRouteImport } from './routes/especialidades.index'
 import { Route as EspecialidadesSlugRouteImport } from './routes/especialidades.$slug'
+import { Route as PrestationsIndexRouteImport } from './routes/prestations.index'
+import { Route as PrestationsIdRouteImport } from './routes/prestations.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +66,16 @@ const EspecialidadesSlugRoute = EspecialidadesSlugRouteImport.update({
   path: '/especialidades/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrestationsIndexRoute = PrestationsIndexRouteImport.update({
+  id: '/prestations/',
+  path: '/prestations/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrestationsIdRoute = PrestationsIdRouteImport.update({
+  id: '/prestations/$id',
+  path: '/prestations/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -74,7 +86,9 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
+  '/prestations/$id': typeof PrestationsIdRoute
   '/especialidades/': typeof EspecialidadesIndexRoute
+  '/prestations/': typeof PrestationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -85,7 +99,9 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
+  '/prestations/$id': typeof PrestationsIdRoute
   '/especialidades': typeof EspecialidadesIndexRoute
+  '/prestations': typeof PrestationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -97,7 +113,9 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/especialidades/$slug': typeof EspecialidadesSlugRoute
+  '/prestations/$id': typeof PrestationsIdRoute
   '/especialidades/': typeof EspecialidadesIndexRoute
+  '/prestations/': typeof PrestationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,7 +128,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/especialidades/$slug'
+    | '/prestations/$id'
     | '/especialidades/'
+    | '/prestations/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -121,7 +141,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/especialidades/$slug'
+    | '/prestations/$id'
     | '/especialidades'
+    | '/prestations'
   id:
     | '__root__'
     | '/'
@@ -132,7 +154,9 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/especialidades/$slug'
+    | '/prestations/$id'
     | '/especialidades/'
+    | '/prestations/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -144,7 +168,9 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   EspecialidadesSlugRoute: typeof EspecialidadesSlugRoute
+  PrestationsIdRoute: typeof PrestationsIdRoute
   EspecialidadesIndexRoute: typeof EspecialidadesIndexRoute
+  PrestationsIndexRoute: typeof PrestationsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -212,6 +238,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EspecialidadesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/prestations/': {
+      id: '/prestations/'
+      path: '/prestations'
+      fullPath: '/prestations/'
+      preLoaderRoute: typeof PrestationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prestations/$id': {
+      id: '/prestations/$id'
+      path: '/prestations/$id'
+      fullPath: '/prestations/$id'
+      preLoaderRoute: typeof PrestationsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -224,7 +264,9 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   EspecialidadesSlugRoute: EspecialidadesSlugRoute,
+  PrestationsIdRoute: PrestationsIdRoute,
   EspecialidadesIndexRoute: EspecialidadesIndexRoute,
+  PrestationsIndexRoute: PrestationsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
