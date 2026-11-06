@@ -7,7 +7,6 @@ const akuraTouchMassage = "/images/akura-touch-massage.webp";
 const footBath = "/images/foot-spa-banho.webp";
 const footMassage = "/images/foot-spa-massagem.webp";
 const footFeet = "/images/foot-spa-pes.webp";
-const kidsCare = "/images/akura-kids-atendimento.webp";
 const kidsSpace = "/images/akura-kids-espaco.webp";
 const esteticaCorporal = "/images/estetica-corporal-akura.webp";
 const massageCorporate = "/images/massage-corporative-akura.png";
@@ -83,8 +82,8 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "huellas-kids-teens", name: "Huellas Kids & Teens", tagline: "Éducation, mouvement et soin dès l’enfance",
     description: "Un univers dédié à la découverte, à l’apprentissage et aux soins préventifs. Le Projet Huellas propose aux enfants et aux adolescents des expériences éducatives et sensorielles à travers des activités ludiques, le mouvement et le soin de soi.",
-    ctaLabel: "Découvrez le Projet Huellas", image: kidsCare, services: [
-    { id: "akura-kids", title: "Akura Kids", image: kidsCare, alt: "Akura Kids — un accompagnement délicat pour les enfants", gallery: [
+    ctaLabel: "Découvrez le Projet Huellas", services: [
+    { id: "akura-kids", title: "Akura Kids", alt: "Akura Kids — un accompagnement délicat pour les enfants", gallery: [
       { image: kidsSpace, alt: "Espace Akura Kids — un coin aménagé pour les enfants" },
     ] },
     { id: "babymassage", title: "Babymassage", duration: "30–40 min", image: babyMassage, alt: "Babymassage — massage doux du dos d’un bébé sur une serviette crème",

@@ -38,7 +38,7 @@ function Specialty() {
       <PageHero eyebrow={s.tagline} title={s.name} text={s.description} {...(s.image ? { image: s.image } : {})} />
       {s.services.length === 0 && <section className="bg-ivory px-6 py-28">
         <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
-          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" /></Parallax></Reveal>
+          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-105 object-cover object-center" /></Parallax></Reveal>
           <Reveal delay={150} direction={flip ? "left" : "right"}>
             <Eyebrow>{t.aboutService}</Eyebrow>
             <h2 className="display mt-8 text-4xl md:text-5xl">{s.name}</h2>
@@ -47,29 +47,33 @@ function Specialty() {
           </Reveal>
         </div>
       </section>}
-      {s.services.map((x, k) => (
+      {s.services.map((x, k) => {
+        const dir = (flip ? k % 2 === 0 : k % 2 === 1) ? "left" : "right";
+        const center = !x.image;
+        return (
           <section key={x.id} id={x.id} className="px-6 py-24">
-            <div className={`mx-auto grid max-w-7xl items-center gap-16 ${x.image ? "md:grid-cols-2" : ""} ${x.image && (flip ? k % 2 === 0 : k % 2 === 1) ? "md:[&>*:first-child]:order-2" : ""}`}>
-              {x.image && <Reveal direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem] shadow-[var(--shadow-soft)]">
+            <div className={`mx-auto grid max-w-7xl items-center gap-16 ${x.image ? "md:grid-cols-2" : ""} ${x.image && dir === "left" ? "md:[&>*:first-child]:order-2" : ""}`}>
+              {x.image && <Reveal direction={dir === "left" ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem] shadow-[var(--shadow-soft)]">
                 <Parallax speed={0.06}>
-                  <img src={x.image} alt={x.alt} loading="lazy" className={`${x.gallery ? "aspect-video" : "aspect-[4/5]"} w-full scale-110 object-cover`} />
+                  <img src={x.image} alt={x.alt} loading="lazy" className="aspect-[4/3] w-full scale-105 object-cover object-center" />
                 </Parallax>
               </Reveal>}
-              <Reveal delay={150} direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "left" : "right"}>
-                <Eyebrow>{s.name}</Eyebrow>
+              <Reveal delay={150} direction={dir} className={center ? "mx-auto max-w-3xl text-center" : ""}>
+                <div className={center ? "flex justify-center" : ""}><Eyebrow>{s.name}</Eyebrow></div>
                 <h2 className="display mt-8 text-4xl md:text-5xl">{x.title}</h2>
-                <div className="gold-line my-10 w-40" />
-                {x.text && <p className="max-w-lg text-lg leading-relaxed">{x.text}</p>}
-                <div className="mt-10"><WaButton /></div>
+                <div className={`gold-line my-10 w-40 ${center ? "mx-auto" : ""}`} />
+                {x.text && <p className={`max-w-lg text-lg leading-relaxed ${center ? "mx-auto" : ""}`}>{x.text}</p>}
+                <div className={`mt-10 ${center ? "flex justify-center" : ""}`}><WaButton /></div>
               </Reveal>
             </div>
-            {x.gallery && <div className="mx-auto mt-10 grid max-w-7xl gap-6 md:grid-cols-2">
+            {x.gallery && <div className={`mx-auto mt-10 grid gap-6 ${x.gallery.length === 1 ? "max-w-3xl" : "max-w-7xl md:grid-cols-2"}`}>
               {x.gallery.map((photo, g) => <Reveal key={photo.image} direction={g % 2 === 0 ? "glow" : "up"} delay={g * 120}>
-                <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
+                <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover object-center shadow-[var(--shadow-soft)]" />
               </Reveal>)}
             </div>}
           </section>
-        ))}
+        );
+      })}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-7xl">
           <Eyebrow>{t.others}</Eyebrow>

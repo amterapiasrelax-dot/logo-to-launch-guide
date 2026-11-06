@@ -160,7 +160,7 @@
 .procedure-slide { position: absolute; inset: 0; display: block; opacity: 0; pointer-events: none; z-index: 0; transition: opacity 1800ms ease-in-out; }
 .procedure-slide.is-previous { opacity: 1; z-index: 1; transition: none; }
 .procedure-slide.is-active { opacity: 1; pointer-events: auto; z-index: 2; }
-.procedure-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.procedure-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .procedure-name { position: absolute; bottom: 24px; right: 24px; max-width: calc(100% - 48px); text-align: right; font-family: var(--font-sans); font-size: 14px; font-weight: 300; letter-spacing: 0; color: var(--photo-label); text-shadow: var(--shadow-photo-label); }
 .procedure-controls { position: relative; z-index: 3; display: flex; justify-content: center; align-items: center; gap: 12px; padding-top: 16px; color: var(--gold); }
 .procedure-controls button { color: var(--ink); }

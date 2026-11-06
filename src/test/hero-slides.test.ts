@@ -11,7 +11,6 @@ describe("Approved procedure carousel", () => {
       ["soin-lumiere-pieds-ongles", "akura-homecare"],
       ["massagem-relaxante", "akura-corporate"],
       ["foot-spa", "akura-corporate"],
-      ["akura-kids", "huellas-kids-teens"],
       ["babymassage", "huellas-kids-teens"],
     ]);
     expect(heroSlides.every(({ image }) => image.startsWith("/images/"))).toBe(true);

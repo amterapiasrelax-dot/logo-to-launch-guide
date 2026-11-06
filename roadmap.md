@@ -35,3 +35,5 @@
 - [x] Aproximar os textos da abertura e integrar o carrossel de fotos à seção de apresentação.
 - [x] Colocar a foto do Babymassage na prestação, no catálogo e no carrossel, com enquadramento sem cortes.
 - [x] Remover o serviço "Soins du corps" da Akura Esthétique, preservando a área; atualizar home, catálogo, carrossel, sitemap e testes.
+- [x] Remover a foto da mulher com criança da área Huellas Kids & Teens e do serviço Akura Kids em todo o site, preservando área, serviço e a foto do cantinho infantil.
+- [ ] Centralizar e padronizar o enquadramento das fotografias de todos os serviços em cartões e páginas individuais, sem substituir fotos, alterar textos ou adicionar preços.

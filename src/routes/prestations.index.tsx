@@ -36,7 +36,7 @@ function Prestations() {
             <Reveal key={service.id} delay={(k % 3) * 120} className="flex flex-col overflow-hidden rounded-[2rem] border border-champagne bg-background shadow-[var(--shadow-soft)]">
               {service.image && (
                 <Link to="/prestations/$id" params={{ id: service.id }} className="block overflow-hidden">
-                  <img src={service.image} alt={service.alt} loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-[1.5s] hover:scale-105" />
+                  <img src={service.image} alt={service.alt} loading="lazy" className="aspect-[4/3] w-full object-cover object-center transition-transform duration-[1.5s] hover:scale-105" />
                 </Link>
               )}
               <div className="flex flex-1 flex-col p-8">
