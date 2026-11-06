@@ -141,10 +141,10 @@
   to { transform: scale(1.12) translate(-1%, -1%); }
 }
 
-.akura-header { background: var(--gold); box-shadow: none; }
+.akura-header { background: var(--button-champagne); box-shadow: none; }
 .akura-nav-link { color: var(--ink); transition: opacity 0.4s var(--ease-soft); }
 .akura-nav-link:hover, .akura-nav-link.active { color: var(--ink); opacity: 0.75; }
-.country-strip { height: 26px; overflow: hidden; background: var(--gold); color: var(--white); }
+.country-strip { height: 26px; overflow: hidden; background: var(--button-champagne); color: var(--white); }
 .country-track { display: flex; width: max-content; height: 100%; animation: country-drift 90s linear infinite; }
 .country-sequence { display: flex; align-items: center; flex-shrink: 0; }
 .country-item { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; text-transform: uppercase; font-family: var(--font-sans); font-size: 10px; font-weight: 300; letter-spacing: 0; }
