@@ -1,4 +1,5 @@
 # AKURA — aplicação do planejamento aprovado
+- [x] Remover acabamento perolado rejeitado, restaurar fundos lisos brancos e detalhes no dourado do logotipo; 16 páginas, celular e 26 testes verificados.
 - [x] Aprimorar acabamento perolado dos fundos, cabeçalho, faixa de países e ações com champagne claríssimo; 16 páginas, navegação móvel e 31 testes verificados.
 - [x] Criar e verificar sitemap XML com todas as 16 páginas públicas e referência no robots.txt para o domínio www.akurawellbeing.com; XML retorna 200 no ambiente de teste, publicação Vercel pendente.
 - [x] Exportar as 17 fotografias originais para public/images e remover dependência de caminhos internos no código em uso.
