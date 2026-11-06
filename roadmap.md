@@ -33,3 +33,5 @@
 - [x] Adicionar as duas fotos do espaço (salle de soins e station de soins) à seção Notre Espace.
 - [x] Criar a seção "Nos Prestations": catálogo com 15 cartões, 11 serviços oficiais com durações (sem preços), páginas individuais /prestations/$id com descrição, benefícios e botão Réserver; navegação, home e sitemap atualizados.
 - [x] Aproximar os textos da abertura e integrar o carrossel de fotos à seção de apresentação.
+- [x] Colocar a foto do Babymassage na prestação, no catálogo e no carrossel, com enquadramento sem cortes.
+- [ ] Remover o serviço "Soins du corps" da Akura Esthétique, preservando a área; atualizar home, catálogo, carrossel, sitemap e testes.
