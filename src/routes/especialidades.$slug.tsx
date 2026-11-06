@@ -55,15 +55,15 @@ function Specialty() {
                   <img src={x.image} alt={x.alt} loading="lazy" className={`${x.gallery ? "aspect-video" : "aspect-[4/5]"} w-full scale-110 object-cover`} />
                 </Parallax>
               </Reveal>}
-              <Reveal delay={150} direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "left" : "right"}>
-                <Eyebrow>{s.name}</Eyebrow>
+              <Reveal delay={150} direction={(flip ? k % 2 === 0 : k % 2 === 1) ? "left" : "right"} className={x.image ? "" : "mx-auto max-w-3xl text-center"}>
+                <div className={x.image ? "" : "flex justify-center"><Eyebrow>{s.name}</Eyebrow></div>
                 <h2 className="display mt-8 text-4xl md:text-5xl">{x.title}</h2>
-                <div className="gold-line my-10 w-40" />
-                {x.text && <p className="max-w-lg text-lg leading-relaxed">{x.text}</p>}
-                <div className="mt-10"><WaButton /></div>
+                <div className={`gold-line my-10 w-40 ${x.image ? "" : "mx-auto"}`} />
+                {x.text && <p className={`max-w-lg text-lg leading-relaxed ${x.image ? "" : "mx-auto"}`}>{x.text}</p>}
+                <div className={`mt-10 ${x.image ? "" : "flex justify-center"}`}><WaButton /></div>
               </Reveal>
             </div>
-            {x.gallery && <div className="mx-auto mt-10 grid max-w-7xl gap-6 md:grid-cols-2">
+            {x.gallery && <div className={`mx-auto mt-10 grid gap-6 ${x.gallery.length === 1 ? "max-w-3xl" : "max-w-7xl md:grid-cols-2"}`}>
               {x.gallery.map((photo, g) => <Reveal key={photo.image} direction={g % 2 === 0 ? "glow" : "up"} delay={g * 120}>
                 <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
               </Reveal>)}

@@ -36,8 +36,8 @@ function Prestation() {
     <>
       <section className="px-6 pb-20 pt-36 md:pt-44">
         <div className={`mx-auto grid max-w-7xl items-center gap-12 ${service.image ? "md:grid-cols-2" : ""}`}>
-          <Reveal>
-            <Eyebrow>{specialty.name}</Eyebrow>
+          <Reveal className={service.image ? "" : "mx-auto max-w-3xl text-center"}>
+            <div className={service.image ? "" : "flex justify-center"}><Eyebrow>{specialty.name}</Eyebrow></div>
             <h1 className="display mt-8 text-4xl md:text-6xl">{service.title}</h1>
             {service.duration && (
               <p className="mt-8 inline-flex items-center gap-2 rounded-full border border-champagne px-5 py-2 text-sm font-bold tracking-[0.14em] uppercase">
@@ -59,7 +59,7 @@ function Prestation() {
                 </ul>
               </div>
             )}
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className={`mt-10 flex flex-wrap items-center gap-4 ${service.image ? "" : "justify-center"}`}>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="akura-btn group inline-flex items-center gap-3 px-7 py-3.5 text-sm font-bold tracking-[0.16em] uppercase">
                 {t.reserve}
                 <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
@@ -82,7 +82,7 @@ function Prestation() {
           )}
         </div>
         {service.gallery && (
-          <div className="mx-auto mt-10 grid max-w-7xl gap-6 md:grid-cols-2">
+          <div className={`mx-auto mt-10 grid gap-6 ${service.gallery?.length === 1 ? "max-w-3xl" : "max-w-7xl md:grid-cols-2"}`}>
             {service.gallery.map((photo, g) => (
               <Reveal key={photo.image} direction={g % 2 === 0 ? "glow" : "up"} delay={g * 120}>
                 <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
