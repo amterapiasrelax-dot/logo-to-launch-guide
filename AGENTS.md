@@ -10,6 +10,7 @@
 <!-- LOVABLE:END -->
 
 - Keep one French content source in `src/lib/i18n.tsx` with `fr-FR` on the root document; browser/Google translation replaces manually maintained language catalogs.
+- Define shared pearl surfaces and action finishes in global semantic tokens and the Button variants; this keeps all pages visually consistent without modifying content or photographs.
 - Keep confirmed procedures/services in their owning specialty's shared data and render them on its existing detail route; this preserves area URLs and avoids country or service page duplication.
 - Derive home carousel slides from confirmed service photography and link to the owning area plus service anchor; never infer a procedure name from an unlabeled area image.
 - Specialty and service photos are optional; render text-only when absent and exclude imageless services from the carousel to preserve information without replacement photos.
