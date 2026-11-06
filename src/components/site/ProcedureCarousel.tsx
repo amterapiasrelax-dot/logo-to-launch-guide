@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { heroSlides, nextSlide } from "@/lib/hero-slides";
 import { cn } from "@/lib/utils";
 
@@ -9,7 +7,6 @@ export function ProcedureCarousel() {
   const [active, setActive] = useState(0);
   const [previous, setPrevious] = useState<number | null>(null);
   const [ready, setReady] = useState(false);
-  const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const [focused, setFocused] = useState(false);
   const touchStart = useRef<number | null>(null);
@@ -35,7 +32,7 @@ export function ProcedureCarousel() {
     return () => media.removeEventListener("change", update);
   }, []);
   useEffect(() => {
-    if (!ready || paused || reduced || focused) return;
+    if (!ready || reduced || focused) return;
     const timer = window.setInterval(() => {
       if (!document.hidden) {
         setPrevious(active);
@@ -43,7 +40,7 @@ export function ProcedureCarousel() {
       }
     }, 6000);
     return () => window.clearInterval(timer);
-  }, [ready, paused, reduced, focused, active]);
+  }, [ready, reduced, focused, active]);
   useEffect(() => {
     const timer = window.setTimeout(() => setPrevious(null), reduced ? 0 : 1800);
     return () => window.clearTimeout(timer);
@@ -70,18 +67,6 @@ export function ProcedureCarousel() {
             <span className="procedure-name">{slide.name}</span>
           </Link>
         ))}
-      </div>
-      <div className="procedure-controls">
-        <div className="flex items-center">
-          {heroSlides.map((slide, i) => <Button key={slide.id} variant="ghost" size="icon" className="h-8 w-8 rounded-full" aria-label={`Afficher ${slide.name}`} aria-pressed={active === i} onClick={() => select(i)}>
-            <span className={cn("h-1 w-1 rounded-full bg-photo-label transition-opacity", active === i ? "opacity-100" : "opacity-40")} />
-          </Button>)}
-        </div>
-        <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon" title="Photo précédente" aria-label="Photo précédente" onClick={() => move(-1)}><ChevronLeft /></Button>
-          {!reduced && <Button variant="ghost" size="icon" title={paused ? "Reprendre le carrousel" : "Mettre le carrousel en pause"} aria-label={paused ? "Reprendre le carrousel" : "Mettre le carrousel en pause"} onClick={() => setPaused(!paused)}>{paused ? <Play /> : <Pause />}</Button>}
-          <Button variant="ghost" size="icon" title="Photo suivante" aria-label="Photo suivante" onClick={() => move(1)}><ChevronRight /></Button>
-        </div>
       </div>
     </section>
   );
