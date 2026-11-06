@@ -5,6 +5,7 @@ import { useI18n } from "@/lib/i18n";
 import { ContactBlock, Eyebrow, PageHero, Reveal } from "@/components/site/ui";
 
 export const Route = createFileRoute("/sobre")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "À propos d’AKURA — Philosophie et accompagnement personnalisé" },

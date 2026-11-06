@@ -5,6 +5,7 @@ import { specialties } from "@/lib/specialties";
 import { ContactBlock, PageHero, Reveal, SpecIcon } from "@/components/site/ui";
 
 export const Route = createFileRoute("/especialidades/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Spécialités — AKURA" },

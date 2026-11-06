@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Eyebrow, Reveal } from "@/components/site/ui";
 
 export const Route = createFileRoute("/politica-de-privacidade")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Politique de confidentialité — AKURA" },
