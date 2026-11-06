@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MessageCircle, Music2 } from "lucide-react";
 import { useState } from "react";
 import logoGold from "@/assets/akura-logo-gold.png";
-import logoWhite from "@/assets/akura-logo-gold.png";
+import logoWhite from "@/assets/akura-logo-white.png";
 import { useI18n } from "@/lib/i18n";
 import { specialties, WHATSAPP_URL } from "@/lib/specialties";
 import { WaButton } from "./ui";
@@ -57,17 +57,17 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <WaButton variant="solid" className="px-5 py-2 text-xs" />
+          <WaButton variant="light" className="px-5 py-2 text-xs" />
         </div>
 
         <button
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-gold/60 lg:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-primary-foreground/60 lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
           aria-expanded={open}
         >
-          <span className={cn("h-px w-5 bg-gold transition-transform", open && "translate-y-[3.5px] rotate-45")} />
-          <span className={cn("h-px w-5 bg-gold transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
+          <span className={cn("h-px w-5 bg-primary-foreground transition-transform", open && "translate-y-[3.5px] rotate-45")} />
+          <span className={cn("h-px w-5 bg-primary-foreground transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
         </button>
       </div>
 
