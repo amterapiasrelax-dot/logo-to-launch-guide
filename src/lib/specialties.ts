@@ -9,12 +9,9 @@ const footMassage = "/images/foot-spa-massagem.webp";
 const footFeet = "/images/foot-spa-pes.webp";
 const kidsCare = "/images/akura-kids-atendimento.webp";
 const kidsSpace = "/images/akura-kids-espaco.webp";
-const microblading = "/images/microblading-akura.webp";
-const esteticaFacial = "/images/estetica-facial-akura.webp";
 const esteticaCorporal = "/images/estetica-corporal-akura.webp";
 const massagemRelaxante = "/images/massagem-relaxante-corporate.webp";
 const laserterapia = "/images/laserterapia-akura.webp";
-const podologyCare = "/images/podologie-pro-soin.webp";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
 
@@ -28,21 +25,10 @@ export const specialties: Specialty[] = [
     { id: "japanese-head-spa", title: siteContent.headSpaTitle, text: siteContent.headSpaText, image: headSpa, alt: "Japanese Head Spa AKURA" },
     { id: "massagem-localizada", title: siteContent.massageTitle, text: siteContent.massageText, image: massageCible, alt: "Massage ciblé AKURA" },
   ] },
-  { slug: "akura-estetica", name: "Akura Esthétique", tagline: "Soins esthétiques du visage et du corps",
+  { slug: "akura-estetica", name: "Akura Esthétique", tagline: "Soins esthétiques du corps",
     description: "Le soin esthétique comme une expérience d’attention et de valorisation de soi. Chaque proposition est présentée avec sensibilité, dans le respect des particularités et des besoins de chacun.",
-    ctaLabel: "Découvrez nos soins", image: esteticaFacial, services: [
-    { id: "estetica-facial", title: "Soins du visage", image: esteticaFacial, alt: "Soins du visage AKURA — soin délicat du visage" },
+    ctaLabel: "Découvrez nos soins", image: esteticaCorporal, services: [
     { id: "estetica-corporal", title: "Soins du corps", image: esteticaCorporal, alt: "Soins du corps AKURA — soin du corps" },
-  ] },
-  { slug: "akura-pmu", name: "Akura PMU", tagline: "Micropigmentation professionnelle",
-    description: "Précision, délicatesse et savoir-faire technique dans un univers dédié à la micropigmentation. Akura PMU valorise l’individualité et la présentation responsable de chaque prestation.",
-    ctaLabel: "Découvrez la spécialité", image: microblading, services: [
-    { id: "microblading", title: "Microblading", image: microblading, alt: "Microblading AKURA — mise en valeur des sourcils" },
-  ] },
-  { slug: "akura-podologia-pro", name: "Akura Podologie PRO", tagline: "Une expertise dédiée au soin des pieds",
-    description: "Uma trajetória construída sobre formação profissional e experiência em Podologia. A Akura Podologie PRO reúne conhecimentos em Podopediatria, Podologia Esportiva, Pé Diabético e Feridas, valorizando a responsabilidade e o cuidado especializado.",
-    ctaLabel: "Explorez la Podologie PRO", image: podologyCare, services: [
-    { id: "podologia", title: "Podologie", image: podologyCare, alt: "Podologie AKURA — soin des ongles des pieds avec des mains gantées" },
   ] },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", tagline: "Thérapie laser et photobiomodulation",
     description: "Le savoir-faire et la technologie réunis dans un univers dédié à la thérapie laser et à la photobiomodulation. Akura Therapy EC présente des expériences professionnelles dans différents contextes, avec des applications et une disponibilité selon la localité.",

@@ -28,3 +28,4 @@
 - [x] Links WhatsApp/Instagram/TikTok/e-mail verificados (fonte única)
 - [x] 9 botões CTA, menu, rodapé e carrossel testados em desktop e mobile
 - [x] Reforço contra rolagem horizontal (overflow-x: clip no html)
+- [x] Remover a especialidade Podologie PRO, a Akura PMU (Microblading) e o serviço de rosto; 7 áreas, carrossel, textos e testes atualizados.

@@ -10,7 +10,7 @@ export const siteContent = {
     aboutTitle: "Chaque expérience commence par le soin",
     aboutText: "Chez AKURA, nous croyons que le bien-être réside dans les détails. Notre approche réunit différentes spécialités dans une expérience de soins personnalisés, attentive aux besoins de chaque personne.",
     specEyebrow: "Nos spécialités",
-    specTitle: "Neuf univers de soins",
+    specTitle: "Sept univers de soins",
     discover: "Découvrir",
     persEyebrow: "Accompagnement personnalisé",
     persTitle: "Un soin pensé pour vous",

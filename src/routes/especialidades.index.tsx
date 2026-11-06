@@ -9,9 +9,9 @@ export const Route = createFileRoute("/especialidades/")({
   head: () => ({
     meta: [
       { title: "Spécialités — AKURA" },
-      { name: "description", content: "Découvrez les neuf spécialités AKURA d’esthétique et de bien-être." },
+      { name: "description", content: "Découvrez les sept spécialités AKURA d’esthétique et de bien-être." },
       { property: "og:title", content: "Spécialités — AKURA" },
-      { property: "og:description", content: "Neuf univers de soins AKURA." },
+      { property: "og:description", content: "Sept univers de soins AKURA." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

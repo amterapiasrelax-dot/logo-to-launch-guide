@@ -3,16 +3,27 @@ import { SITE_LANGUAGE } from "@/lib/i18n";
 import { findSpecialty, specialties } from "@/lib/specialties";
 
 describe("AKURA site organization", () => {
-  it("uses the new podology photo and excludes both old photographs", () => {
-    const podology = findSpecialty("akura-podologia-pro");
-    expect(podology?.services.map(({ id }) => id)).toEqual(["podologia"]);
-    expect(podology?.image).toContain("podologie-pro-soin.webp");
-    expect(podology?.services[0]?.image).toBe(podology?.image);
-    expect(specialties.flatMap((area) => [area.image, ...area.services.map((service) => service.image)])
-      .filter((image) => image?.includes("podologia"))).toEqual([]);
-  });
   it("uses French as the original site language", () => {
     expect(SITE_LANGUAGE).toBe("fr-FR");
+  });
+
+  it("removes Podologie PRO, Akura PMU and the facial service everywhere", () => {
+    expect(findSpecialty("akura-podologia-pro")).toBeUndefined();
+    expect(findSpecialty("akura-pmu")).toBeUndefined();
+    const ids = specialties.flatMap(({ services }) => services.map(({ id }) => id));
+    expect(ids).not.toContain("podologia");
+    expect(ids).not.toContain("microblading");
+    expect(ids).not.toContain("estetica-facial");
+    const images = specialties.flatMap((area) => [area.image, ...area.services.map((service) => service.image)])
+      .filter((image) => image !== undefined);
+    expect(images.filter((image) => /podologie|microblading|estetica-facial/.test(image))).toEqual([]);
+  });
+
+  it("keeps only the body care service in Akura Esthétique", () => {
+    const estetica = findSpecialty("akura-estetica");
+    expect(estetica?.services.map(({ id }) => id)).toEqual(["estetica-corporal"]);
+    expect(estetica?.image).toBe("/images/estetica-corporal-akura.webp");
+    expect(estetica?.tagline).toBe("Soins esthétiques du corps");
   });
 
   it("places the approved home care photo in its owning area", () => {
@@ -21,11 +32,10 @@ describe("AKURA site organization", () => {
     expect(homecare?.image).toBe(homecare?.services[0]?.image);
   });
 
-  it("preserves the nine individual areas", () => {
+  it("preserves the seven individual areas", () => {
     expect(specialties.map(({ slug }) => slug)).toEqual([
-      "akura-touch", "akura-estetica", "akura-pmu", "akura-podologia-pro",
-      "akura-therapy-ec", "akura-homecare", "akura-corporate",
-      "huellas-kids-teens", "akura-formations",
+      "akura-touch", "akura-estetica", "akura-therapy-ec", "akura-homecare",
+      "akura-corporate", "huellas-kids-teens", "akura-formations",
     ]);
   });
 
