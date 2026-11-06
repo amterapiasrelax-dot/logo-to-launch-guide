@@ -71,9 +71,13 @@ function Prestation() {
           </Reveal>
           {service.image && (
             <Reveal delay={150} direction="right" className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
-              <Parallax speed={0.05}>
-                <img src={service.image} alt={service.alt} className="aspect-[4/3] w-full scale-110 object-cover" />
-              </Parallax>
+              {service.id === "babymassage" ? (
+                <img src={service.image} alt={service.alt} className="h-auto w-full" />
+              ) : (
+                <Parallax speed={0.05}>
+                  <img src={service.image} alt={service.alt} className="aspect-[4/3] w-full scale-110 object-cover" />
+                </Parallax>
+              )}
             </Reveal>
           )}
         </div>
