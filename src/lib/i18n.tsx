@@ -2,7 +2,7 @@ export const SITE_LANGUAGE = "fr-FR";
 
 // One French source; other languages are handled by browser/Google translation.
 export const siteContent = {
-    nav: { home: "Accueil", about: "À propos", specialties: "Spécialités", intl: "International", contact: "Contact", all: "Voir toutes les spécialités" },
+    nav: { home: "Accueil", about: "À propos", specialties: "Spécialités", prestations: "Prestations", intl: "International", contact: "Contact", all: "Voir toutes les spécialités" },
     cta: "Réservez votre expérience",
     heroTitle: "Une expérience de soin qui va au-delà de l’essentiel",
     heroText: "Découvrez un univers d’esthétique et de bien-être où chaque détail est pensé pour vous offrir une expérience personnalisée, chaleureuse et exclusive.",
@@ -37,6 +37,13 @@ export const siteContent = {
     footerContact: "Contact par WhatsApp",
     rights: "Tous droits réservés.",
     play: "Lire",
+    prestationsEyebrow: "Nos Prestations",
+    prestationsTitle: "Un catalogue de soins délicats",
+    prestationsText: "Chaque prestation AKURA est une expérience pensée dans les moindres détails. Découvrez nos soins, leurs bienfaits et leur durée, et choisissez celui qui vous ressemble.",
+    durationLabel: "Durée",
+    benefitsLabel: "Bienfaits",
+    reserve: "Réserver",
+    allPrestations: "Toutes les prestations",
 };
 
 export type Dict = typeof siteContent;
