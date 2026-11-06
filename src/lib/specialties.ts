@@ -56,9 +56,7 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-estetica", name: "Akura Esthétique", tagline: "Soins esthétiques du corps",
     description: "Le soin esthétique comme une expérience d’attention et de valorisation de soi. Chaque proposition est présentée avec sensibilité, dans le respect des particularités et des besoins de chacun.",
-    ctaLabel: "Découvrez nos soins", image: esteticaCorporal, services: [
-    { id: "estetica-corporal", title: "Soins du corps", image: esteticaCorporal, alt: "Soins du corps AKURA — soin du corps" },
-  ] },
+    ctaLabel: "Découvrez nos soins", image: esteticaCorporal, services: [] },
   { slug: "akura-therapy-ec", name: "Akura Therapy EC", tagline: "Thérapie laser et photobiomodulation",
     description: "Le savoir-faire et la technologie réunis dans un univers dédié à la thérapie laser et à la photobiomodulation. Akura Therapy EC présente des expériences professionnelles dans différents contextes, avec des applications et une disponibilité selon la localité.",
     ctaLabel: "Découvrez Therapy EC", image: laserterapia, services: [
