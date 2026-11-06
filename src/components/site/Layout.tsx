@@ -57,18 +57,16 @@ export function Header() {
           <Link to="/contato" className={linkCls}>{t.nav.contact}</Link>
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <WaButton variant="light" className="px-5 py-2 text-xs" />
-        </div>
-
         <Button
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full border border-primary-foreground/60 lg:hidden"
+          className="header-menu-toggle flex h-10 w-10 flex-col items-center justify-center gap-1.5 p-0"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
           aria-expanded={open}
+          aria-controls="header-menu"
         >
-          <span className={cn("h-px w-5 shrink-0 bg-ink transition-transform", open && "translate-y-[3.5px] rotate-45")} />
-          <span className={cn("h-px w-5 shrink-0 bg-ink transition-transform", open && "-translate-y-[3.5px] -rotate-45")} />
+          <span className={cn("h-px w-5 shrink-0 bg-primary-foreground transition-transform", open && "translate-y-[7px] rotate-45")} />
+          <span className={cn("h-px w-5 shrink-0 bg-primary-foreground transition-opacity", open && "opacity-0")} />
+          <span className={cn("h-px w-5 shrink-0 bg-primary-foreground transition-transform", open && "-translate-y-[7px] -rotate-45")} />
         </Button>
       </div>
 
@@ -87,7 +85,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="glass mx-4 mt-2 max-h-[80vh] overflow-y-auto rounded-3xl border border-champagne p-6 lg:hidden">
+        <div id="header-menu" className="glass absolute right-4 top-full mt-2 max-h-[calc(100dvh-110px)] w-[calc(100%-2rem)] max-w-sm overflow-y-auto rounded-lg border border-champagne p-6" onKeyDown={(e) => { if (e.key === "Escape") setOpen(false); }}>
           <nav className="flex flex-col gap-4" aria-label="Navigation mobile">
             {links.slice(0, 2).map((l) => (
               <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={mobileLinkCls}>{l.label}</Link>
@@ -102,6 +100,11 @@ export function Header() {
               <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className={mobileLinkCls}>{l.label}</Link>
             ))}
             <WaButton className="mt-2" />
+            <div className="flex items-center gap-5 border-t border-champagne pt-5" aria-label="Réseaux sociaux">
+              <a href="https://instagram.com/akurawellbeing" target="_blank" rel="noopener noreferrer" aria-label="Instagram AKURA" title="Instagram" className="inline-flex h-10 w-10 items-center justify-center"><Instagram className="h-5 w-5" aria-hidden /></a>
+              <a href="https://tiktok.com/@akurawellbeing" target="_blank" rel="noopener noreferrer" aria-label="TikTok AKURA" title="TikTok" className="inline-flex h-10 w-10 items-center justify-center"><Music2 className="h-5 w-5" aria-hidden /></a>
+              <a href="mailto:akurawellbeing@gmail.com" aria-label="Email AKURA" title="Email" className="inline-flex h-10 w-10 items-center justify-center"><Mail className="h-5 w-5" aria-hidden /></a>
+            </div>
           </nav>
         </div>
       )}
