@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getRouterInstance } from "@tanstack/react-start";
 import { isSitemapRouteIncluded, sitemapPathForLocation, sitemapStaticPaths, sitemapXML, type SitemapEntry } from "@/lib/sitemap";
-import { specialties } from "@/lib/specialties";
+import { allServices, specialties } from "@/lib/specialties";
 
 const BASE_URL = "https://www.akurawellbeing.com";
 
@@ -19,6 +19,16 @@ export const Route = createFileRoute("/sitemap.xml")({
               to: "/especialidades/$slug", params: { slug: specialty.slug }, search: () => ({}), hash: "",
             });
             const path = sitemapPathForLocation(router, location, routeId);
+            if (path) entries.push({ path });
+          }
+        }
+        const prestationRouteId = "/prestations/$id";
+        if (isSitemapRouteIncluded(router.routesById[prestationRouteId])) {
+          for (const { service } of allServices) {
+            const location = router.buildLocation({
+              to: "/prestations/$id", params: { id: service.id }, search: () => ({}), hash: "",
+            });
+            const path = sitemapPathForLocation(router, location, prestationRouteId);
             if (path) entries.push({ path });
           }
         }

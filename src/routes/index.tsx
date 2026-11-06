@@ -33,13 +33,13 @@ function Index() {
       <section className="akura-introduction">
         <div className="akura-introduction-content">
           <h1 className="display text-6xl md:text-8xl">AKURA</h1>
-          <p className="mt-6 max-w-xl text-2xl font-light leading-snug md:text-3xl">{t.heroTitle}</p>
-          <p className="mt-5 max-w-xl text-base leading-relaxed md:text-lg">{t.heroText}</p>
+          <p className="mt-4 max-w-xl text-2xl font-light leading-snug md:text-3xl">{t.heroTitle}</p>
+          <p className="mt-3 max-w-xl text-base leading-relaxed md:text-lg">{t.heroText}</p>
+        </div>
+        <div className="akura-procedures">
+          <ProcedureCarousel />
         </div>
       </section>
-      <div className="akura-procedures">
-        <ProcedureCarousel />
-      </div>
 
       {/* SOBRE */}
       <section className="bg-ivory px-6 py-16 md:py-24">
@@ -81,7 +81,7 @@ function Index() {
               <ul className={`mt-8 flex flex-wrap gap-3 ${photo ? "" : "justify-center"}`}>
                 {s.services.map((x) => (
                   <li key={x.id}>
-                    <Link to="/especialidades/$slug" params={{ slug: s.slug }} hash={x.id} className="inline-block rounded-full border border-champagne px-4 py-2 text-sm font-bold transition-colors hover:bg-champagne/50">
+                    <Link to="/prestations/$id" params={{ id: x.id }} className="inline-block rounded-full border border-champagne px-4 py-2 text-sm font-bold transition-colors hover:bg-champagne/50">
                       {x.title}
                     </Link>
                   </li>

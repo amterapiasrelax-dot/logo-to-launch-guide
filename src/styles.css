@@ -151,10 +151,10 @@
 .country-item { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; white-space: nowrap; text-transform: uppercase; font-family: var(--font-sans); font-size: 10px; font-weight: 300; letter-spacing: 0; }
 .country-separator { font-size: 8px; }
 @keyframes country-drift { to { transform: translateX(-50%); } }
-.akura-introduction { position: relative; isolation: isolate; display: flex; align-items: center; min-height: max(520px, 68svh); padding: 140px 24px 48px; }
+.akura-introduction { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: center; gap: 32px; padding: 140px 24px 40px; }
 .akura-introduction { background: var(--white); }
 .akura-introduction-content { width: 100%; max-width: 1152px; margin-inline: auto; }
-.akura-procedures { padding: 32px 24px 16px; background: var(--ivory); }
+.akura-procedures { width: 100%; max-width: 1152px; margin-inline: auto; }
 .procedure-carousel { position: relative; width: 100%; max-width: 1000px; margin-inline: auto; isolation: isolate; }
 .procedure-stage { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gold); }
 .procedure-slide { position: absolute; inset: 0; display: block; opacity: 0; pointer-events: none; z-index: 0; transition: opacity 1800ms ease-in-out; }
@@ -168,8 +168,7 @@
 .procedure-controls button:hover { opacity: 0.85; }
 .procedure-controls svg { filter: none; }
 @media (max-width: 767px) {
-  .akura-introduction { min-height: max(500px, 66svh); padding-top: 130px; }
-  .akura-procedures { padding: 24px 20px 12px; }
+  .akura-introduction { padding-top: 130px; gap: 24px; }
   .procedure-stage { aspect-ratio: 4 / 5; }
   .procedure-name { bottom: 18px; right: 18px; max-width: calc(100% - 36px); font-size: 13px; }
   .procedure-controls { gap: 4px; flex-wrap: wrap; }
@@ -185,7 +184,7 @@
 }
 
 /* Flat, restrained surfaces and thin brand-gold action borders. */
-.bg-ivory, .akura-procedures, section[class*="bg-champagne"] { background: var(--white); }
+.bg-ivory, section[class*="bg-champagne"] { background: var(--white); }
 .country-strip { color: var(--gold); text-shadow: none; border-top: 1px solid color-mix(in oklab, var(--white) 80%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--gold) 50%, transparent); }
 .country-item { font-weight: 700; }
 .akura-btn, .pearl-action { position: relative; overflow: hidden; border-radius: 6px; border: 1px solid var(--gold); color: var(--ink); text-shadow: none; text-align: center; justify-content: center;
