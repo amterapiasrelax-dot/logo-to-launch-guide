@@ -73,6 +73,8 @@
 
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow-soft: 0 0 0 transparent;
+  --button-champagne: linear-gradient(110deg, var(--gold) 0%, color-mix(in oklab, var(--gold) 78%, var(--white)) 26%, color-mix(in oklab, var(--gold) 48%, var(--white)) 49%, color-mix(in oklab, var(--gold) 82%, var(--white)) 72%, var(--gold) 100%);
+  --button-shadow: inset 0 1px 0 color-mix(in oklab, var(--white) 70%, transparent), 0 4px 12px -6px color-mix(in oklab, var(--gold) 60%, transparent);
 }
 
 @layer base {
@@ -186,9 +188,9 @@
 .country-strip { text-shadow: none; border-top: 1px solid var(--white); border-bottom: 1px solid var(--gold); }
 .country-item { font-weight: 700; }
 .akura-btn, .pearl-action { position: relative; overflow: hidden; border-radius: 6px; border: 1px solid var(--gold); color: var(--ink); text-shadow: none; text-align: center; justify-content: center;
-  background: var(--white); box-shadow: none;
-  transition: opacity 0.25s var(--ease-soft), transform 0.25s var(--ease-soft); }
-.akura-btn:hover, .pearl-action:hover { opacity: 0.8; }
+  background: var(--button-champagne); background-size: 180% 100%; background-position: 0 50%; box-shadow: var(--button-shadow);
+  transition: background-position 0.65s var(--ease-soft), transform 0.25s var(--ease-soft); }
+.akura-btn:hover, .pearl-action:hover { background-position: 100% 50%; }
 .akura-btn:active, .pearl-action:active { transform: translateY(1px); }
 .akura-btn { max-width: 100%; white-space: normal; letter-spacing: 0; }
 .akura-header nav a:not(.akura-nav-link) { color: var(--ink); }
