@@ -159,7 +159,7 @@ export function PageHero({ eyebrow, title, text, image, fullPhoto = false }: { e
           <div className={cn("mt-10", !image && "flex justify-center")}><WaButton /></div>
         </Reveal>
         {image && <Reveal delay={150} className={cn("overflow-hidden shadow-[var(--shadow-soft)]", fullPhoto ? "rounded-2xl" : "arch")}>
-          <img src={image} alt="" className={fullPhoto ? "h-auto w-full" : "kenburns aspect-[4/5] w-full object-cover"} />
+          <img src={image} alt="" className={fullPhoto ? "h-auto w-full" : "kenburns aspect-[4/5] w-full object-cover object-center"} />
         </Reveal>}
       </div>
     </section>

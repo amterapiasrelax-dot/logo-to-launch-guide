@@ -38,7 +38,7 @@ function Specialty() {
       <PageHero eyebrow={s.tagline} title={s.name} text={s.description} {...(s.image ? { image: s.image } : {})} />
       {s.services.length === 0 && <section className="bg-ivory px-6 py-28">
         <div className={`mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
-          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" /></Parallax></Reveal>
+          <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem]"><Parallax speed={0.06}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[4/3] w-full scale-105 object-cover object-center" /></Parallax></Reveal>
           <Reveal delay={150} direction={flip ? "left" : "right"}>
             <Eyebrow>{t.aboutService}</Eyebrow>
             <h2 className="display mt-8 text-4xl md:text-5xl">{s.name}</h2>
@@ -55,7 +55,7 @@ function Specialty() {
             <div className={`mx-auto grid max-w-7xl items-center gap-16 ${x.image ? "md:grid-cols-2" : ""} ${x.image && dir === "left" ? "md:[&>*:first-child]:order-2" : ""}`}>
               {x.image && <Reveal direction={dir === "left" ? "right" : "left"} className="overflow-hidden rounded-[2rem] rounded-bl-[8rem] shadow-[var(--shadow-soft)]">
                 <Parallax speed={0.06}>
-                  <img src={x.image} alt={x.alt} loading="lazy" className={`${x.gallery ? "aspect-video" : "aspect-[4/5]"} w-full scale-110 object-cover`} />
+                  <img src={x.image} alt={x.alt} loading="lazy" className="aspect-[4/3] w-full scale-105 object-cover object-center" />
                 </Parallax>
               </Reveal>}
               <Reveal delay={150} direction={dir} className={center ? "mx-auto max-w-3xl text-center" : ""}>
@@ -68,7 +68,7 @@ function Specialty() {
             </div>
             {x.gallery && <div className={`mx-auto mt-10 grid gap-6 ${x.gallery.length === 1 ? "max-w-3xl" : "max-w-7xl md:grid-cols-2"}`}>
               {x.gallery.map((photo, g) => <Reveal key={photo.image} direction={g % 2 === 0 ? "glow" : "up"} delay={g * 120}>
-                <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
+                <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover object-center shadow-[var(--shadow-soft)]" />
               </Reveal>)}
             </div>}
           </section>

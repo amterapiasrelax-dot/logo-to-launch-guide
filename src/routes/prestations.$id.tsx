@@ -71,13 +71,9 @@ function Prestation() {
           </Reveal>
           {service.image && (
             <Reveal delay={150} direction="right" className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
-              {service.id === "babymassage" ? (
-                <img src={service.image} alt={service.alt} className="h-auto w-full" />
-              ) : (
-                <Parallax speed={0.05}>
-                  <img src={service.image} alt={service.alt} className="aspect-[4/3] w-full scale-110 object-cover" />
-                </Parallax>
-              )}
+              <Parallax speed={0.05}>
+                <img src={service.image} alt={service.alt} loading="lazy" className="aspect-[4/3] w-full scale-105 object-cover object-center" />
+              </Parallax>
             </Reveal>
           )}
         </div>
@@ -85,7 +81,7 @@ function Prestation() {
           <div className={`mx-auto mt-10 grid gap-6 ${service.gallery?.length === 1 ? "max-w-3xl" : "max-w-7xl md:grid-cols-2"}`}>
             {service.gallery.map((photo, g) => (
               <Reveal key={photo.image} direction={g % 2 === 0 ? "glow" : "up"} delay={g * 120}>
-                <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-[var(--shadow-soft)]" />
+                <img src={photo.image} alt={photo.alt} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover object-center shadow-[var(--shadow-soft)]" />
               </Reveal>
             ))}
           </div>

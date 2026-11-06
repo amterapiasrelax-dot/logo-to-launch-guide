@@ -102,7 +102,7 @@ function Index() {
               <div className={`mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
                 <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
                   <Parallax speed={0.05}>
-                    <img src={photo} alt={s.name} loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" />
+                    <img src={photo} alt={s.name} loading="lazy" className="aspect-[4/3] w-full scale-105 object-cover object-center" />
                   </Parallax>
                 </Reveal>
                 <Reveal delay={150} direction={flip ? "left" : "right"}>{text}</Reveal>
@@ -119,7 +119,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:grid-cols-[1.2fr_0.8fr]">
           <Reveal direction="left" className="relative overflow-hidden rounded-[2rem] rounded-br-[10rem]">
             <Parallax speed={0.06}>
-              <img src={careHands} alt="Soin personnalisé" loading="lazy" width={1200} height={1504} className="aspect-[5/4] w-full scale-110 object-cover" />
+              <img src={careHands} alt="Soin personnalisé" loading="lazy" width={1200} height={1504} className="aspect-[5/4] w-full scale-105 object-cover object-center" />
             </Parallax>
           </Reveal>
           <Reveal delay={200} direction="right" className="md:-ml-24 md:rounded-[2rem] md:bg-background md:p-14 md:shadow-[var(--shadow-soft)]">
@@ -166,12 +166,12 @@ function Index() {
             <h2 className="display mt-8 text-4xl md:text-6xl">{t.spaceTitle}</h2>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-12">
-            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
-            <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace} alt="Espace de soins AKURA" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
+            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-105 object-cover object-center transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
+            <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace} alt="Espace de soins AKURA" loading="lazy" className="aspect-[4/5] w-full scale-105 object-cover object-center" /></Parallax></Reveal>
           </div>
           <div className="mt-6 grid gap-6 md:grid-cols-12">
-            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salleSoins} alt="Salle de soins AKURA — table de massage et bain Head Spa" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
-            <Reveal delay={150} direction="left" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={stationSoins} alt="Station de soins AKURA — outils de soin dorés sur plateau" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
+            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salleSoins} alt="Salle de soins AKURA — table de massage et bain Head Spa" loading="lazy" className="aspect-[3/2] w-full scale-105 object-cover object-center transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
+            <Reveal delay={150} direction="left" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={stationSoins} alt="Station de soins AKURA — outils de soin dorés sur plateau" loading="lazy" className="aspect-[4/5] w-full scale-105 object-cover object-center" /></Parallax></Reveal>
           </div>
         </div>
       </section>

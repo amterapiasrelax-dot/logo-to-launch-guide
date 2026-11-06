@@ -31,7 +31,7 @@ function Sobre() {
             <h2 className="display mt-8 text-4xl md:text-5xl">{t.persTitle}</h2>
             <p className="mt-8 text-lg leading-relaxed">{t.persText}</p>
           </Reveal>
-          <Reveal delay={150}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] rounded-tr-[8rem] object-cover" /></Reveal>
+          <Reveal delay={150}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full rounded-[2rem] rounded-tr-[8rem] object-cover object-center" /></Reveal>
         </div>
       </section>
       <ContactBlock />
