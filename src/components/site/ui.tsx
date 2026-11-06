@@ -152,11 +152,11 @@ export function PageHero({ eyebrow, title, text, image, fullPhoto = false }: { e
   return (
     <section className="relative px-6 pb-20 pt-36 md:pt-44">
       <div className={cn("mx-auto grid max-w-7xl items-end gap-12", image && "md:grid-cols-[1.1fr_0.9fr]")}>
-        <Reveal>
-          <Eyebrow>{eyebrow}</Eyebrow>
+        <Reveal className={cn(!image && "mx-auto max-w-3xl text-center")}>
+          <div className={cn(!image && "flex justify-center")}><Eyebrow>{eyebrow}</Eyebrow></div>
           <h1 className="display mt-8 text-5xl md:text-7xl">{title}</h1>
-          {text && <p className="mt-8 max-w-xl text-lg leading-relaxed">{text}</p>}
-          <div className="mt-10"><WaButton /></div>
+          {text && <p className={cn("mt-8 max-w-xl text-lg leading-relaxed", !image && "mx-auto")}>{text}</p>}
+          <div className={cn("mt-10", !image && "flex justify-center")}><WaButton /></div>
         </Reveal>
         {image && <Reveal delay={150} className={cn("overflow-hidden shadow-[var(--shadow-soft)]", fullPhoto ? "rounded-2xl" : "arch")}>
           <img src={image} alt="" className={fullPhoto ? "h-auto w-full" : "kenburns aspect-[4/5] w-full object-cover"} />
