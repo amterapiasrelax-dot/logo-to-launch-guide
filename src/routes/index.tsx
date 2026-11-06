@@ -52,7 +52,7 @@ function Index() {
         </div>
       </section>
 
-      {/* ESPECIALIDADES — todas as nove áreas em seções completas */}
+      {/* ESPECIALIDADES — toutes les áreas em seções completas */}
       <section className="px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <Reveal direction="fade" className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -100,7 +100,7 @@ function Index() {
               <div className={`mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2 ${flip ? "md:[&>*:first-child]:order-2" : ""}`}>
                 <Reveal direction={flip ? "right" : "left"} className="overflow-hidden rounded-[2rem] shadow-[var(--shadow-soft)]">
                   <Parallax speed={0.05}>
-                    <img src={photo} alt={s.name} loading="lazy" className={s.slug === "akura-podologia-pro" ? "h-auto w-full" : "aspect-[4/3] w-full scale-110 object-cover"} />
+                    <img src={photo} alt={s.name} loading="lazy" className="aspect-[4/3] w-full scale-110 object-cover" />
                   </Parallax>
                 </Reveal>
                 <Reveal delay={150} direction={flip ? "left" : "right"}>{text}</Reveal>

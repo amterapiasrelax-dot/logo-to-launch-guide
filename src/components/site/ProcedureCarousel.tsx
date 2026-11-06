@@ -63,7 +63,7 @@ export function ProcedureCarousel() {
             className={cn("procedure-slide", previous === i && "is-previous", active === i && "is-active")}
             aria-hidden={active !== i} tabIndex={active === i ? 0 : -1}
             aria-label={`${slide.name} — AKURA`}>
-            <img src={slide.image} alt={slide.alt} className={slide.id === "podologia" ? "!object-contain" : undefined} loading="eager" fetchPriority={i === 0 ? "high" : "auto"} />
+            <img src={slide.image} alt={slide.alt} loading="eager" fetchPriority={i === 0 ? "high" : "auto"} />
             <span className="procedure-name">{slide.name}</span>
           </Link>
         ))}
