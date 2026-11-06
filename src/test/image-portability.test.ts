@@ -18,6 +18,7 @@ const originals = {
   "homecare-soins-pieds.webp": "2459091b3bcc034d1db0b8f86636edfbd9b09d04082b4f7abca56ab02b2e09f6",
   "laserterapia-akura.webp": "6f9c7f61aaf06c7bf548131d2fa9b244704e4fc5057b8731ee3c7072f580b794",
   "massage-cible.webp": "493356b65ff0e30add775351581e2c64f51e143beefd3d7d51df95cc024c3904",
+  "massage-corporative-akura.png": "bb61120e150b48fc82e17b17cd2237723911b7964ce30e9c90b7051f1b52da9e",
   "massagem-relaxante-corporate.webp": "a830fee7555395978ed6de3e7ddab913eaa2fec75e5fa3cc0b77434361d3a839",
   "microblading-akura.webp": "6d789e2d3ff5cfbde36f11643848f79180fad51324df2287706c1f5080172e7f",
   "podologie-pro-soin.webp": "baaecfbb5d4258626b9449660a61268750420798585e5b7f0471ba96108411f6",

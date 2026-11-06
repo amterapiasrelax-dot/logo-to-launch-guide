@@ -32,6 +32,12 @@ describe("AKURA site organization", () => {
     expect(homecare?.image).toBe(homecare?.services[0]?.image);
   });
 
+  it("places the approved corporate chair massage photo in Akura Corporate", () => {
+    const corporate = findSpecialty("akura-corporate");
+    expect(corporate?.image).toBe("/images/massage-corporative-akura.png");
+    expect(corporate?.services[0]?.image).toBe(corporate?.image);
+  });
+
   it("preserves the seven individual areas", () => {
     expect(specialties.map(({ slug }) => slug)).toEqual([
       "akura-touch", "akura-estetica", "akura-therapy-ec", "akura-homecare",
