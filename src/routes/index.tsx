@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 const realSpace = "/images/espaco-real-akura.png";
 import careHands from "@/assets/care-hands.jpg";
 const salaSpa = "/images/sala-spa-akura.png";
+const salleSoins = "/images/espace-salle-de-soins-akura.png";
+const stationSoins = "/images/espace-station-soins-akura.png";
 import { useI18n } from "@/lib/i18n";
 import { specialties } from "@/lib/specialties";
 import { ContactBlock, Eyebrow, Parallax, Reveal, WaButton } from "@/components/site/ui";
@@ -166,6 +168,10 @@ function Index() {
           <div className="mt-10 grid gap-6 md:grid-cols-12">
             <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salaSpa} alt="Salle de spa AKURA" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
             <Reveal delay={150} direction="right" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={realSpace} alt="Espace de soins AKURA" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
+          </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-12">
+            <Reveal direction="glow" className="overflow-hidden rounded-[2rem] md:col-span-7"><Parallax speed={0.05}><img src={salleSoins} alt="Salle de soins AKURA — table de massage et bain Head Spa" loading="lazy" className="aspect-[3/2] w-full scale-110 object-cover transition-transform duration-[1.5s] hover:scale-[1.14]" /></Parallax></Reveal>
+            <Reveal delay={150} direction="left" className="overflow-hidden arch md:col-span-5 md:mt-24"><Parallax speed={0.09}><img src={stationSoins} alt="Station de soins AKURA — outils de soin dorés sur plateau" loading="lazy" className="aspect-[4/5] w-full scale-110 object-cover" /></Parallax></Reveal>
           </div>
         </div>
       </section>

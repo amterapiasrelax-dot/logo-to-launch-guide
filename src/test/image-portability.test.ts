@@ -9,6 +9,8 @@ const originals = {
   "akura-kids-espaco.webp": "c0a721cd078f6fcae55244384c8939a48edda6f5624e1e3390f837cf230394f5",
   "akura-touch-massage.webp": "2d1395643d4df6f6706cdad7f403492f312ca88f0198c5cb4eb0e320183f1c79",
   "espaco-real-akura.png": "3ed4fba9d546b7605d7ff9086470182064b060c2d24ab7746ed9a9bcdc776620",
+  "espace-salle-de-soins-akura.png": "07d9b6aa1fe31024d38802891e1e47d37d285d66cc7291f6a2f3dedf8e37879a",
+  "espace-station-soins-akura.png": "8405754ee70713dd7c2a97b9d7529f9ad42fa7100bac56ac5425178526aeca24",
   "estetica-corporal-akura.webp": "903aeb6937c07632a3a08adc9b6e62ba3242d1c32508558c8764d4b0cc9ee66f",
   "estetica-facial-akura.webp": "15384dcea02032a4083f42f78241282b80583e253e716605dd3989a900eb41dc",
   "foot-spa-banho.webp": "52775f0345178c357f47affcb7af7238d905ec4e25bec5f320444673695aacaa",
