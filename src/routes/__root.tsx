@@ -80,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "IsG-yKj7JSMlFmC-lgIxq5NQBKCHirQTbn4FO2l12oU" },
       { title: "AKURA" },
       { name: "description", content: "AKURA — esthétique et bien-être." },
     ],
