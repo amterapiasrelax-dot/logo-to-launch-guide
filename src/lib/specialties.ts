@@ -10,7 +10,7 @@ const footFeet = "/images/foot-spa-pes.webp";
 const kidsCare = "/images/akura-kids-atendimento.webp";
 const kidsSpace = "/images/akura-kids-espaco.webp";
 const esteticaCorporal = "/images/estetica-corporal-akura.webp";
-const massagemRelaxante = "/images/massagem-relaxante-corporate.webp";
+const massageCorporate = "/images/massage-corporative-akura.png";
 const laserterapia = "/images/laserterapia-akura.webp";
 
 export const WHATSAPP_URL = "https://wa.me/message/4ICX2I4F3MQCP1";
@@ -42,8 +42,8 @@ export const specialties: Specialty[] = [
   ] },
   { slug: "akura-corporate", name: "Akura Corporate", tagline: "Bien-être pour les entreprises et les événements",
     description: "Des expériences de bien-être pensées pour les organisations qui placent les personnes au cœur de leurs priorités. Akura Corporate développe des propositions personnalisées pour les entreprises, les hôtels, les équipes et les événements, créant des moments privilégiés de soin et de douceur.",
-    ctaLabel: "Demandez une proposition", image: massagemRelaxante, services: [
-    { id: "massagem-relaxante", title: "Massage relaxant", image: massagemRelaxante, alt: "Massage relaxant AKURA Corporate — massage express dans un cadre moderne" },
+    ctaLabel: "Demandez une proposition", image: massageCorporate, services: [
+    { id: "massagem-relaxante", title: "Massage relaxant", image: massageCorporate, alt: "Massage relaxant AKURA Corporate — massage du dos en entreprise" },
     { id: "foot-spa", title: "Foot Spa", image: footBath, alt: "Foot Spa — bain de pieds avec des pierres dans une bassine dorée", gallery: [
       { image: footMassage, alt: "Foot Spa — massage des pieds" },
       { image: footFeet, alt: "Foot Spa — soin des pieds" },

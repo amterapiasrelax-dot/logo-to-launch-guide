@@ -29,3 +29,4 @@
 - [x] 9 botões CTA, menu, rodapé e carrossel testados em desktop e mobile
 - [x] Reforço contra rolagem horizontal (overflow-x: clip no html)
 - [x] Remover a especialidade Podologie PRO, a Akura PMU (Microblading) e o serviço de rosto; 7 áreas, carrossel, textos e testes atualizados.
+- [x] Substituir a imagem da Akura Corporate pela foto de massage assis en entreprise.
