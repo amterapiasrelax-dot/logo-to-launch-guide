@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* AKURA palette — exclusive: #FFFFFF, #F8F4EE, #F0E0CE, #DCC3A9, #C9A16B */
+/* AKURA palette — exclusive: #FFFEFC, #FDF5D8, #E6D9B3, #DACFAF, #B8AA87 */
 @theme inline {
   --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
@@ -39,11 +39,11 @@
 
 :root {
   --radius: 1rem;
-  --white: oklch(1 0 0);
-  --ivory: oklch(0.968 0.01 78);      /* #F8F4EE */
-  --champagne: oklch(0.912 0.034 70);  /* #F0E0CE */
-  --sand: oklch(0.823 0.05 70);        /* #DCC3A9 */
-  --gold: oklch(0.72 0.085 72);        /* #C9A16B */
+  --white: #FFFEFC;
+  --ivory: #FDF5D8;
+  --champagne: #E6D9B3;
+  --sand: #DACFAF;
+  --gold: #B8AA87;
   --photo-label: var(--white);
   --shadow-photo-label: 0 1px 4px color-mix(in oklab, var(--gold) 70%, transparent);
 
@@ -67,6 +67,14 @@
   --input: var(--sand);
   --ring: var(--gold);
 
+  /* Satin pearl surface: soft pearl-white, cream and light champagne reflections */
+  --pearl: radial-gradient(120% 80% at 12% 8%, color-mix(in oklab, var(--white) 95%, transparent) 0%, transparent 55%),
+    radial-gradient(90% 70% at 88% 30%, color-mix(in oklab, var(--ivory) 70%, transparent) 0%, transparent 60%),
+    radial-gradient(110% 90% at 30% 100%, color-mix(in oklab, var(--champagne) 28%, transparent) 0%, transparent 65%),
+    linear-gradient(135deg, var(--white) 0%, color-mix(in oklab, var(--ivory) 45%, var(--white)) 50%, var(--white) 100%);
+  --pearl-ivory: radial-gradient(100% 80% at 85% 10%, color-mix(in oklab, var(--white) 85%, transparent) 0%, transparent 60%),
+    radial-gradient(90% 80% at 10% 90%, color-mix(in oklab, var(--champagne) 35%, transparent) 0%, transparent 65%),
+    linear-gradient(120deg, var(--ivory) 0%, color-mix(in oklab, var(--ivory) 55%, var(--white)) 45%, var(--ivory) 100%);
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --shadow-soft: 0 30px 60px -30px color-mix(in oklab, var(--gold) 35%, transparent);
 }
@@ -76,6 +84,8 @@
   html { scroll-behavior: smooth; overflow-x: clip; }
   body {
     background-color: var(--color-background);
+    background-image: var(--pearl);
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-weight: 400;
@@ -178,3 +188,8 @@
   .procedure-slide { transition: none; }
   .country-track { animation: none; }
 }
+
+/* Pearl satin finish on ivory/champagne background areas */
+.bg-ivory { background-image: var(--pearl-ivory); }
+.akura-procedures { background-image: var(--pearl-ivory); }
+.country-strip { background-image: linear-gradient(90deg, var(--white), var(--ivory) 50%, var(--white)); }
