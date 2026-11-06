@@ -89,7 +89,7 @@ function Index() {
               </ul>
             )}
             <div className="mt-10">
-              <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="group inline-flex items-center gap-3 rounded-full border border-gold px-7 py-3.5 text-sm font-bold tracking-[0.12em] uppercase transition-all duration-500 ease-[var(--ease-soft)] hover:bg-gold hover:text-primary-foreground">
+              <Link to="/especialidades/$slug" params={{ slug: s.slug }} className="akura-btn group inline-flex items-center gap-3 px-7 py-3.5 text-sm font-bold tracking-[0.16em] uppercase">
                 {s.ctaLabel}
                 <span aria-hidden className="transition-transform duration-500 group-hover:translate-x-1">→</span>
               </Link>
