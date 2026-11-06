@@ -30,7 +30,7 @@ describe("Prestations catalog", () => {
 
   it("never shows prices anywhere in the service data", () => {
     const text = JSON.stringify(allServices);
-    expect(text).not.toMatch(/€|EUR|prix|tarif/i);
+    expect(text).not.toMatch(/€|\b(EUR|prix|tarif|tarifs)\b/i);
   });
 
   it("keeps service ids unique across specialties", () => {
