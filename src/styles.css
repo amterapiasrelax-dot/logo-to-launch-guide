@@ -71,7 +71,7 @@
   --pearl: radial-gradient(120% 80% at 12% 8%, color-mix(in oklab, var(--white) 95%, transparent) 0%, transparent 55%),
     radial-gradient(90% 70% at 88% 30%, color-mix(in oklab, var(--ivory) 70%, transparent) 0%, transparent 60%),
     radial-gradient(110% 90% at 30% 100%, color-mix(in oklab, var(--champagne) 28%, transparent) 0%, transparent 65%),
-    linear-gradient(135deg, var(--white) 0%, color-mix(in oklab, var(--ivory) 45%, var(--white)) 50%, var(--white) 100%);
+    linear-gradient(135deg, var(--white) 0%, color-mix(in oklab, var(--ivory) 25%, var(--white)) 50%, var(--white) 100%);
   --pearl-ivory: radial-gradient(100% 80% at 85% 10%, color-mix(in oklab, var(--white) 85%, transparent) 0%, transparent 60%),
     radial-gradient(90% 80% at 10% 90%, color-mix(in oklab, var(--champagne) 35%, transparent) 0%, transparent 65%),
     linear-gradient(120deg, var(--ivory) 0%, color-mix(in oklab, var(--ivory) 55%, var(--white)) 45%, var(--ivory) 100%);
@@ -84,7 +84,7 @@
   html { scroll-behavior: smooth; overflow-x: clip; }
   body {
     background-color: var(--color-background);
-    background-image: var(--pearl);
+    background-image: repeating-linear-gradient(115deg, color-mix(in oklab, var(--champagne) 7%, transparent) 0 2px, transparent 2px 6px), var(--pearl);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -146,9 +146,9 @@
   to { transform: scale(1.12) translate(-1%, -1%); }
 }
 
-.akura-header { background: linear-gradient(120deg, var(--sand) 0%, var(--gold) 55%, var(--sand) 100%); }
-.akura-nav-link { color: color-mix(in oklab, var(--white) 88%, transparent); transition: color 0.4s var(--ease-soft); }
-.akura-nav-link:hover, .akura-nav-link.active { color: var(--white); }
+.akura-header { background: linear-gradient(120deg, color-mix(in oklab, var(--ivory) 70%, transparent), color-mix(in oklab, var(--champagne) 55%, transparent) 55%, color-mix(in oklab, var(--ivory) 70%, transparent)); backdrop-filter: blur(18px) saturate(1.3); border-bottom: 1px solid color-mix(in oklab, var(--white) 70%, transparent); }
+.akura-nav-link { color: var(--gold); transition: opacity 0.4s var(--ease-soft); }
+.akura-nav-link:hover, .akura-nav-link.active { color: var(--gold); opacity: 0.7; }
 .country-strip { height: 26px; overflow: hidden; background: linear-gradient(90deg, var(--ivory), var(--champagne) 50%, var(--ivory)); color: var(--gold); }
 .country-track { display: flex; width: max-content; height: 100%; animation: country-drift 90s linear infinite; }
 .country-sequence { display: flex; align-items: center; flex-shrink: 0; }
@@ -190,6 +190,6 @@
 }
 
 /* Pearl satin finish on ivory/champagne background areas */
-.bg-ivory { background-image: var(--pearl-ivory); }
-.akura-procedures { background-image: var(--pearl-ivory); }
+.bg-ivory { background-color: var(--white); background-image: var(--pearl); }
+.akura-procedures { background-color: var(--white); background-image: var(--pearl); }
 .country-strip { background-image: linear-gradient(90deg, var(--white), var(--ivory) 50%, var(--white)); }
