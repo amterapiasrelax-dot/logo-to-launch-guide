@@ -47,7 +47,7 @@
   --champagne: var(--gold);
   --sand: var(--gold);
   --champagne-light: var(--gold);
-  --ink: oklch(0.43 0 0);
+  --ink: #998B70;
   --photo-label: var(--white);
   --shadow-photo-label: 0 1px 4px color-mix(in oklab, var(--gold) 70%, transparent);
 
@@ -96,7 +96,7 @@
   letter-spacing: 0.32em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--ink);
 }
 
 @utility display {
@@ -149,8 +149,7 @@
 .country-separator { font-size: 8px; }
 @keyframes country-drift { to { transform: translateX(-50%); } }
 .akura-introduction { position: relative; isolation: isolate; display: flex; align-items: center; min-height: max(520px, 68svh); padding: 140px 24px 48px; }
-.akura-introduction-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; z-index: -2; }
-.akura-introduction::before { content: ""; position: absolute; inset: 0; z-index: -1; background: color-mix(in oklab, var(--white) 88%, transparent); }
+.akura-introduction { background: var(--white); }
 .akura-introduction-content { width: 100%; max-width: 1152px; margin-inline: auto; }
 .akura-procedures { padding: 32px 24px 16px; background: var(--ivory); }
 .procedure-carousel { position: relative; width: 100%; max-width: 1000px; margin-inline: auto; isolation: isolate; }
@@ -193,6 +192,7 @@
 .akura-btn:active, .pearl-action:active { transform: translateY(1px); }
 .akura-btn { max-width: 100%; white-space: normal; letter-spacing: 0; }
 .akura-header nav a:not(.akura-nav-link) { color: var(--ink); }
+.text-gold, [class*="text-gold/"] { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   .akura-btn, .pearl-action { transition: none; }
   .akura-btn:hover, .pearl-action:hover, .akura-btn:active, .pearl-action:active { transform: none; }
