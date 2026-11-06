@@ -192,7 +192,7 @@
 /* Pearl satin finish on ivory/champagne background areas */
 .bg-ivory { background-color: var(--white); background-image: var(--pearl); }
 .akura-procedures { background-color: var(--white); background-image: var(--pearl); }
-.country-strip { background: color-mix(in oklab, var(--white) 70%, transparent); backdrop-filter: blur(12px); color: var(--gold); border-bottom: 1px solid color-mix(in oklab, var(--champagne) 70%, transparent); }
+.country-strip { background: color-mix(in oklab, var(--white) 70%, transparent); backdrop-filter: blur(12px); color: var(--white); text-shadow: 0 0 1px var(--gold), 0 1px 2px var(--gold), 0 0 6px color-mix(in oklab, var(--gold) 70%, transparent); border-bottom: 1px solid color-mix(in oklab, var(--champagne) 70%, transparent); }
 .country-item { font-weight: 700; }
 /* Champagne satin buttons (reference: A.M Terapia Relax) */
 .akura-btn { position: relative; overflow: hidden; border-radius: 6px; border: 1px solid color-mix(in oklab, var(--white) 75%, transparent); color: var(--white); text-shadow: 0 1px 2px color-mix(in oklab, var(--gold) 95%, transparent);
